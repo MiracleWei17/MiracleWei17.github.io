@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>魏霂崙的个人空间</title>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .bs-doc-header {
+            background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+            padding: 50px 0;
+        }
+
+        .bs-doc-header h1 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        .bs-doc-header h2 {
+            margin-top: 0;
+        }
+
+        .bs-doc-header h2 small {
+            color: #cdbfe3;
+        }
+
+        .bs-doc-header p {
+            font-size: 15px;
+            color: #cdbfe3ee;
+        }
+
+        .jumbotron {
+            padding: 18px 30px !important;
+        }
+
+        .jumbotron h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .jumbotron P {
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 992px) {
+
+            #contact,
+            #idea,
+            #play {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .bs-doc-header .container {
+                padding: 0 30px;
+            }
+
+            .navbar-header {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            #contact,
+            #idea,
+            #play {
+                display: block;
+            }
+
+            .step {
+                margin-left: 30px;
+                margin-right: 30px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div class=".container-fluid">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./index.html">魏霂崙的个人空间</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">基本功<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">前端</a></li>
+                        <li><a href="#">后端</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">数据结构与算法<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">数据结构</a></li>
+                                <li><a href="#">算法</a></li>
+                                <li><a href="#">刷题</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="./english.html">英语</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">其他<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Git</a></li>
+                                <li><a href="#">Shell</a></li>
+                                <li><a href="#">Vim</a></li>
+                                <li><a href="#">Linux</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">正则表达式</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">UI设计</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" id="idea">想法</a></li>
+                        <li><a href="#" id="play">玩</a></li>
+                        <li class="dropdown" id="contact">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">其他平台<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">qq：3484465596</a></li>
+                                <li><a href="https://www.zfrontier.com/app/user/55k9lkjDkbLP96">zFrontier</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="bs-doc-header">
+            <div class="container">
+                <h1>突破信息茧房，为你提供一种新的高效获取信息的途径。</h1>
+                <h2><small>除此之外，参加国内各种应试、阅读原版技术文档、移民的前提，都是你要会英语。</small></h2>
+                <P>本教程以备考托福为目标，这样做的好处在于，如果是漫无目的积累学习，你很容易迷失方向，不知道该去干什么，也不知道自己学到了什么程度。而基于一个目标去学习就会有一些列需要去学习、准备的东西，借助这个过程来驱动你学习英语。托福考试既然能够被国外学校列为国际学生申请入学的前置条件，就说明这个考试的成绩在一定程度上是能反映你是否有能力接受全英文的授课，事实上托福考试的内容也的确是一个对国外大学授课、生活的模拟，这和我们学英语的目的是完全契合的，所以选择他作为我们学习英语的目标，或者说驱动，再合适不过。本教程几乎不需要任何基础，所以以下学习路径中的内容对大多数人而言都是可行的。
+                </P>
+            </div>
+        </div>
+        <div class="container step" style="margin-top: 30px;">
+            <div class="jumbotron col-md-9">
+                <h2>基本背景</h2>
+                <p>我的基础相当地差：唯一认真学英语的年龄段就是小学，初中在糊弄，高中更是彻底摆了，不是我吹，我高中一次课都没完整地、认真地听过，一次作业都没(自己)写过，平时成绩基本在及格线挣扎，高考运气比较好考了一百零几。大学在准备考托福之前一点没碰过英语，英语课绩点常年2点几。<br>但在决定考托福出国之后，按照下面的方法去学，从我真正进入状态算起，每天全天地去学，大概花了四个月，把托福考到100+。<br>我算是个完全没有语言天赋的人，这也是为什么我高中英语一点没学，因为我本能地抗拒这件事，看见这玩意就反胃。我自己背单词的速度比别人慢特别多，而且也很难集中精力去学，经常是看一会就坚持不住了。<br>我说这些是想告诉大家，我这种基础、天赋的人都能成功，你们尝试复制我这套经验去学，大概率是没有任何问题的，应当对这件事有信心。
+                </p>
+            </div>
+        </div>
+        <div class="container step">
+            <div class="col-md-1"></div>
+            <div class="jumbotron col-md-9">
+                <h2>词汇</h2>
+                <p>9000的词汇量基本就可以达到托福的要求，也能基本满足交流需求(不过涉及专业词汇的英文授课、写文章这些还是不太够，后面还是要不断积累)。<br>每个人的基础不同，背单词的起点也不同，我自己虽说中学没怎么学吧，但是中学哪些词多少还能认得差不多的，并且考虑到托福词汇会cover一部分四级的词汇，所以我就直接背托福核心词了。但假如你的基础真的是非常非常差，小学水平这种的，那建议先从四级词汇开始背(四级词汇是包含中学词汇的，不要再往前捯找更基础的书啦)。
+                </p>
+                <p>
+                    背单词这种事，应当在一开始就对自己有个合理的预期：对于大多书没语言天赋的人(读一遍就能记住这种)和没有积累的人而言，短时间输入这么多单词都是一件很困难的事，这是由语言特性决定的。<br>
+                    英语是门很糟糕的语言：咱们中文虽然不是拼音语言，并非音形一体，可汉语的形和意是一致的，并且虽然汉语的常用词也很多，但你掌握了少数基本的字，后面的词基本就是这些字的组合，是非常容易理解、掌握、记忆的。而英语完全不是这样的，而英语完全不是这样的:<br>
+                    ①英文的构词就决定了你要记非常多的词，咱们汉语对于一个新的事物，一般都是借助已有的字词组合构成，而英语则一般是重新发明一个词/字母组合，基本可以说是没有任何规律。甚至对于这些以英语为母语的人也大多不愿意学生物相关专业——因为都是捏造出的新词，非常没有规律，native
+                    speaker也要查字典；<br>
+                    ②英文虽然是拼音语言，但是他的读音和拼写并没有必然联系，或者没有一个严格的、能让两者一一对应的规则，哪怕是一个以英语为母语、系统学过自然拼读还有各种发音规律的人(你可以搜以下这类书，非常的厚，规则很复杂)，也做不到说你给他一个不认识的词的拼写让他读正确，或者给他一个不认识的词的发音让他正确的拼写。你没有办法说，对于某一个发音，他就该怎样拼写，或者某种字母组合就一定要发某个音。这导致他既没有做到音形一致，也没有做到形意一致，哪头好处都没落着。这是由于过去欧洲各个国家、文明相对割裂，语言不统一导致的，英语中的很多词都是从别的语言移植过来的，但是又保留了原语言的发音，这就导致很多词的发音和拼写看起来很割裂。以前的法语意大利语这些语言也存在这种问题，但这些语言现代基本都进行了改良，比如意大利语，现在他的每一个发音都会对应一个唯一的拼写，两者之间能够建立起严格的对应关系，但英语处于某些原因吧，并没有经过这种改造。所以你有时候不能深究他那些奇怪的发音，就是得一个个死记硬背；<br>
+                    ③英语里有非常多的同义词，很多词都是一个意思(，其实是有细微差别的，所以还得你自己花时间进一步学习，区别他们)。这是因为文化差异，这其实是一个非常正常的现象，语言是对现实世界的刻画，是现实世界的产物，不同的文化、文明，对世界的认识是不同的，心里觉得重要的东西也不一样。比如在英语里“律师”这个词就有一大堆叫法，咱们中文就都叫律师一般。相反地，中文里咱们有粉条、粉丝、面条、牛河、粿条、米线、河粉，咱们华人都知道这是完全不一样的东西，但外国人那边的世界中就干脆不存在这些东西，自然就没有与之对应的词，在人家内这些东西都叫“noodle”。<br>
+                    ④英语里很多词都有一堆意思，你看哪些字母越少的词，意思越多。虽然中文也有一词多义现象，但绝对没英文那么多。原因我猜测是英国国土被其他国家历史上一共侵略过四次，这对他们语言造成了不可忽略的影响，像上面说，它从别的语言移植过来了很多词(但发音差不多，这就导致了同样的发音拼写，有一堆意思)。<br>
+                    所以综合这些因素，你背单词不论如何都是痛快不起来的。只能说，小车不倒只管推，坚持，坚持！
+                </p>
+                <p>
+                    但其实背单词还是有一些方法可循的：<br>
+                    ①语言本质是对现实世界刻画，人们发明语言，本质是对身边的物质和一些抽象的事物命名以达到沟通交流的目的，所以你记单词的时候，也尽量去想象这个词对应了一个怎样的东西，尽可能地去联想，这对你记忆有很大的帮助。<br>
+                    ②音频信号在视频信号之前。语言最早发明的时候一定是先开口说的，除了无时无刻都会有的听和说，你仔细想想，你在脑海中思考的时候、你在读文字的时候、你在写东西的时候，你脑中都会产生一个声音，会把这些东西念出来，而不是在脑海里把这些字写法、字形一个个蹦出来。写只是为了记录，进一步传播，但最基础、最核心的听和说。也就是说，背单词也好，学英语也好，最关键的地方在于建立音频信号与具体意义/内容的联系，音频信号是最重要的。从应试的角度也是这个道理，你去考托福，听力和口语都是用的是发音，阅读你能认个大概也不影响你做，真正要你把单词拼出来的地方只有写作。其实这一点在中文这里也是这样的，在这个越来越无纸化的21世纪，你仔细想想你写字的频率，每天在屏幕上看东西认的是形，打字用的是拼音，很少需要你把他一笔一划地写出来，但并没有影响你的日常生活。那么背单词你就要遵从这个规则，要会读读对、要听到音频信号能反应出它对应的事物、对于想要表达的东西你要能反应过来它的发音要能说出来。至于拼写，毕竟英语是个拼音语言，再没规律，你单词背的多了，最后利用自然拼读还是能拼写写个大概的。你仔细想想你小时候上语文课，也是花大量时间在读课文背课文听写上面，其实道理是一样的。<br>
+                    ③停留在一个单词上的时间尽可能少，回看一个单词的次数尽可能多。你在同一个词停留10秒以上，后面的时间基本无效的，从长远来看并不会帮你记得更清楚，相反会让你变得越来越没耐心、越来越挫败。不要说非要把这个词当时清清楚楚得刻在脑海里，试试上过一段时间之后你忘得和当时把一个词浮光掠影地看一遍留下地印象是一样的。重要的是循环滚动，反复回看，一个词的单位时间尽可能短，但次数尽可能地多，一天的各个时间点都看一下，多看几天，你重复几遍基本可以永远记住，尽管你在这个词上花的单次时间很短。这种方法看起来似乎不能让你心安，但确实行之有效。<br>
+                    <br>综合这几点，我向你推荐的一种方法就是，找一个循环读单词读含义的视频，你反复跟读反复听，最好还能结合自然拼读，即每个单词读的时候还给你给出这个词按照自然拼读的拆分，这能进一步帮你记发音、记拼写。我自己看的是这个两视频，挺不错的：<a href="https://www.bilibili.com/video/BV1U341137jGhttps://www.bilibili.com/video/BV1U341137jG">托福词以类记(张红岩)</a>，<a href="https://www.bilibili.com/video/BV1q5411n7jf">来灭托福！自创背词法|6小时一轮|托福词汇|45天突破版</a>。<br>
+                    <br>④背单词APP。你一定听说过用APP背单词，但我不太建议上来就用软件背，因为这玩意太“轻”了，你很容易不当回事，看似好像是你每天抽出些时间上午点一点、下午点一点、晚上点一点，但其实实践起来你可能发现就不是这样的了，反正我自己是没坚持下去，而且也容易切到别的应用开启网上冲浪。但这种形式的确是很好的，我认为它适合在什么时候用呢，适合用纸质书或者我前面推荐的那种视频，记过一轮，都记住了，之后再每天拿这种APP来复习，刷熟练度，这时候你拿它点点点是很容易坚持下去的，还省时间(见缝插针的在垃圾时间干这件事)，人的本性就是这样，对自己熟悉的东西容易专注，而输入陌生的东西是痛苦的。至于纸质书，我也没坚持下去，说实话，每天好几页，密密麻麻的，全都不认得，看着就头疼，我还是推荐视频，有个声音跟进度条带着你推进，就好像是有老师带着你上课一样，比较容易调动你的大脑。④背单词APP。你一定听说过用APP背单词，但我不太建议上来就用软件背，因为这玩意太“轻”了，你很容易不当回事，看似好像是你每天抽出些时间上午点一点、下午点一点、晚上点一点，但其实实践起来你可能发现就不是这样的了，反正我自己是没坚持下去，而且也容易切到别的应用开启网上冲浪。但这种形式的确是很好的，我认为它适合在什么时候用呢，适合用纸质书或者我前面推荐的那种视频，记过一轮，都记住了，之后再每天拿这种APP来复习，刷熟练度，这时候你拿它点点点是很容易坚持下去的，还省时间(见缝插针的在垃圾时间干这件事)，人的本性就是这样，对自己熟悉的东西容易专注，而输入陌生的东西是痛苦的。至于纸质书，我也没坚持下去，说实话，每天好几页，密密麻麻的，全都不认得，看着就头疼，我还是推荐视频，有个声音跟进度条带着你推进，就好像是有老师带着你上课一样，比较容易调动你的大脑。<br>
+                    <br>综上，我认为的最佳方案就是：先利用我上面发的带自然拼读的视频跟读去记，记住之后就每天抽一丢丢时间拿APP打卡复习，APP我比较推荐“默默背单词”和“不背单词”这两个。<br>
+                    <br>⑤不要拿汉语当媒介、用英英词典。前面谈英语里好多单词一个意思也谈到过，不同语言也伴随着不同的思维方式、文化。你去看译文是注定会有信息丢失的，因为有的东西中文里就找不到一个能与之对应的东西，再加上有的翻译、汉意太垃圾，必然伴随大量的信息丢失。拿词来说的话就像前面说的哪个情况，好几个词你看汉意都差不多，或者不知道汉意说的是啥，但你看英文释义你就能很清楚。你想想你学中文，字典都是拿中文解释中文。所以随着你的记得词越来越多，尽量就别英译汉了，只用英英词典。比较推荐我自己在用的这个：<a href="https://dictionary.cambridge.org/">CambridgeDictionary</a>。<br>
+                    <br>更重要的是，你要让自己进入英语思维，前面讲音频信号的重要性的时候也说到过，你要确保自己听到英语的音频信号之后，脑海里要返回的这个词在现实世界里对应的东西，而不是中文。你要用英语和他所表示的意义去在你脑子里建立联系，而不是每次说话要先组织中文然后汉译英，每次听、读别人的话要先英译汉，尽量要摒弃掉用中文当媒介辅助理解这个习惯，让自己进入纯粹的英语世界。这个道理很简单，你见哪个外国人听别人讲话要先翻译中文再去理解别人讲什么，先不说会产生信息丢失，你每次听别人讲话、自己说话都比别人多一道工序，在内反应半天，能不慢么。<br>
+                    <br>⑥多关联、联想意思相近的、有关联的词，尝试去汇总他们，有助于把你的记忆穿起来。<br>
+                    <br>按照上面第一个视频的划分，一共有45个list，一天一个(你也可以每天把那45个刷一两边刷45天)(最开始你用原速，后面熟悉了你就可以结合暂停键直接用二倍速了，花不了多少时间)，差不多两个月能背完。
+                </p>
+                <p>
+                    最后，再分享给你们一个辅助资料吧，核心词记完之后，可以看看这些，作为一个补充：<a href="./最新学科分类词汇.rar">最新学科分类词汇</a>。
+                </p>
+            </div>
+        </div>
+        <div class="container step">
+            <div class="col-md-1"></div>
+            <div class="jumbotron col-md-9">
+                <h2>基本背景</h2>
+            </div>
+        </div>
+        <div class="container step">
+            <div class="col-md-2"></div>
+            <div class="jumbotron col-md-9">
+                <h2>基本背景</h2>
+            </div>
+        </div>
+        <div class="container step">
+            <div class="col-md-3"></div>
+            <div class="jumbotron col-md-9">
+                <h2>基本背景</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
