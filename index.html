@@ -13,14 +13,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>魏霂崙的个人空间</title>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .bs-doc-header {
+            background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+            padding: 50px 0;
+        }
+
+        .bs-doc-header h1 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        .bs-doc-header h2 {
+            margin-top: 0;
+        }
+
+        .bs-doc-header h2 small {
+            color: #cdbfe3;
+        }
+
+        .bs-doc-header p {
+            font-size: 15px;
+            color: #cdbfe3ee;
+        }
+
+        .jumbotron {
+            padding: 18px 30px !important;
+        }
+
+        .jumbotron h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .jumbotron P {
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 992px) {
+
+            #contact,
+            #idea,
+            #play {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .bs-doc-header .container {
+                padding: 0 30px;
+            }
+
+            .navbar-header {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            #contact,
+            #idea,
+            #play {
+                display: block;
+            }
+
+            .step {
+                margin-left: 30px;
+                margin-right: 30px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
 <html>
 
 <body>
     <div class=".container-fluid">
         <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header" style="padding-left: 20px;">
+            <div class="container">
+                <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -60,11 +134,9 @@
                                 <li><a href="#">UI设计</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">想法</a></li>
-                        <li><a href="#">玩</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
+                        <li><a href="#" id="idea">想法</a></li>
+                        <li><a href="#" id="play">玩</a></li>
+                        <li class="dropdown" id="contact">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">其他平台<span class="caret"></span></a>
                             <ul class="dropdown-menu">
