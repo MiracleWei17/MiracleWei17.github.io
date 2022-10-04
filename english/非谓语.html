@@ -1,0 +1,3971 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext'
+        rel='stylesheet' type='text/css' />
+    <style type='text/css'>
+        html {
+            overflow-x: initial !important;
+        }
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --select-text-bg-color: #B5D6FC;
+            --select-text-font-color: auto;
+            --monospace: "Lucida Console", Consolas, "Courier", monospace;
+            --title-bar-height: 20px;
+        }
+
+        .mac-os-11 {
+            --title-bar-height: 28px;
+        }
+
+        html {
+            font-size: 14px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: auto;
+            inset: 0px;
+            font-size: 1rem;
+            line-height: 1.42857;
+            overflow-x: hidden;
+            background: inherit;
+            tab-size: 4;
+        }
+
+        iframe {
+            margin: auto;
+        }
+
+        a.url {
+            word-break: break-all;
+        }
+
+        a:active,
+        a:hover {
+            outline: 0px;
+        }
+
+        .in-text-selection,
+        ::selection {
+            text-shadow: none;
+            background: var(--select-text-bg-color);
+            color: var(--select-text-font-color);
+        }
+
+        #write {
+            margin: 0px auto;
+            height: auto;
+            width: inherit;
+            word-break: normal;
+            overflow-wrap: break-word;
+            position: relative;
+            white-space: normal;
+            overflow-x: visible;
+            padding-top: 36px;
+        }
+
+        #write.first-line-indent p {
+            text-indent: 2em;
+        }
+
+        #write.first-line-indent li p,
+        #write.first-line-indent p * {
+            text-indent: 0px;
+        }
+
+        #write.first-line-indent li {
+            margin-left: 2em;
+        }
+
+        .for-image #write {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        body.typora-export {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .typora-export .footnote-line,
+        .typora-export li,
+        .typora-export p {
+            white-space: pre-wrap;
+        }
+
+        .typora-export .task-list-item input {
+            pointer-events: none;
+        }
+
+        @media screen and (max-width: 500px) {
+            body.typora-export {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            #write {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        #write li>figure:last-child {
+            margin-bottom: 0.5rem;
+        }
+
+        #write ol,
+        #write ul {
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+            image-orientation: from-image;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            color: inherit;
+            font: inherit;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            line-height: normal;
+            padding: 0px;
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        #write h1,
+        #write h2,
+        #write h3,
+        #write h4,
+        #write h5,
+        #write h6,
+        #write p,
+        #write pre {
+            width: inherit;
+        }
+
+        #write h1,
+        #write h2,
+        #write h3,
+        #write h4,
+        #write h5,
+        #write h6,
+        #write p {
+            position: relative;
+        }
+
+        p {
+            line-height: inherit;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            break-after: avoid-page;
+            break-inside: avoid;
+            orphans: 4;
+        }
+
+        p {
+            orphans: 4;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        .md-math-block,
+        .md-rawblock,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .md-blockmeta {
+            color: rgb(204, 204, 204);
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        sup.md-footnote {
+            padding: 2px 4px;
+            background-color: rgba(238, 238, 238, 0.7);
+            color: rgb(85, 85, 85);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        sup.md-footnote a,
+        sup.md-footnote a:hover {
+            color: inherit;
+            text-transform: inherit;
+            text-decoration: inherit;
+        }
+
+        #write input[type="checkbox"] {
+            cursor: pointer;
+            width: inherit;
+            height: inherit;
+        }
+
+        figure {
+            overflow-x: auto;
+            margin: 1.2em 0px;
+            max-width: calc(100% + 16px);
+            padding: 0px;
+        }
+
+        figure>table {
+            margin: 0px;
+        }
+
+        thead,
+        tr {
+            break-inside: avoid;
+            break-after: auto;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+            width: 100%;
+            overflow: auto;
+            break-inside: auto;
+            text-align: left;
+        }
+
+        table.md-table td {
+            min-width: 32px;
+        }
+
+        .CodeMirror-gutters {
+            border-right: 0px;
+            background-color: inherit;
+        }
+
+        .CodeMirror-linenumber {
+            user-select: none;
+        }
+
+        .CodeMirror {
+            text-align: left;
+        }
+
+        .CodeMirror-placeholder {
+            opacity: 0.3;
+        }
+
+        .CodeMirror pre {
+            padding: 0px 4px;
+        }
+
+        .CodeMirror-lines {
+            padding: 0px;
+        }
+
+        div.hr:focus {
+            cursor: none;
+        }
+
+        #write pre {
+            white-space: pre-wrap;
+        }
+
+        #write.fences-no-line-wrapping pre {
+            white-space: pre;
+        }
+
+        #write pre.ty-contain-cm {
+            white-space: normal;
+        }
+
+        .CodeMirror-gutters {
+            margin-right: 4px;
+        }
+
+        .md-fences {
+            font-size: 0.9rem;
+            display: block;
+            break-inside: avoid;
+            text-align: left;
+            overflow: visible;
+            white-space: pre;
+            background: inherit;
+            position: relative !important;
+        }
+
+        .md-fences-adv-panel {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+            padding-top: 0px;
+            padding-bottom: 8px;
+            overflow-x: auto;
+        }
+
+        #write .md-fences.mock-cm {
+            white-space: pre-wrap;
+        }
+
+        .md-fences.md-fences-with-lineno {
+            padding-left: 0px;
+        }
+
+        #write.fences-no-line-wrapping .md-fences.mock-cm {
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .md-fences.mock-cm.md-fences-with-lineno {
+            padding-left: 8px;
+        }
+
+        .CodeMirror-line,
+        twitterwidget {
+            break-inside: avoid;
+        }
+
+        svg {
+            break-inside: avoid;
+        }
+
+        .footnotes {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .footnotes+.footnotes {
+            margin-top: 0px;
+        }
+
+        .md-reset {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            outline: 0px;
+            vertical-align: top;
+            background: 0px 0px;
+            text-decoration: none;
+            text-shadow: none;
+            float: none;
+            position: static;
+            width: auto;
+            height: auto;
+            white-space: nowrap;
+            cursor: inherit;
+            -webkit-tap-highlight-color: transparent;
+            line-height: normal;
+            font-weight: 400;
+            text-align: left;
+            box-sizing: content-box;
+            direction: ltr;
+        }
+
+        li div {
+            padding-top: 0px;
+        }
+
+        blockquote {
+            margin: 1rem 0px;
+        }
+
+        li .mathjax-block,
+        li p {
+            margin: 0.5rem 0px;
+        }
+
+        li blockquote {
+            margin: 1rem 0px;
+        }
+
+        li {
+            margin: 0px;
+            position: relative;
+        }
+
+        blockquote> :last-child {
+            margin-bottom: 0px;
+        }
+
+        blockquote> :first-child,
+        li> :first-child {
+            margin-top: 0px;
+        }
+
+        .footnotes-area {
+            color: rgb(136, 136, 136);
+            margin-top: 0.714rem;
+            padding-bottom: 0.143rem;
+            white-space: normal;
+        }
+
+        #write .footnote-line {
+            white-space: pre-wrap;
+        }
+
+        @media print {
+
+            body,
+            html {
+                border: 1px solid transparent;
+                height: 99%;
+                break-after: avoid;
+                break-before: avoid;
+                font-variant-ligatures: no-common-ligatures;
+            }
+
+            #write {
+                margin-top: 0px;
+                padding-top: 0px;
+                border-color: transparent !important;
+                padding-bottom: 0px !important;
+            }
+
+            .typora-export * {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .typora-export #write {
+                break-after: avoid;
+            }
+
+            .typora-export #write::after {
+                height: 0px;
+            }
+
+            .is-mac table {
+                break-inside: avoid;
+            }
+
+            .typora-export-show-outline .typora-export-sidebar {
+                display: none;
+            }
+        }
+
+        .footnote-line {
+            margin-top: 0.714em;
+            font-size: 0.7em;
+        }
+
+        a img,
+        img a {
+            cursor: pointer;
+        }
+
+        pre.md-meta-block {
+            font-size: 0.8rem;
+            min-height: 0.8rem;
+            white-space: pre-wrap;
+            background: rgb(204, 204, 204);
+            display: block;
+            overflow-x: hidden;
+        }
+
+        p>.md-image:only-child:not(.md-img-error) img,
+        p>img:only-child {
+            display: block;
+            margin: auto;
+        }
+
+        #write.first-line-indent p>.md-image:only-child:not(.md-img-error) img {
+            left: -2em;
+            position: relative;
+        }
+
+        p>.md-image:only-child {
+            display: inline-block;
+            width: 100%;
+        }
+
+        #write .MathJax_Display {
+            margin: 0.8em 0px 0px;
+        }
+
+        .md-math-block {
+            width: 100%;
+        }
+
+        .md-math-block:not(:empty)::after {
+            display: none;
+        }
+
+        .MathJax_ref {
+            fill: currentcolor;
+        }
+
+        [contenteditable="true"]:active,
+        [contenteditable="true"]:focus,
+        [contenteditable="false"]:active,
+        [contenteditable="false"]:focus {
+            outline: 0px;
+            box-shadow: none;
+        }
+
+        .md-task-list-item {
+            position: relative;
+            list-style-type: none;
+        }
+
+        .task-list-item.md-task-list-item {
+            padding-left: 0px;
+        }
+
+        .md-task-list-item>input {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin-left: -1.2em;
+            margin-top: calc(1em - 10px);
+            border: none;
+        }
+
+        .math {
+            font-size: 1rem;
+        }
+
+        .md-toc {
+            min-height: 3.58rem;
+            position: relative;
+            font-size: 0.9rem;
+            border-radius: 10px;
+        }
+
+        .md-toc-content {
+            position: relative;
+            margin-left: 0px;
+        }
+
+        .md-toc-content::after,
+        .md-toc::after {
+            display: none;
+        }
+
+        .md-toc-item {
+            display: block;
+            color: rgb(65, 131, 196);
+        }
+
+        .md-toc-item a {
+            text-decoration: none;
+        }
+
+        .md-toc-inner:hover {
+            text-decoration: underline;
+        }
+
+        .md-toc-inner {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .md-toc-h1 .md-toc-inner {
+            margin-left: 0px;
+            font-weight: 700;
+        }
+
+        .md-toc-h2 .md-toc-inner {
+            margin-left: 2em;
+        }
+
+        .md-toc-h3 .md-toc-inner {
+            margin-left: 4em;
+        }
+
+        .md-toc-h4 .md-toc-inner {
+            margin-left: 6em;
+        }
+
+        .md-toc-h5 .md-toc-inner {
+            margin-left: 8em;
+        }
+
+        .md-toc-h6 .md-toc-inner {
+            margin-left: 10em;
+        }
+
+        @media screen and (max-width: 48em) {
+            .md-toc-h3 .md-toc-inner {
+                margin-left: 3.5em;
+            }
+
+            .md-toc-h4 .md-toc-inner {
+                margin-left: 5em;
+            }
+
+            .md-toc-h5 .md-toc-inner {
+                margin-left: 6.5em;
+            }
+
+            .md-toc-h6 .md-toc-inner {
+                margin-left: 8em;
+            }
+        }
+
+        a.md-toc-inner {
+            font-size: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
+
+        .footnote-line a:not(.reversefootnote) {
+            color: inherit;
+        }
+
+        .reversefootnote {
+            font-family: ui-monospace, sans-serif;
+        }
+
+        .md-attr {
+            display: none;
+        }
+
+        .md-fn-count::after {
+            content: ".";
+        }
+
+        code,
+        pre,
+        samp,
+        tt {
+            font-family: var(--monospace);
+        }
+
+        kbd {
+            margin: 0px 0.1em;
+            padding: 0.1em 0.6em;
+            font-size: 0.8em;
+            color: rgb(36, 39, 41);
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(173, 179, 185);
+            border-radius: 3px;
+            box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .md-comment {
+            color: rgb(162, 127, 3);
+            opacity: 0.6;
+            font-family: var(--monospace);
+        }
+
+        code {
+            text-align: left;
+            vertical-align: initial;
+        }
+
+        a.md-print-anchor {
+            white-space: pre !important;
+            border-width: initial !important;
+            border-style: none !important;
+            border-color: initial !important;
+            display: inline-block !important;
+            position: absolute !important;
+            width: 1px !important;
+            right: 0px !important;
+            outline: 0px !important;
+            background: 0px 0px !important;
+            text-decoration: initial !important;
+            text-shadow: initial !important;
+        }
+
+        .os-windows.monocolor-emoji .md-emoji {
+            font-family: "Segoe UI Symbol", sans-serif;
+        }
+
+        .md-diagram-panel>svg {
+            max-width: 100%;
+        }
+
+        [lang="flow"] svg,
+        [lang="mermaid"] svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        [lang="mermaid"] .node text {
+            font-size: 1rem;
+        }
+
+        table tr th {
+            border-bottom: 0px;
+        }
+
+        video {
+            max-width: 100%;
+            display: block;
+            margin: 0px auto;
+        }
+
+        iframe {
+            max-width: 100%;
+            width: 100%;
+            border: none;
+        }
+
+        .highlight td,
+        .highlight tr {
+            border: 0px;
+        }
+
+        mark {
+            background: rgb(255, 255, 0);
+            color: rgb(0, 0, 0);
+        }
+
+        .md-html-inline .md-plain,
+        .md-html-inline strong,
+        mark .md-inline-math,
+        mark strong {
+            color: inherit;
+        }
+
+        .md-expand mark .md-meta {
+            opacity: 0.3 !important;
+        }
+
+        mark .md-meta {
+            color: rgb(0, 0, 0);
+        }
+
+        @media print {
+
+            .typora-export h1,
+            .typora-export h2,
+            .typora-export h3,
+            .typora-export h4,
+            .typora-export h5,
+            .typora-export h6 {
+                break-inside: avoid;
+            }
+        }
+
+        .md-diagram-panel .messageText {
+            stroke: none !important;
+        }
+
+        .md-diagram-panel .start-state {
+            fill: var(--node-fill);
+        }
+
+        .md-diagram-panel .edgeLabel rect {
+            opacity: 1 !important;
+        }
+
+        .md-fences.md-fences-math {
+            font-size: 1em;
+        }
+
+        .md-fences-advanced:not(.md-focus) {
+            padding: 0px;
+            white-space: nowrap;
+            border: 0px;
+        }
+
+        .md-fences-advanced:not(.md-focus) {
+            background: inherit;
+        }
+
+        .typora-export-show-outline .typora-export-content {
+            max-width: 1440px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .typora-export-sidebar {
+            width: 300px;
+            font-size: 0.8rem;
+            margin-top: 80px;
+            margin-right: 18px;
+        }
+
+        .typora-export-show-outline #write {
+            --webkit-flex: 2;
+            flex: 2 1 0%;
+        }
+
+        .typora-export-sidebar .outline-content {
+            position: fixed;
+            top: 0px;
+            max-height: 100%;
+            overflow: hidden auto;
+            padding-bottom: 30px;
+            padding-top: 60px;
+            width: 300px;
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            .typora-export-sidebar,
+            .typora-export-sidebar .outline-content {
+                width: 240px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .typora-export-sidebar {
+                display: none;
+            }
+        }
+
+        .outline-content li,
+        .outline-content ul {
+            margin-left: 0px;
+            margin-right: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            list-style: none;
+        }
+
+        .outline-content ul {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .outline-content strong {
+            font-weight: 400;
+        }
+
+        .outline-expander {
+            width: 1rem;
+            height: 1.42857rem;
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            cursor: pointer;
+            padding-left: 4px;
+        }
+
+        .outline-expander::before {
+            content: "";
+            position: relative;
+            font-family: Ionicons;
+            display: inline-block;
+            font-size: 8px;
+            vertical-align: middle;
+        }
+
+        .outline-item {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            cursor: pointer;
+        }
+
+        .outline-expander:hover::before {
+            content: "";
+        }
+
+        .outline-h1>.outline-item {
+            padding-left: 0px;
+        }
+
+        .outline-h2>.outline-item {
+            padding-left: 1em;
+        }
+
+        .outline-h3>.outline-item {
+            padding-left: 2em;
+        }
+
+        .outline-h4>.outline-item {
+            padding-left: 3em;
+        }
+
+        .outline-h5>.outline-item {
+            padding-left: 4em;
+        }
+
+        .outline-h6>.outline-item {
+            padding-left: 5em;
+        }
+
+        .outline-label {
+            cursor: pointer;
+            display: table-cell;
+            vertical-align: middle;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .outline-label:hover {
+            text-decoration: underline;
+        }
+
+        .outline-item:hover {
+            border-color: rgb(245, 245, 245);
+            background-color: var(--item-hover-bg-color);
+        }
+
+        .outline-item:hover {
+            margin-left: -28px;
+            margin-right: -28px;
+            border-left: 28px solid transparent;
+            border-right: 28px solid transparent;
+        }
+
+        .outline-item-single .outline-expander::before,
+        .outline-item-single .outline-expander:hover::before {
+            display: none;
+        }
+
+        .outline-item-open>.outline-item>.outline-expander::before {
+            content: "";
+        }
+
+        .outline-children {
+            display: none;
+        }
+
+        .info-panel-tab-wrapper {
+            display: none;
+        }
+
+        .outline-item-open>.outline-children {
+            display: block;
+        }
+
+        .typora-export .outline-item {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        .typora-export .outline-item:hover {
+            margin-right: -8px;
+            border-right: 8px solid transparent;
+        }
+
+        .typora-export .outline-expander::before {
+            content: "+";
+            font-family: inherit;
+            top: -1px;
+        }
+
+        .typora-export .outline-expander:hover::before,
+        .typora-export .outline-item-open>.outline-item>.outline-expander::before {
+            content: "−";
+        }
+
+        .typora-export-collapse-outline .outline-children {
+            display: none;
+        }
+
+        .typora-export-collapse-outline .outline-item-open>.outline-children,
+        .typora-export-no-collapse-outline .outline-children {
+            display: block;
+        }
+
+        .typora-export-no-collapse-outline .outline-expander::before {
+            content: "" !important;
+        }
+
+        .typora-export-show-outline .outline-item-active>.outline-item .outline-label {
+            font-weight: 700;
+        }
+
+        .md-inline-math-container mjx-container {
+            zoom: 0.95;
+        }
+
+
+        :root {
+            --side-bar-bg-color: #fafafa;
+            --control-text-color: #777;
+        }
+
+        @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+        /* open-sans-regular - latin-ext_latin */
+        /* open-sans-italic - latin-ext_latin */
+        /* open-sans-700 - latin-ext_latin */
+        /* open-sans-700italic - latin-ext_latin */
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+            color: rgb(51, 51, 51);
+            line-height: 1.6;
+        }
+
+        #write {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 30px;
+            padding-bottom: 100px;
+        }
+
+        @media only screen and (min-width: 1400px) {
+            #write {
+                max-width: 1024px;
+            }
+        }
+
+        @media only screen and (min-width: 1800px) {
+            #write {
+                max-width: 1200px;
+            }
+        }
+
+        #write>ul:first-child,
+        #write>ol:first-child {
+            margin-top: 30px;
+        }
+
+        a {
+            color: #4183C4;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            line-height: 1.4;
+            cursor: text;
+        }
+
+        h1:hover a.anchor,
+        h2:hover a.anchor,
+        h3:hover a.anchor,
+        h4:hover a.anchor,
+        h5:hover a.anchor,
+        h6:hover a.anchor {
+            text-decoration: none;
+        }
+
+        h1 tt,
+        h1 code {
+            font-size: inherit;
+        }
+
+        h2 tt,
+        h2 code {
+            font-size: inherit;
+        }
+
+        h3 tt,
+        h3 code {
+            font-size: inherit;
+        }
+
+        h4 tt,
+        h4 code {
+            font-size: inherit;
+        }
+
+        h5 tt,
+        h5 code {
+            font-size: inherit;
+        }
+
+        h6 tt,
+        h6 code {
+            font-size: inherit;
+        }
+
+        h1 {
+            font-size: 2.25em;
+            line-height: 1.2;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            font-size: 1.75em;
+            line-height: 1.225;
+            border-bottom: 1px solid #eee;
+        }
+
+        /*@media print {
+                .typora-export h1,
+                .typora-export h2 {
+                    border-bottom: none;
+                    padding-bottom: initial;
+                }
+            
+                .typora-export h1::after,
+                .typora-export h2::after {
+                    content: "";
+                    display: block;
+                    height: 100px;
+                    margin-top: -96px;
+                    border-top: 1px solid #eee;
+                }
+            }*/
+
+        h3 {
+            font-size: 1.5em;
+            line-height: 1.43;
+        }
+
+        h4 {
+            font-size: 1.25em;
+        }
+
+        h5 {
+            font-size: 1em;
+        }
+
+        h6 {
+            font-size: 1em;
+            color: #777;
+        }
+
+        p,
+        blockquote,
+        ul,
+        ol,
+        dl,
+        table {
+            margin: 0.8em 0;
+        }
+
+        li>ol,
+        li>ul {
+            margin: 0 0;
+        }
+
+        hr {
+            height: 2px;
+            padding: 0;
+            margin: 16px 0;
+            background-color: #e7e7e7;
+            border: 0 none;
+            overflow: hidden;
+            box-sizing: content-box;
+        }
+
+        li p.first {
+            display: inline-block;
+        }
+
+        ul,
+        ol {
+            padding-left: 30px;
+        }
+
+        ul:first-child,
+        ol:first-child {
+            margin-top: 0;
+        }
+
+        ul:last-child,
+        ol:last-child {
+            margin-bottom: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid #dfe2e5;
+            padding: 0 15px;
+            color: #777777;
+        }
+
+        blockquote blockquote {
+            padding-right: 0;
+        }
+
+        table {
+            padding: 0;
+            word-break: initial;
+        }
+
+        table tr {
+            border: 1px solid #dfe2e5;
+            margin: 0;
+            padding: 0;
+        }
+
+        table tr:nth-child(2n),
+        thead {
+            background-color: #f8f8f8;
+        }
+
+        table th {
+            font-weight: bold;
+            border: 1px solid #dfe2e5;
+            border-bottom: 0;
+            margin: 0;
+            padding: 6px 13px;
+        }
+
+        table td {
+            border: 1px solid #dfe2e5;
+            margin: 0;
+            padding: 6px 13px;
+        }
+
+        table th:first-child,
+        table td:first-child {
+            margin-top: 0;
+        }
+
+        table th:last-child,
+        table td:last-child {
+            margin-bottom: 0;
+        }
+
+        .CodeMirror-lines {
+            padding-left: 4px;
+        }
+
+        .code-tooltip {
+            box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+            border-top: 1px solid #eef2f2;
+        }
+
+        .md-fences,
+        code,
+        tt {
+            border: 1px solid #e7eaed;
+            background-color: #f8f8f8;
+            border-radius: 3px;
+            padding: 0;
+            padding: 2px 4px 0px 4px;
+            font-size: 0.9em;
+        }
+
+        code {
+            background-color: #f3f4f4;
+            padding: 0 2px 0 2px;
+        }
+
+        .md-fences {
+            margin-bottom: 15px;
+            margin-top: 15px;
+            padding-top: 8px;
+            padding-bottom: 6px;
+        }
+
+
+        .md-task-list-item>input {
+            margin-left: -1.3em;
+        }
+
+        @media print {
+            html {
+                font-size: 13px;
+            }
+
+            pre {
+                page-break-inside: avoid;
+                word-wrap: break-word;
+            }
+        }
+
+        .md-fences {
+            background-color: #f8f8f8;
+        }
+
+        #write pre.md-meta-block {
+            padding: 1rem;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: #f7f7f7;
+            border: 0;
+            border-radius: 3px;
+            color: #777777;
+            margin-top: 0 !important;
+        }
+
+        .mathjax-block>.code-tooltip {
+            bottom: .375rem;
+        }
+
+        .md-mathjax-midline {
+            background: #fafafa;
+        }
+
+        #write>h3.md-focus:before {
+            left: -1.5625rem;
+            top: .375rem;
+        }
+
+        #write>h4.md-focus:before {
+            left: -1.5625rem;
+            top: .285714286rem;
+        }
+
+        #write>h5.md-focus:before {
+            left: -1.5625rem;
+            top: .285714286rem;
+        }
+
+        #write>h6.md-focus:before {
+            left: -1.5625rem;
+            top: .285714286rem;
+        }
+
+        .md-image>.md-meta {
+            /*border: 1px solid #ddd;*/
+            border-radius: 3px;
+            padding: 2px 0px 0px 4px;
+            font-size: 0.9em;
+            color: inherit;
+        }
+
+        .md-tag {
+            color: #a7a7a7;
+            opacity: 1;
+        }
+
+        .md-toc {
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .sidebar-tabs {
+            border-bottom: none;
+        }
+
+        #typora-quick-open {
+            border: 1px solid #ddd;
+            background-color: #f8f8f8;
+        }
+
+        #typora-quick-open-item {
+            background-color: #FAFAFA;
+            border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        /** focus mode */
+        .on-focus-mode blockquote {
+            border-left-color: rgba(85, 85, 85, 0.12);
+        }
+
+        header,
+        .context-menu,
+        .megamenu-content,
+        footer {
+            font-family: "Segoe UI", "Arial", sans-serif;
+        }
+
+        .file-node-content:hover .file-node-icon,
+        .file-node-content:hover .file-node-open-state {
+            visibility: visible;
+        }
+
+        .mac-seamless-mode #typora-sidebar {
+            background-color: #fafafa;
+            background-color: var(--side-bar-bg-color);
+        }
+
+        .md-lang {
+            color: #b4654d;
+        }
+
+        /*.html-for-mac {
+                --item-hover-bg-color: #E6F0FE;
+            }*/
+
+        #md-notification .btn {
+            border: 0;
+        }
+
+        .dropdown-menu .divider {
+            border-color: #e5e5e5;
+            opacity: 0.4;
+        }
+
+        .ty-preferences .window-content {
+            background-color: #fafafa;
+        }
+
+        .ty-preferences .nav-group-item.active {
+            color: white;
+            background: #999;
+        }
+
+        .menu-item-container a.menu-style-btn {
+            background-color: #f5f8fa;
+            background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
+        }
+    </style>
+    <title>非谓语</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .bs-doc-header {
+            background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+            padding: 50px 0;
+        }
+
+        .bs-doc-header h1 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        .bs-doc-header h2 {
+            margin-top: 0;
+        }
+
+        .bs-doc-header h2 small {
+            color: #cdbfe3;
+        }
+
+        .bs-doc-header p {
+            font-size: 15px;
+            color: #cdbfe3ee;
+        }
+
+        .jumbotron {
+            padding: 18px 30px !important;
+        }
+
+        .jumbotron h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .jumbotron P {
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 992px) {
+
+            #contact,
+            #idea,
+            #play {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .bs-doc-header .container {
+                padding: 0 30px;
+            }
+
+            .navbar-header {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            #contact,
+            #idea,
+            #play {
+                display: block;
+            }
+
+            .step {
+                margin-left: 30px;
+                margin-right: 30px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div class=".container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">魏霂崙的个人空间</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">基本功<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">前端</a></li>
+                        <li><a href="#">后端</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">数据结构与算法<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">数据结构</a></li>
+                                <li><a href="#">算法</a></li>
+                                <li><a href="#">刷题</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../english.html">英语</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">其他<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Git</a></li>
+                                <li><a href="#">Shell</a></li>
+                                <li><a href="#">Vim</a></li>
+                                <li><a href="#">Linux</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">正则表达式</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">UI设计</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" id="idea">想法</a></li>
+                        <li><a href="../play.html" id="play">玩</a></li>
+                        <li class="dropdown" id="contact">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">其他平台<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">qq：3484465596</a></li>
+                                <li><a href="https://www.zfrontier.com/app/user/55k9lkjDkbLP96">zFrontier</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class='typora-export-content'>
+            <div id='write' class=''>
+                <h1 id='概述'><span>概述</span></h1>
+                <p><span>非谓语就是动词经过形式变换后，不做谓语，做其他成分。非谓语动词做句中成分是他们非动词特征的体现。</span></p>
+                <figure>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><span>非谓语动词</span></th>
+                                <th><span>在句子中充当的成分、表达的意义</span></th>
+                                <th><span>逻辑主语</span></th>
+                                <th><span>时态、语态变化</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span>不定式</span></td>
+                                <td><span>即“不一定是什么词性的成分”，可当作名词、形容词和副词来使用。不定式在句中能够充当除谓语以外的其他任何成分。</span></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><span>动名词</span></td>
+                                <td><span>动名词相当于名词，在句中充当主语、宾语、表语和定语(形容词)。</span></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><span>分词</span></td>
+                                <td><span>相当于形容词和副词，在句种充当定语、状语、补足语和表语。</span></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+                <p><span>本文将会以上面的表格的表头为主线，铺盖介绍非谓语的各方面。</span></p>
+                <p><span>非谓语动词作为是动词的一种变化形式，他为了和句子的谓语区分开来，也为了便于分辨和表意，用的形式要么是to
+                        do要么是过去式要么是进行时，但绝不可能是动词原形；</span><br><span>不过他仍保留了动词的特征，虽然他不做谓语，但毕竟表示的是一个动作，不管作任何成分都会有自己的逻辑主语，有时态(确切的说是体态aspect，并没有时间上的变化，时间都是现在时)和语态的变化，</span><br><span>在逻辑意义上有自己的句子结构&amp;成分（</span><u><span>所以有些时候非谓语不会单独的出现做成分，会附加一些和这个动词有关，补充这个不完整句子意思的其他成分</span></u><span>）。</span>
+                </p>
+                <p><span>从某些方面上，非谓语起到的作用是代替冗长的从句，简化表达。利用非谓语替代复杂的从句做同样的成分，往往省略了从句中的一些成分，非谓语多是简单的短语。(这也意味着适用非谓语的句子基本都能改写为相应的从句，会产生信息的丢失)</span>
+                </p>
+                <h1 id='不定式'><span>不定式</span></h1>
+                <blockquote>
+                    <p><span>对于讲用法的前面几节，会用最常见的情形距离说明，不会考虑体态和语态，有关体态和语态会在最后单开一节专门讲。</span></p>
+                </blockquote>
+                <h3 id='不定式的作用一）作主语'><span>不定式的作用（一）：作主语</span></h3>
+                <p><span>把不定式to do放在句首的主语，或者把不定时to do放在句末，用it作形式主语代指句末不定时。</span></p>
+                <p><span>一般来讲都是要放在句末的，只有一些比较特殊的情况才直接把不定时放在句首作主语，这种情况往往是有两个不定式构成对比关系。</span></p>
+                <blockquote>
+                    <p><span>To err is human; to forgive, divine. </span></p>
+                    <p><span>谚语：犯错人皆难免，宽恕则属超凡。</span></p>
+                    <p><span>第二个分句是省略句，省去了is。</span></p>
+                </blockquote>
+                <p><span>放在句首的情况只占大概不到10%，更常见的是用it作形式主语，放在句首，真主语（短语）放在句子后面。主要讨论三个问题：</span></p>
+                <ol start=''>
+                    <li>
+                        <p><span>结构：It is +形容词+to do</span></p>
+                        <blockquote>
+                            <p><span>It is possible to give without loving, but it is not possible to love without
+                                    giving.</span></p>
+                        </blockquote>
+                        <p><span>如果要明确说出不定式的逻辑主语，可以通过介词for给出。</span></p>
+                        <blockquote>
+                            <p><span>It is impossible for us to master English in a short time.</span></p>
+                        </blockquote>
+                        <p><span>形式主语it不能用this或that替换。</span></p>
+                    </li>
+                    <li>
+                        <p><span>其他结构：上面只是最常见的一种结构，除此还可以有很多结构。</span></p>
+                        <blockquote>
+                            <p><span>It takes time and effort to master English.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>It is may duty to help you with your English.</span></p>
+                        </blockquote>
+                        <p><span>总之就是it作主语，其他各方面就是一个正常的句子，只要这是个合理的句子结构就可以。虽然结构多种多样，但It + ...... + to do
+                                +...的结构是固定的。</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span>思维差异</span></p>
+                        <p><span>对于“It is impossible for us to master English in a short time”这句话，我们用中文表达习惯说“We are
+                                impossible to master English in a short time（我们不可能短时间内就掌握英语）”，但这样的说法在英语中是错误的。因为英语中不具备be
+                                impossible to表不可能这样的表达，impossible不能修饰人。只能说我们做到这件事不可能，不能说我们不可能做到这件事。</span></p>
+                        <p><span>再比如，汉语中说“你们在这停车是违章的”，英语中必须说：</span></p>
+                        <blockquote>
+                            <p><span>It is against the regulation for you to park your car here.</span></p>
+                        </blockquote>
+                        <p><span>不定式作主语是一个很重要的英汉思维差异转换的句型，很多句子若用汉语说是“人”做主语，但是英语就要用不定式做主语，即“事”做主语。</span></p>
+                    </li>
+                </ol>
+                <h3 id='不定式的作用二）作宾语'><span>不定式的作用（二）：作宾语</span></h3>
+                <ul>
+                    <li>
+                        <p><span>结构一：动词+to do</span></p>
+                        <p><span>两个特点/条件：①句子主语和不定式逻辑主语一致，即两个动作都是由全句主语发出。②句子的谓语动词多是描述态度，不定式的动词说明行为。</span></p>
+                        <blockquote>
+                            <p><span>This company refused to cooperate with us.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>结构二：动词+疑问词+to do</span></p>
+                        <p><span>连接代词（what，who，which）或连接副词（how，when，where）以及连词whether</span></p>
+                        <p><span>这种结构可以看成是连词引导的宾语从句的简略形式。（其中whether对应于一般疑问句）</span></p>
+                        <blockquote>
+                            <p><span>I wonder who to invite.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>I don&#39;t know whether to answer his letter.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>结构三：动词+it+宾语补足语+to do</span></p>
+                        <p><span>在动词+宾语+宾补这样的结构，如果宾语想用不定式，就得用上面那种结构，不能直接将不定式放在谓语动词后面，需要后置，用it作为形式宾语。</span></p>
+                        <blockquote>
+                            <p><span>I think it hard to answer the question in one go.</span></p>
+                            <p><span>我觉得很难一下子回答这个问题。</span></p>
+                        </blockquote>
+                        <p><span>这里也体现这中英文的思维差异，我们说中文会像翻译那样直接说，即使“我觉得很难”的这件事没有主语，但是英语中就不能把上面哪个表达改写成一个宾语从句，因为如果这样就要加主语，但似乎这样和我们要表达的意思有些违背：我们只是想说这个问题难回答，没主语的事儿。所以就只能用不定式，写成上面那样。</span>
+                        </p>
+                        <p><span>除此之外需要主语，对于不用不定式的”动词+宾语+宾补“结构，宾语也是可以后置的，但这时候是不需要加it的。所以需要注意，不是后置宾语就一定要在谓语后面加it的，要看后置的宾语的形式，如果是不定式就需要加，如果是普通的名词短语或者从句，就不需要加。</span>
+                        </p>
+                    </li>
+                </ul>
+                <h3 id='不定式的作用三）作宾语补足语'><span>不定式的作用（三）：作宾语补足语</span></h3>
+                <p><span>通常只放在某些特定的谓语动词后面。结构为：谓语动词+宾语+to do。(宾补的词性不固定，什么样的都有)</span></p>
+                <blockquote>
+                    <p><span>There is still good availability of some of the hottest toys this Christmas, but we still
+                            advise </span><strong><u><span>parents and shoppers</span></u></strong><span>
+                        </span><strong><u><span>to get to stores</span></u></strong><span> as early as possible next
+                            week.</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>Allow </span><strong><u><span>me</span></u></strong><span> </span><strong><u><span>to
+                                    drink</span></u></strong><span> to your success!</span></p>
+                    <p><span>让我为你的成功干杯！（祝酒词）（其中me是宾语，to drink是宾补，to your success是目的状语）</span></p>
+                </blockquote>
+                <h3 id='不定式的作用四）做定语'><span>不定式的作用（四）：做定语</span></h3>
+                <p><span>因为不定式是一个短语的形式，而短语作名词的定语时都要置于名词的后面，因此不定式作定语需要放在被修饰的名词后面构成后置定语。</span></p>
+                <p><span>要理解不定式作定语的用法，核心在于定语和被修饰名词之间构成的逻辑关系。</span></p>
+                <ul>
+                    <li>
+                        <p><span>宾语关系</span></p>
+                        <p><span>被修饰的名词充当不定式的宾语。</span></p>
+                        <p><span>这种情形又需要细分为两种情况讨论：作不定式中动词的宾语；作不定式中介词的宾语。</span></p>
+                        <p><span>这两类细分情形的区别在于，把不定式和被修饰的词拿出来，应如何还原成一个正常的句子，或者说不定式表达的动作和被修饰的名词(短语)在逻辑上的关系是怎样的。</span></p>
+                        <blockquote>
+                            <p><span>I have a letter to write. 这句话是对的</span></p>
+                            <p><span>I need a pen to write. 这句话是错的</span></p>
+                            <p><span>I need some paper to write. 这句话是错的</span></p>
+                        </blockquote>
+                        <p><span>后两句话之所以错，是因为他们相比于这个局部结构还原成正常的句子之后，是少东西的。用笔去写我们会说write with a pen而不是write a
+                                pen，同样的用纸来写是write on some
+                                paper，他们做的都是介词的宾语，他们本来和动词是没有逻辑关系的，只有添加了介词后才有。所以使用不定式的时候，也需要在动词后面加上介词。</span></p>
+                        <blockquote>
+                            <p><span>I need a pen to write with.</span></p>
+                            <p><span>I need some paper to write on.</span></p>
+                        </blockquote>
+                        <ul>
+                            <li>
+                                <p><span>作不定式中动词的宾语</span></p>
+                                <p><span>词是的不定式中的动词应当是一个及物动词，并且不带宾语。</span></p>
+                            </li>
+                            <li>
+                                <p><span>作不定式中介词的宾语</span></p>
+                                <p><span>因为有了介词的帮助，便无需再关心是否及物。</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>介词和动词搭配</span></p>
+                                        <p><span>有些动词和介词是固定搭配。</span></p>
+                                        <blockquote>
+                                            <p><span>I had no place to live in.</span></p>
+                                            <p><span>She has four children to take of.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>介词和被修饰的名词搭配</span></p>
+                                        <p><span>此时没有固定搭配的限制，但是不同的名词使用的介词不同。</span></p>
+                                        <blockquote>
+                                            <p><span>Why don&#39;t you get a backpack to carry your books in？
+                                                    这里是个双宾语</span>
+                                            </p>
+                                            <p><span>I need to buy an outfit for the gym to exercise in.</span></p>
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>主语关系</span></p>
+                        <p><span>被修饰的名词再逻辑意义上充当不定式中动词的主语</span></p>
+                        <blockquote>
+                            <p><span>The next train to arrive is from Xian.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>同位语关系</span></p>
+                        <p><span>这是一种比较特殊的关系，不定式的短语的内容是对修饰名词的补充，他们说的是一个东西。从整个句子看他即起到作定语的修饰作用；但你也可以把他理解成一个名词词性，作同位语，所以这也是不定式作同位语的用法。</span>
+                        </p>
+                        <p><span>这种表达对名词有限制，一般只限于两类：</span></p>
+                        <ul>
+                            <li>
+                                <p><span>与动词相关的名词</span></p>
+                                <p><span>与动词相关的名词就是说，这个名词有一个同词根的动词，这个名词表示的是一种动作，他的动词形式是要求与不定式连用的动词，所以他的名词也需要接不定式表示具体动作的内容(或者是具有这种性质的名词)。这种名词常见的有：arrangement，attempt，claim，decision，hope，determination，failure，need，plan，promise，refusal，resolution，tendency，threat，wish...</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>I don&#39;t wish to change. 动词形式</span></p>
+                                    <p><span>I have no wish to change. 名词形式</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>He refused to co-operate with us. 动词形式</span></p>
+                                    <p><span>His refusal to co-operate makes us angry. 名词形式</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>与形容词相关的名词</span></p>
+                                <p><span>与形容词相关的名词是指，有一个和这个名词同词根&amp;含义的形容词，使用这个形容词时后面要接不定式，所以他的名词也接to
+                                        do。因为需要表示形容词的具体内容，形容词只是说&quot;怎么样&quot;，需要用不定式补充到底是“什么怎么样“。</span></p>
+                                <blockquote>
+                                    <p><span>They were eager to help us.</span></p>
+                                    <p><span>Their eagerness to help pleased me.</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>状语关系</span></p>
+                        <p><span>被修饰的名词在逻辑意义上充当不定式动词的状语。</span></p>
+                        <ul>
+                            <li>
+                                <p><span>作方式状语</span></p>
+                                <p><span>被修饰的名词往往是way</span></p>
+                                <blockquote>
+                                    <p><span>There are two basic ways to see growth: ...</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>作时间状语</span></p>
+                                <p><span>一般是time等</span></p>
+                                <blockquote>
+                                    <p><span>The time to go is July.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>作地点状语</span></p>
+                                <p><span>一般是place等</span></p>
+                                <blockquote>
+                                    <p><span>A good place to eat is the Sichuan restaurant around the corner.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>...</span></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>补语关系</span></p>
+                        <p><span>被修饰的名词在逻辑意义上充当不定式动词</span><strong><span>逻辑主语</span></strong><span>的补语</span></p>
+                        <blockquote>
+                            <p><span>The thing (for you) to be these days is a gold-collar. 在现代社会，你一定要努力成为一个金领人士。</span>
+                            </p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h3 id='不定式的作用五）同位语'><span>不定式的作用（五）：同位语</span></h3>
+                <p><span>详见上</span></p>
+                <h3 id='不定式的作用六）形容词to-do'><span>不定式的作用（六）：形容词+to do</span></h3>
+                <p><span>这是一种特殊的形式，从标题可以看到，不同于前面几种作成分的用法，这里说的是他的位置特点，这类用在形容词后面的不定式具体充当何种成分是不一定的。</span></p>
+                <p><span>不定式具体作何种成分对于这种情况并不重要，关键是要搞清楚不定式的逻辑语义关系。（其实下面很多地方也没有办法说清具体是什么成分，并不是严格的符合句子结构的，不妨把不定式视作和形容词组合的短语一起构成定语或状语。）</span>
+                </p>
+                <p><span>和前面作定语不同之处在于，理解前面那种用法的关键在于理解不定式和他所修饰名词的逻辑关系，而形容词+to do的用法关键在于，动词与句子主语的逻辑关系。</span></p>
+                <p><span>这种结构的句子，表层结构和深层结构是不统一的，表层结构是指句子的形式、结构，深层结构是指句子的真实含义，句子结构上的主语谓语和实际意义上的逻辑主语谓语往往不统一。</span></p>
+                <ul>
+                    <li>
+                        <p><span>宾语关系（一）</span></p>
+                        <ul>
+                            <li>
+                                <p><span>找出深层逻辑关系的诀窍在于，把不定式从句子中剔除，如果该句没有实际意义，就证明句子结构上的主语并不是真正意义上的主语，而只是形式上的主语，或者说是语法结构上的主语罢了。</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>He is difficult to understand. 他很难理解，还是？理解他很难。</span></p>
+                                    <p><span>He is difficult 这显然不是人话，所以he在深层结构上并不是主语，主语是understand这件事。</span></p>
+                                    <p><span>To understand him is difficult. 这才是这句话的深层结构。形式主语he做understand的逻辑宾语。</span>
+                                    </p>
+                                    <p><span>这里的difficult强调的是事情，而不是人。</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>更确切地说，应该是把不定式从句子中剔除，句意/强调的东西是否发生了改变。</span></p>
+                                    <p><span>He is difficult to understand. 不管按照上面的哪种理解，总之说的都是某件事很难。</span></p>
+                                    <p><span>He is difficult. 这就变成了“他很难相处”，从原来的说事很难变成了说人很难，意思发生了转变，所以he并不真正的主语。</span>
+                                    </p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>更深层次的内核在于，这个形容词是怎么样的。</span></p>
+                                <p><span>有些形容词</span><strong><span>使用某个意思的时候</span></strong><span>(例如上面哪个例子的difficult显然用的就是“难”的意思，而不是“难相处”)，只能用来，或者说一般用来强调“事情”，而不是强调“人”，所以我们一般不用“人”来充当真正意义上的主语。</span>
+                                </p>
+                                <p><span>之所以上面那句话可以那样用，是因为understand可以承担做逻辑主语的功能，并且形式主语成为了understand的宾语。但是还有一些情况比如：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>We are diffifcult to learn English well overnight. 我们很难一夜之间把英语学好。</span>
+                                    </p>
+                                </blockquote>
+                                <p><span>这句话就是错的，这就是一种不能用于该结构的情形。因为如果你把“学英语”当作实际意义上的主语，那么要把“We”安放在何处？这里的“We”并不能像前面的“he”那样做不定式逻辑意义上的宾语。所以这里的we避无可避的，成为了实际上的、真正的主语，difficult修饰的就是we，这就与difficult的用法产生了冲突(只能强调事)，正确的表达应该是：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>For us to learn English well overnight is difficult.</span></p>
+                                    <p><span>或者：It is difficult for us to learn English well overnight.</span></p>
+                                </blockquote>
+                                <p><span>这种情况就不能使用形容词+to do的用法。</span></p>
+                            </li>
+                            <li>
+                                <p><span>总结：</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>这一句型/表达的特点在于，句子表层结构和深层结构不统一。由“人”或者“事”做主语，然后有一个形容词修饰他后面加to
+                                                do，但这个形容词不能修饰他们，句子在深层结构中，是后面不定式表示的在形式主语基础上的”事件“或”活动“充当真正的主语，形式主语充当他的逻辑宾语。</span>
+                                        </p>
+                                        <blockquote>
+                                            <p><span>English is difficult to speak.</span></p>
+                                            <p><span>To speak English is difficult.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>具体来说，可以是充当不定式动词的宾语，例如He is easy to fool；或者是充当不定式中介词的宾语，例如He is
+                                                interesting
+                                                to listen to。</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>句型可以变换、还原，但句意不变：把真正意义上的主语放在句首，或者使用it做形式主语将真主语放在句末。</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>形容词的特点：侧重强调基于”人“或”物”的“事情”或“活动”，有些形容词可以修饰人，但单独使用的形容词的含义与带不定式的形容词的含义会有差别(例如difficult)。这样的形容词常见的有：agreeable，awful，comfortable，convenient，dangerous，delightful，difficult，disagreeable，dreadful，easy，hard，horrible，impossible，lovely，marvelous，safe，unsafe，splendid，strange，terrible，wonderful。以及下列动词的现在分词(充当形容词)：alarm，amaze，amuse，annoy，astonish，bewilder，bore，depress，disappoint，discourage，disgust，embarrass，encourage，excite，frighten，horrify，interest，surprise，terrify，upset。</span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p><span>动词的特点：及物动词且不带宾语(形式主语做逻辑宾语)；或者是不及物动词添加适当的介词。</span></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><span>易错：</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>别乱用被动，因为是形式主语做逻辑宾语，这个结构压根就没有主语的事儿，形式主语本身就是“被xxx”的哪个，不需要用被动。</span></p>
+                                        <blockquote>
+                                            <p><span>He is easy to fool. √</span></p>
+                                            <p><span>He is easy to be fooled. ×</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>不定式后面不要加宾语，因为已经有逻辑宾语了(句子的主语)(除非是双宾语)。</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>有时候需要在不定式后面添加适当的介词，因为动词不及物，不加介词句子的主语就架空了，无法回到句末当宾语。</span></p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>宾语关系（二）</span></p>
+                        <p><span>这种用法比起前面的要简单的多，他们的共同之处在于主语都是不定式动词的逻辑宾语。</span></p>
+                        <p><span>不同之处在于这种用法的形容词侧重描述“事物”的性质特征，而非“事件”、“活动”的性质特征，形容词就是修饰主语本身的，主语在实际意义上也确实是主语。在语义上，这种结构表达的含义为：因为“主语”具有“形容词”这样的特性，所以可以/需要“不定式”。</span>
+                        </p>
+                        <p><span>从句子成分的角度看，不定式算是做句子的结果状语。</span></p>
+                        <p><span>两个例子：</span></p>
+                        <ul>
+                            <li>
+                                <p><span>及物动词：</span></p>
+                                <blockquote>
+                                    <p><span>The book is interesting to buy.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>不及物动词/做介词的宾语：</span></p>
+                                <blockquote>
+                                    <p><span>The dorm is too noisy to swim in.</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                        <p><span>这样的特点决定了具有如下的特点/和上一种用法的区别：</span></p>
+                        <ul>
+                            <li><span>因为这里形容词修饰的不再是“事件”/“活动”，而是主语本身，所以这里不能进行句式变换。</span></li>
+                            <li><span>形容词特点不同。</span></li>
+                            <li><span>不定式是否可省区。不同于上一种用法，不定式的省略会产生另一种意思/无法构成意思；这种用法下，省去不定式虽然可能丢失一些细节，但不会改变句子的核心意思，而且对于很多场景(不用说大家也知道是什么动作)，不定式确实可以省略。</span>
+                            </li>
+                        </ul>
+                        <p><span>不过对于一部分特殊的形容词以及要表达的意义，往往是两种用法的特点/要素兼有，很难判断是那种情形，或者说怎么理解都可以，比如：</span></p>
+                        <blockquote>
+                            <p><span>The bed is comfortable to sleep in.</span></p>
+                            <p><span>两种用法对应的改写也是都成立的：</span></p>
+                            <p><span>It is comfortable to sleep in the bed.</span></p>
+                            <p><span>The bed is comfortable.</span></p>
+                        </blockquote>
+                        <p><span>说到底，语言是很灵活的，不是非此即彼、非黑即白的，存在一些这样的“模糊区域”/“黑色地带”。</span></p>
+                    </li>
+                </ul>
+                <blockquote>
+                    <p><span>这两种宾语关系都可以在形容词后面通过介词for引出不定式的逻辑主语。</span></p>
+                </blockquote>
+                <ul>
+                    <li>
+                        <p><span>主语关系（一）</span></p>
+                        <p><span>和前面的宾语关系（一）不同，这里的形容词也不是用来描述“事件”，对于此类用法，形容词描述的是主语本身。</span></p>
+                        <blockquote>
+                            <p><span>He is kind to help us. 他真好，来帮我们。</span></p>
+                        </blockquote>
+                        <p><span>对于这类用法，还可以进行如下改写：</span></p>
+                        <blockquote>
+                            <p><span>改写一：</span><strong><span>It is</span></strong><span> kind
+                                </span><strong><span>of</span></strong><span> him </span><strong><span>to
+                                        help</span></strong><span> us. </span></p>
+                            <p><span>在此基础上改写感叹句(to do可省略)：</span><strong><span>How</span></strong><span> kind
+                                </span><strong><span>of</span></strong><span> him </span><strong><span>(it is) to
+                                        help</span></strong><span> us !</span></p>
+                            <p><span>改写二：He is </span><strong><span>so</span></strong><span> kind
+                                </span><strong><span>as to
+                                        help</span></strong><span> us.</span></p>
+                            <p><span>在此基础上改写疑问句：Would you be </span><strong><span>so</span></strong><span> kind
+                                </span><strong><span>as to help</span></strong><span> us?</span></p>
+                        </blockquote>
+                        <p><span>对于有些形容词，我们还可以采用其名词形式来表达类似的形式，反正结构都是主系表+to do：</span></p>
+                        <blockquote>
+                            <p><span>You are foolish to spend so much.</span></p>
+                            <p><span>You are fool to spend so much.</span></p>
+                        </blockquote>
+                        <p><span>使用名词，同样可以进行上面三种改写：</span></p>
+                        <blockquote>
+                            <p><span>It is foolish of you to spend so much.</span></p>
+                            <p><span>You are so foolish as to spend so much.</span></p>
+                            <p><span>How foolish of you (it is) to spend so much!</span></p>
+                        </blockquote>
+                        <p><span>这类用法，形容词除了具有修饰主语的特点，进一步地，这个形容词是外界对主语的评价，通常是评价人行为的形容词，比如brave，careful，careless，considerate，cowardly，crazy，cruel，generous，good，greedy，kind，nice，kind，mad，mean，modest，rude，selfish，thoughtful，wrong...亦或者是表示人的智力方面的形容词，如：clever，foolish，idiotic，intelligent，sensible，wise，silly，stupid...</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span>主语关系（二）</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>这一用法的形容词也是修饰主语，但和用法一的区别在于，上一种用法的形容词，是外界对主语的评价，而这一用法则是主语本身的特质，或者说主语对外界(后面事物的评价)，形容词是表示感情的，具体来说表示某人对某事的态度或情感。</span>
+                                </p>
+                                <p><span>这样的形容词有：afraid，angry，anxious，ashamed，content，curious，determined，desperate，eager，frightened，furious，glad，happy，impatient，indignant，jubilant，keen，reluctant，thankful...</span>
+                                </p>
+                                <p><span>还常常是过去分词转化来的形容词。这里的形容词与”宾语关系（一）“形成对比，那里是现在分词。过去分词有：annoyed，astonished，bored，concerned，delighted，depressed，disappointed，disgusted，dissatisfied，embarrassed，fascinated，frightened，interested，overjoyed，overwhelmed，perturbed，puzzled，relived，reluctant，surprised，willing，unwilling，worried...</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>I am sorry to hear it。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>除此之外，用法一的主语，既是形容词的主语、又是不定式的主语。用法二既可以这样用，让主语也做不定式的主语，但是也可以用介词for引出不定式自己的逻辑主语：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>She&#39;s anxious to win the competition.</span></p>
+                                    <p><span>She&#39;s anxious for her daughter to win the competition.</span></p>
+                                </blockquote>
+                                <p><span>这些形容词既然是表示情感，后面的不定式短语一般就表示产生这种情感的原因，所以后边的不定式有点充当原因状语的意味，这就使得我们可以这样改写：让形容词变成副词直接修饰动词：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>China was relucatant to open its doors to foreigners in the 1840s.</span>
+                                    </p>
+                                    <p><span>China relucatantly open its doors to foreigners in the 1840s.</span></p>
+                                </blockquote>
+                                <p><span>而用法一因为形容词/评价的发出者和动作的发出者不统一，则不具备这样的用法。</span></p>
+                            </li>
+                            <li>
+                                <p><span>从形式上而言，和用法一的区别在于，前者可以有各种变换形式，而后者没有；但后者可以通过介词for引出不定式的逻辑主语，而前者不能。</span><br><span>不过前者的改写可以通过介词of引出逻辑主语，这是其他形容词+to
+                                        do用法都不具备的，除了用法一以外的句式在需要引出不定式逻辑主语时都是用介词for。</span></p>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p><span>主语关系（三）</span></p>
+                        <p><span>这里的形容词即不像主语关系一表示评价人的行为，也不像主语关系二那样表示人的感情，也不像宾语关系那样评价事件(一)或事物(二)，这里的形容词在逻辑语义上说明不定式动作的特点，因而可以把形容词变为副词直接修饰动词，相当于方式状语。</span>
+                        </p>
+                        <blockquote>
+                            <p><span>He is slow to react.</span></p>
+                            <p><span>He reacts slowly.</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <p><span>总结：不同(含义)的形容词，对应了不同意义的表达，决定了后面不定式的主动关系和被动关系的不同、形容词所修饰内容的不同、句子的主语是做不定式的逻辑宾语还是逻辑主语。可见，正确理解这种句式，以及正确利用这种句式遣词造句的关键在于，对形容词含义&amp;用法的把握。</span>
+                </p>
+                <blockquote>
+                    <p><span>He is easy to fool.</span></p>
+                    <p><span>He is afraid to be fooled.</span></p>
+                    <p><span>极其相似的两句话，但是因为形容词的含义和用法不同，导致句子主语和不定式的逻辑关系不同，从而一个用的是主动语态，而另一个是被动。</span></p>
+                </blockquote>
+                <h3 id='不定式的作用七）作状语'><span>不定式的作用（七）：作状语</span></h3>
+                <ul>
+                    <li>
+                        <p><span>目的状语</span></p>
+                        <p><span>这是不定式作状语最主要的功能，甚至是他的专属功能，因为英语中其他形式很少能充当目的状语，动名词和分词都不能作目的状语。</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>to do放在句末。且往往会附带其他的句子结构以充实有关目的的信息。</span></p>
+                            </li>
+                            <li>
+                                <p><span>若要强调目的状语，可以把to do结构提置句首:</span></p>
+                                <blockquote>
+                                    <p><span>To avoid criticism，do nothing，say nothing，be nothing.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>还可以用in order to do或so as to do来强调目的状语:</span></p>
+                                <blockquote>
+                                    <p><span>We had better start early so as to catch the train.</span></p>
+                                    <p><span>In order to play tennis，you need a tennis racket and tennis balls.</span>
+                                    </p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>作状语的不定式，其逻辑主语往往需要和句子主语保持一致。</span></p>
+                            </li>
+                            <li>
+                                <p><span>但如果不定式的逻辑主语不是很明确，那么就算不一致/显得不太规范，但也不认为他们是错的。</span></p>
+                                <blockquote>
+                                    <p><span>To study English well，a lot of practices are needed. </span></p>
+                                    <p><span>A lot of practices are needed to study English well. 可以这么说，但不太规范。</span>
+                                    </p>
+                                    <p><span>可以这样改写：To study English well，you need a lot of study.</span></p>
+                                    <p><span>A lot of practices are needed for you to study English well</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>不定式作目的状语，他的否定形式必须用in order not to do或者so as not to do，而不能单独用not to do：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>We‘d better start early，in order not to miss the train.</span></p>
+                                </blockquote>
+                            </li>
+                        </ol>
+                        <p><span>因为目的状语算是不定式作状语的主要用途，因此在适用不定式作状语表示其他意义的时候，一般都要附加一些限制条件，以和目的状语区分，不定式作其他状语都仅限于一些特定的结构中，以避免与目的状语混淆。</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span>结果状语</span></p>
+                        <ul>
+                            <li>
+                                <p><span>only to do</span></p>
+                                <p><span>用于引出意想不到或不愉快的结果，表示说话人不希望他发生，这个结构具有消极意义。</span></p>
+                                <blockquote>
+                                    <p><span>We hurried to the railway station，only to find the train had just
+                                            left.</span>
+                                    </p>
+                                    <p><span>显然如果不用only区分，就会和表目的的用法混淆，产生出匆忙感到火车站是为了让火车刚好开走的理解。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>so...as to do/such as to do</span></p>
+                                <p><span>注意区别表目的的so as to
+                                        do，这里的是分开写的，表结果的so后面常接一个形容词。such可以替换so+形容词，不过有时候需要补一些东西，不然少了这个形容词之后句子无法表达完整意思。</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>Her story is so sad as to arouse our sympathy.</span></p>
+                                    <p><span>Her story is such as to arouse our sympthy.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>He is so indifferent as to make everyone despair.</span></p>
+                                    <p><span>His indifference is such as to make everyone despair.</span></p>
+                                </blockquote>
+                                <p><span>此外还有一种表示结果的用法，such＋不定冠词+形容词然后修饰名词，名词是夹在形容词和不定式之间的(哪怕后面不跟不定式的as to
+                                        do也有这种用法)：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>She had such a good friend as to help her when she was in trouble.</span>
+                                    </p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>...enough to do</span></p>
+                                <p><span>置于形容词后边。</span></p>
+                            </li>
+                            <li>
+                                <p><span>too...to</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>肯定形式，否定意义：太而不能。</span></p>
+                                        <p><span>否定意义来源于too这个词，英语中too含有消极、负面的意思。</span></p>
+                                        <p><span>too相当于副词，然后中间接形容词。本质属于前面介绍过的形容词+to
+                                                do的用饭。根据形容词的类型，有的时候不定式充当不定式的逻辑主语，有的时候则是逻辑宾语。</span></p>
+                                    </li>
+                                    <li>
+                                        <p><span>肯定形式，肯定意义（一）：too后面接一些特殊形容词，如ready、anxious、eager、willing这些表示积极意义的词，则这个句型就表示肯定意义。</span>
+                                        </p>
+                                        <blockquote>
+                                            <p><span>You are too ready to find faults with other people.
+                                                    你也太爱挑别人刺了。</span>
+                                            </p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>肯定形式，肯定意思（二）：当too 前面有only、all、but、really修饰时，也表示肯定意思。</span></p>
+                                        <blockquote>
+                                            <p><span>I am only too pleased to help you.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>否定形式，肯定意义：not too...to do，不很...所以能够。</span></p>
+                                        <blockquote>
+                                            <p><span>We are never too old to learn.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>否定形式，否定意义：too...not to do，很...所以不会不。</span></p>
+                                        <blockquote>
+                                            <p><span>He is too smart not see your point.</span></p>
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>条件状语</span></p>
+                        <p><span>句子的谓语动词通常含有助动词，如：will，would，shall，should，must，can，could等，因为此时不定式短语前面的句子相当于一个主句，不定式短语相当于一个条件状语从句(简化的)。</span>
+                        </p>
+                        <p><span>不定式的逻辑主语和句子主语一致：</span></p>
+                        <blockquote>
+                            <p><span>One must be out of his mind to do such a thing.</span></p>
+                            <p><span>=One must be out of his mind if he does such a thing.</span></p>
+                        </blockquote>
+                        <p><span>不定式的逻辑主语和句子主语不一致：</span></p>
+                        <blockquote>
+                            <p><span>The father will be proud </span><strong><span>for his son</span></strong><span> to
+                                    win
+                                    the gold medal.</span></p>
+                            <p><span>=The father will be proud if his son wins the gold medal.</span></p>
+                        </blockquote>
+                        <p><span>也可以表示一个虚拟条件，类似一个虚拟语气，表示和事实相反的状态，此时句子谓语的情态动词要用过去式，如would。</span></p>
+                        <blockquote>
+                            <p><span>I would have been happy to be invited to the party.</span></p>
+                            <p><span>=I would have been happy if I had been invitied to the party.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>原因状语</span></p>
+                        <p><span>表示产生某种感情的原因。</span></p>
+                        <blockquote>
+                            <p><span>They laughed to see the clown.</span></p>
+                            <p><span>=They laughed as they saw the clown.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>He is happy for his daughter to marry a wealthy man.</span></p>
+                            <p><span>=He is happy as his daughter married a wealthy man.</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <p><span>对于不定式用作状语的情况，在结构上并没有什么特点，因为英语中的状语本来就没什么特点，没有一个共性的结构规律。不过即使有时候很难判断某个不定式到底是状语还是别的什么成分也没有关系，能理解句意即可。</span>
+                </p>
+                <h3 id='不定式的作用八）独立使用'><span>不定式的作用（八）独立使用</span></h3>
+                <ul>
+                    <li>
+                        <p><span>作独立成分修饰整个句子</span></p>
+                        <p><span>to begin with（首先），to tell the truth（老实说），to make a long story short（长话短说），so to
+                                speak（可以这么说—），to be brief/exact/frank/honest（简单地说/确切地说/坦率地说），to say nothing of（姑且不说），to
+                                say
+                                the least（至少可以这么说/简直是/何止是啊）。</span></p>
+                        <p><span>一般放在句首或者句尾，或者独自成句。</span></p>
+                    </li>
+                    <li>
+                        <p><span>引导独立地句子</span></p>
+                        <p><span>表达愿望、担心、惊讶等强烈的情感。常见的结构是：to think，to imagine，to spend...</span></p>
+                        <blockquote>
+                            <p><span>To think she wanted to walk all the way to the park.</span></p>
+                            <p><span>你想想看，她竟然想大老远地走到公园去。</span></p>
+                            <p><span>= It&#39;s too far to walk to the park.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>To imagine even for a minute that I would do a thing like that on purpose.</span>
+                            </p>
+                            <p><span>你想想看，我能故意做这种事吗？</span></p>
+                            <p><span>= I would never do that on purpose.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>To spend so much money on something he didn‘t even need.</span></p>
+                            <p><span>他竟然花那么多钱去买一些自己根本不需要的东西。</span></p>
+                            <p><span>= He spent money unwisely.</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h3 id='汇总不定式的逻辑主语'><span>汇总：不定式的逻辑主语</span></h3>
+                <p><span>逻辑主语和句子主语一致。</span></p>
+                <p><span>逻辑主语和句子主语不一致：</span></p>
+                <ul>
+                    <li>
+                        <p><span>for+名词/代词+to do</span></p>
+                        <p><span>这是最普遍的一种情况，前面哪些不定式用法中，逻辑主语和句子主语不一致时，除了下面那种特殊情况，都用一般该方法加主语。</span></p>
+                    </li>
+                    <li>
+                        <p><span>of sb. to do</span></p>
+                        <p><span>这使用于一种特殊情况，那就是“形容词+to
+                                do”中的主语关系(一)的用法，即形容词用来说明人的性格或行为表现。但既然是“主语关系”那么，句子主语本身就做不定式的主语，这算是逻辑主语和句子主语一致，怎么会需要利用of
+                                sb加主语呢？这是指该用法的It is改写(改写一)以及在此基础上的感叹句改写使用of sb. to do来说明逻辑主语。</span></p>
+                        <blockquote>
+                            <p><span>这也一欸这，用of的句子，可以用“人”作主语将句子改写，而用for的句子则不能。</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h3 id='不定式的体态和语态'><span>不定式的体态和语态</span></h3>
+                <figure>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><span>四种体态</span></th>
+                                <th><span>主动</span></th>
+                                <th><span>被动</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span>一般式</span></td>
+                                <td><span>to write</span></td>
+                                <td><span>to be written</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>完成式</span></td>
+                                <td><span>to have written</span></td>
+                                <td><span>to have been written</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>进行式</span></td>
+                                <td><span>to be writing</span></td>
+                                <td><span>没这种用法</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>完成进行式</span></td>
+                                <td><span>to have been writing</span></td>
+                                <td><span>没这种用法</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+                <p><span>可以看到，不定式一共有六种不同的结构形式。</span></p>
+                <ul>
+                    <li>
+                        <p><span>一般式</span></p>
+                        <p><span>有执行者，被修饰的词就是执行者：</span></p>
+                        <blockquote>
+                            <p><span>He wants somesone to wash his clothes.</span></p>
+                            <p><span>不定式作定语的主语关系情形。</span></p>
+                        </blockquote>
+                        <p><span>有执行者，被修饰的词是承受者：</span></p>
+                        <blockquote>
+                            <p><span>I have a lot of clothes to wash. 我有很多衣服要洗（自己洗）。</span></p>
+                            <p><span>不定式作定语的宾语关系情形。</span></p>
+                            <p><span>不过这种说法很拗口，正常来讲都是让不定式作宾语：I have to wash a lot of clothes.</span></p>
+                        </blockquote>
+                        <p><span>没有执行者，被修饰的词是承受者(不可能是执行者，其实是有两个特例的，见下文）：</span></p>
+                        <blockquote>
+                            <p><span>I have a lot of clothes to be washed. 我有很多衣服要洗（找别人洗或者只是单纯的说要洗，但没有指定说谁洗）。</span></p>
+                            <p><span>不定式作定语的宾语关系情形。</span></p>
+                        </blockquote>
+                        <p><span>综上：句子中如果出现了不定式动作的执行者，就用主动形式，对于被修饰词是承受着的情形相当于主动语态表被动；动作没有执行者，</span><strong><span>且</span></strong><span>所修饰的成分是不定式动作的承受者(也不可能是执行者)，就使用被动形式。</span>
+                        </p>
+                        <p><span>也就是说，被修饰词是不是承受者只是需要用被动语态的必要条件，还需要动作没有执行者才可以用被动。</span></p>
+                        <p><span>上面介绍的是不定式作定语的情形，这算是最复杂的一种，不定式作其他成分也适用类似上面的规则：</span></p>
+                        <ul>
+                            <li>
+                                <p><span>作主语</span></p>
+                                <blockquote>
+                                    <p><span>It&#39;s an honor for me to be invited to address the international
+                                            conference.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>作宾语</span></p>
+                                <blockquote>
+                                    <p><span>No one hoped to be laughed at that.</span></p>
+                                </blockquote>
+                                <p><span>但其实不定式是可以些携带一些东西的，比如带方式状语指出动作的执行者，但者算是不定式的一部分，并不算前面说的那种执行者or承受者，所以改用被动还是要用被动：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>No one wants to be mocked by you.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>作宾补</span></p>
+                                <blockquote>
+                                    <p><span>He wanted the letter to be delivered at once.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>作表语</span></p>
+                                <blockquote>
+                                    <p><span>These sheets are to be washed.</span></p>
+                                </blockquote>
+                                <p><span>有两个特殊的短语：to let(出租)和to blame(责备)，用主动形式表示被动意思，这是固定用法：</span></p>
+                                <ul>
+                                    <li>
+                                        <blockquote>
+                                            <p><span>You should be to blame for it. 你该为此受到责备。</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <blockquote>
+                                            <p><span>The house is to let. 这房子要出租。</span></p>
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><span>作状语</span></p>
+                                <blockquote>
+                                    <p><span>She was too old to be assigned such work.</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                        <p><span>双重被动式：句子的谓语是被动的，谓语后面所接的不定式也是被动的，因而构成两个被动连用的现象，称为双重被动结构。</span></p>
+                        <blockquote>
+                            <p><span>The book is not allowed to be taken out of the labrary.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>The book is said to havve been published.</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <blockquote>
+                    <p><span>相比于谓语，完成时的体态的含义于使用规则，有很多的不同。</span></p>
+                </blockquote>
+                <ul>
+                    <li>
+                        <p><span>完成式</span></p>
+                        <p><span>不定式完成时最主要的含义，是表达一个发生在谓语动作之前的动作；其次是表达过去的虚拟；最后用在某些特定的动词后面可以表达一个将来的动作。</span></p>
+                        <ul>
+                            <li>
+                                <p><span>表示在谓语动作之前发生的动作</span></p>
+                                <blockquote>
+                                    <p><span>I&#39;m sorry to have bothered you with so many question on such an
+                                            occasion.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>从这个意义上来看，不定式的完成时相当于不定式的一般过去时态。事实上并不仅限于表示一般过去时态，不定式用完成时表示的是相对谓语的过去，而谓语的时态是任意的，不一定是一般现在时。</span>
+                                    </p>
+                                </blockquote>
+                                <p><span>这类情形的谓语动词有规律可循：</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>态度情感类谓语</span></p>
+                                        <blockquote>
+                                            <p><span>I&#39;m sorry to have kept you waiting so long.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>观点类谓语</span></p>
+                                        <p><span>例如is said(据说)，is believed(相信)，is considered/thought(具信)，is
+                                                estimated(据估计),...</span></p>
+                                        <blockquote>
+                                            <p><span>Humans are believed to have evolved from the primate species.
+                                                    用被动是因为某事/人被相信、传说、认为、推测、估计</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>推断类谓语</span></p>
+                                        <p><span>请比较：</span></p>
+                                        <blockquote>
+                                            <p><span>It seems to have rained last night.
+                                                    加了完成时就是表示发生在谓语之前：昨晚似乎下雨了。</span>
+                                            </p>
+                                            <p><span>It seems to rain any time soon. 不加就和主语的时间默认一致：似乎很快要下雨了。</span></p>
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><span>表示非真实的过去/对过去的虚拟</span></p>
+                                <p><span>把不定式的完成时用在表示打算、需要或计划等动词的过去时后面，表示过去本打算做但事实上没有实现的动作。例如：mean，intend，think，plan，hope，wish，propose，...</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>I planned to have visited you yesterday evening, but I was too busy.</span>
+                                    </p>
+                                </blockquote>
+                                <p><span>但类似这种对过去的虚拟，也可以用相应谓语动词的完成时态来表示，然后不定式变回一般式的to do.</span></p>
+                                <blockquote>
+                                    <p><span>I had intended to see you, but I was busy.</span></p>
+                                </blockquote>
+                                <p><span>除此之外有下面这几种结构也能表示同样的意思：was/were to have done，would like to have done，should like
+                                        to
+                                        have done。</span></p>
+                                <blockquote>
+                                    <p><span>I was to have visited you yesterday evening.</span></p>
+                                    <p><span>I was intended to have seen you, but I forgot.</span></p>
+                                </blockquote>
+                                <p><span>综上所述，表示“过去想做/计划做但实际没做”的事，有下面几种方法：</span></p>
+                                <ul>
+                                    <li><span>was/were to have done</span></li>
+                                    <li><span>would like to have done</span></li>
+                                    <li><span>should like to have done</span></li>
+                                    <li><span>intended/meant/designed/hoped/planned/thought/wished/proposed/... + to
+                                            have
+                                            done</span></li>
+                                    <li><span>had intended/meant/designed/hoped/planned/thought/wished/proposed/... + to
+                                            do</span></li>
+                                </ul>
+                                <p><span>需要注意，这种对过去的虚拟，说的和之前虚拟语气说的，不是一回事儿，虚拟语气表示的是那种，“有一个虚拟的条件句，一个虚拟的主句”的情形。</span></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>进行式</span></p>
+                        <p><span>用来描写，以谓语发生时间为基准，(现在或过去)正在进行的事，或者说与谓语动词同时发生的事情。</span></p>
+                        <blockquote>
+                            <p><span>He pretended to be sleeping when she came in. 现在进行</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>The economy was in a slump, but now it seems to be bouncing back. 过去进行</span></p>
+                        </blockquote>
+                        <p><span>还可以表示反复发生的一般性动作，因为进行时态可以表示一个最近一段时间内持续进行的一般性动作，此时带有很强的感情色彩。</span></p>
+                        <blockquote>
+                            <p><span>The worst way to miss someone is to be sitting righit beside them knowing you
+                                    can&#39;t
+                                    have them.</span></p>
+                            <p><span>Simle at your interviewer to show you are glad to be talking with him or
+                                    her.</span>
+                            </p>
+                        </blockquote>
+                        <p><span>进行式没有被动结构，只有主动结构。这种用法远没有完成式常用，了解下即可。</span></p>
+                    </li>
+                    <li>
+                        <p><span>完成进行时</span></p>
+                        <p><span>表示谓语动作之前已经开始并且一直在持续进行某一动作。</span></p>
+                        <blockquote>
+                            <p><span>He seems to have been sitting there all day.</span></p>
+                            <p><span>I seems to have been learning English for over ten years.</span></p>
+                        </blockquote>
+                        <p><span>完成进行式也没有被动，而且用的更少。</span></p>
+                    </li>
+                </ul>
+                <h3 id='省去to的不定式'><span>省去to的不定式</span></h3>
+                <p><span>不定式是由小品词to加一个动词原形构成的，不过有时候这个小品词to可以省略，甚至是必须省去。</span></p>
+                <ul>
+                    <li>
+                        <p><span>在某些动词的复合宾语中</span></p>
+                        <p><span>最常见的情况就是出现在某些动词的宾语补足语中，这样的动词包括两类：</span></p>
+                        <ol start=''>
+                            <li><span>感觉动词：see，hear，watch，notice，feel，observe，...</span></li>
+                            <li><span>使役动词：let，make，have，...</span></li>
+                        </ol>
+                        <p><span>不过上述谓语动词如果用被动时，后面的不定式不能省略to。</span></p>
+                    </li>
+                    <li>
+                        <p><span>在特定的句型结构中</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>一些动词短语作谓语：had better，would rather，would sooner，would just as soon，might（just）as
+                                        well，cannot but，cannot choose but，can not help but，...</span></p>
+                            </li>
+                            <li>
+                                <p><span>more than，rather than，other than，than</span></p>
+                                <blockquote>
+                                    <p><span>Teachers do much more than impart knowledge. They are forces in young
+                                            lives.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>I would rather go naked than wear furs.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>Rather than go on with his work，he went home.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>No on could do other than admire it. 大家都很推崇它。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>but前面有do，后面若接不定式需要省去to</span></p>
+                                <blockquote>
+                                    <p><span>I have nothing to do but wait.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>I have no choice but to wait.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>He will do anything but give in.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>He needs nothing but to successed.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>有一种主系表结构，主语是do的内容，且是一个解释do精确含义的主语从句或者定语从句的句子，表示是对do的评价或描述。在主语的谓语be动词后面直接加do而不是to
+                                        do。</span></p>
+                                <blockquote>
+                                    <p><span>Saddam Hussein has been executed. All his execution does is stir up a real
+                                            vendetta.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>All you do is sit and watch tv and complain about how tired you are.
+                                        </span>
+                                    </p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>其中都是all作主语，后面的somebody/something‘s do/does是定语从句。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>why (not) + do</span></p>
+                                <p><span>Why do sth. ?表示为什么要做某事呢？含有责怪/质疑之意，表明做某事是无意义或愚蠢的。</span></p>
+                                <p><span>否定形式Why not do sth.?则通常表示建议，在口语中非常常用。</span></p>
+                            </li>
+                            <li>
+                                <p><span>并列结构中，to常被省去</span></p>
+                                <p><span>两个不定式由and，or，but等连词连接时，为了避免重复而把连词后面的不定式to省去。</span></p>
+                                <blockquote>
+                                    <p><span>I&#39;d like to lie down and (to) go to sleep.</span></p>
+                                </blockquote>
+                                <p><span>不过需要注意如果两个不定式动词之间由对比之义，则均需要保留to；其实即使不只在并列结构中，只要不定式有对比强调的含义，此时不定式的to都会保留。</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>It is greatest happiness on earth to love and to be loved.</span></p>
+                                    <p><span>I came not to praise, but to scold you.</span></p>
+                                    <p><span>He likes to be respected, not to respect others.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>在一些两个动词一起连用的固定搭配中</span></p>
+                                <p><span>这样的固定的动词搭配包括make do（设法应付、应对），make believe（假装），let drop（使...掉下来），let
+                                        fall（让...倒下），let fly（放飞），let slip（放走、错失机会），let go of（松开），hear say（听说），leave go
+                                        of（放走），等等。</span></p>
+                                <blockquote>
+                                    <p><span>Let;s believe we are now on a deserted island.</span></p>
+                                </blockquote>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <h1 id='动名词'><span>动名词</span></h1>
+                <p><span>在动词后面加-ing，构成doing形式。它在意义上相当于一个名词，但又同时保留动词的特征。相当于一个名词是因为在句中充当名词成分，充当主语、宾语或表语，此外还可以作定语。保留了动词特征是指他可以有自己的宾语，保留自己的逻辑主语，可以像动词短语那样在动名词后接所需要的介词，可以携带属于动名词的小句子成分，即有一套属于他自己的简化版的句子结构；并且还有自己的体态和语态变化。</span>
+                </p>
+                <h3 id='动名词的作用一）作主语'><span>动名词的作用（一）：作主语</span></h3>
+                <ul>
+                    <li>
+                        <p><span>位于句首</span></p>
+                        <p><span>谓语动词用单数。</span></p>
+                        <blockquote>
+                            <p><span>Really using a language makes all the difference, doesn&#39;t it?</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>Being deeply loved by someone gives you strength; while loving someon deeply gives
+                                    you
+                                    courage.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>位于句末</span></p>
+                        <p><span>仅限于几个动名词后置的固定、特定句型</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>it is no good/no use doing sth.</span></p>
+                                <p><span>其中no good可以替换成诸如any good/some good，any/some/no use，a waste of time等等</span></p>
+                                <blockquote>
+                                    <p><span>It&#39;s no use crying over split milk. 后悔没用。</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>Is it any good trying to explain? 独立解释有用吗？</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>there is no point/use/good (in) doing sth.</span></p>
+                                <blockquote>
+                                    <p><span>There is no use your arguing with him. your算是限定词限定作名词的动名词。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>there is no doing sth.</span></p>
+                                <p><span>意思相当于it&#39;s impossible to do sth. 或we can&#39;t do
+                                        sth.，表示“不可能做某事”，不过这两种意思相同的改写并非动名词的用法。</span></p>
+                                <blockquote>
+                                    <p><span>There is no telling what will happen tomorrow. 谁也无法预知明天会发生什么。</span></p>
+                                </blockquote>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <h3 id='动名词的作用二）作宾语'><span>动名词的作用（二）：作宾语</span></h3>
+                <ul>
+                    <li>
+                        <p><span>作动宾</span></p>
+                        <p><span>有一些特定的动词(短语)后面一般要用动名词作宾语：admit，advise，anticipate，appreciate，avoid，consider，contemplate，delay，deny，detest，discuss，dislike，encourage，endure，enjoy，escape，excuse，fancy，favor，feel
+                                like，finish，forbid，forgive，give up，can’t help，imagine，involve，leave
+                                off，mention，mind，miss，overlook，permit，postpone，practice，prohibit，put
+                                off，resent，resist，risk，can&#39;t stand，suggest，tolerate，understand，...</span></p>
+                        <blockquote>
+                            <p><span>Putting in a new window will involve cutting away part of the roof.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>作介宾</span></p>
+                        <p><span>介词不见得是谓语动词后的介词，可能是各种各样位置的介词。</span></p>
+                        <p><span>这里只使用介词to，这个介词比较特殊，即能作为不定式的小品词接动词原形，也可以作为介词后面接动名词。所以在遇到to的时候必须搞清楚它是作为介词还是作为不定式的符号。</span>
+                        </p>
+                        <p><span>下面是一些常接的介词to短语，都必须接动名词，而不能接动词原形：look forward to，devote...to doing/be devoted to
+                                doing，object to，be/get used to，prefer doing to doing，in addition to，be accustomed to
+                                do/doing，amount to doing(意味着)，take to doing(开始喜欢做)，dedicate...to doing/be dedicated to
+                                doing，be averse to doing，the alternative/approach/solution to doing，be opposed to
+                                doing，get
+                                round to doing，...</span></p>
+                        <blockquote>
+                            <p><span>Afeter a long delay I finally got round to making inquiries into the matter.</span>
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>特定句型中做宾语</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>做某事遇到了麻烦/困难/问题/xxx(对事情的评价or态度即可)</span></p>
+                                <p><span>have difficulty/trouble/problems/(a lot of)fun/(lots of)pleasure/a hard time/a
+                                        good
+                                        time/a difficult time/... （in） doing sth.</span></p>
+                                <blockquote>
+                                    <p><span>Woman：How do you find your new apartment？</span></p>
+                                    <p><span>Man：Well，it‘s quite nice really，although I have a hard time getting used to
+                                            living in a big place.</span></p>
+                                    <p><span>这里的</span><strong><span>How do you
+                                                find...</span></strong><span>是一个特殊句型，他的含义是“你觉得...怎么样？”，是在向对方征询意见或看法，而不是表示“你是怎么发现/找到...的？”要表达后者的意思，需要用过去式How
+                                            did you find...?</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>表示”情不自禁“”不得不“的短语</span></p>
+                                <p><span>例如：can’t help doing，can&#39;t resist doing，can&#39;t keep from doing，can&#39;t
+                                        hold
+                                        back from doing，can&#39;t keep back from doing，...</span></p>
+                                <blockquote>
+                                    <p><span>No one can help liking Tom；he is such a cute boy.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>其他</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>be worth doing ：值得做，用主动形式表示被动意思</span></p>
+                                        <p><span>也可以改写成be worthy of being done/to be done.</span></p>
+                                        <blockquote>
+                                            <p><span>The book is worth reading.</span></p>
+                                            <p><span>The book is worthy of being read.</span></p>
+                                            <p><span>The book is worthy to be read.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>The money will be used to keep a space wehicle on the moon
+                                            </span><strong><span>busy sending</span></strong><span> back to the earth
+                                                photographs and other information about the surface of the moon.</span>
+                                        </p>
+                                        <blockquote>
+                                            <p><span>主语money，谓语be used，to keep后面的是不定式做宾语；</span></p>
+                                            <p><span>在后面这句话中，keep是动作，间接宾语是月球上的飞行器，后面的是直接宾语；</span></p>
+                                            <p><span>动名词sending做直接宾语中的动作，busy用来修饰名词，back是副词做状语修饰sending表方式，后面的地球是动作send的间接宾语，最后的“照片和其他信息”是直接宾语。</span>
+                                            </p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>有关这些接动名词作宾语的句型或者短语还有很多，需要在日常学习中积累。</span></p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <h3 id='动名词作用三）作表语'><span>动名词作用（三）：作表语</span></h3>
+                <p><span>直接放在be动词后面补充说明句子的具体内容。</span></p>
+                <blockquote>
+                    <p><span>His hobby is collecting stamps.</span></p>
+                </blockquote>
+                <h3 id='动名词的作用四）作定语'><span>动名词的作用（四）：作定语</span></h3>
+                <p><span>放在被修饰的名词前面，一般表示所修饰名词的用途。例如：</span></p>
+                <blockquote>
+                    <p><span>a sleeping car 卧铺车厢，a reading room 阅览室，a swimming pool 游泳池</span></p>
+                </blockquote>
+                <h3 id='动名词的逻辑主语'><span>动名词的逻辑主语</span></h3>
+                <p><span>当句子主语和动名词的逻辑主语不一致时，就需要动名词和其逻辑主语一起构成动名词的复合结构。</span></p>
+                <p><span>动名词的复合结构由物主代词(his,my,your等)或所有格名词(如Tom‘s)与名词连用构成。</span></p>
+                <blockquote>
+                    <p><span>He dislike his wife&#39;s working late.</span></p>
+                </blockquote>
+                <p><span>而在某些情况下，动名词的逻辑主语可以不是物主代词或名词所有格，而是直接采用宾格代词或普通格名词，具体规则如下：</span></p>
+                <ol start=''>
+                    <li>
+                        <p><span>动名词的复合结构在句中作主语，最好用所有格形式</span></p>
+                    </li>
+                    <li>
+                        <p><span>动名词的复合结构在句中作宾语，两种格均可</span></p>
+                    </li>
+                    <li>
+                        <p><span>逻辑主语是无生命的“物”而不是“人”时，最好用普通格</span></p>
+                        <blockquote>
+                            <p><span>There is a necessity for this type of houses being built. 这里的this type of
+                                    houses是物。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>当动名词的逻辑主语是不定代词(如someon,anyone,everyone等)时，最好用普通格。</span></p>
+                    </li>
+                    <li>
+                        <p><span>当动名词的逻辑主语由较长的一组词构成时，最好用普通格</span></p>
+                        <blockquote>
+                            <p><span>There is no point any on of us arguing with him.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>I&#39;ve always had in my mind a dream of my father, mother and I living
+                                    together.</span></p>
+                        </blockquote>
+                    </li>
+                </ol>
+                <p><span>用法：常用在句中作主语或者宾语</span></p>
+                <ol start=''>
+                    <li>
+                        <p><span>用作主语</span></p>
+                        <blockquote>
+                            <p><span>Tom&#39;s coming home at last was a great consolation.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>用作动词的宾语</span></p>
+                        <blockquote>
+                            <p><span>Do you mind my making a suggestion?</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>用作介词的宾语</span></p>
+                        <blockquote>
+                            <p><span>Clint insisted on my reading the letter.</span></p>
+                        </blockquote>
+                    </li>
+                </ol>
+                <h3 id='动名词的体态和语态'><span>动名词的体态和语态</span></h3>
+                <figure>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><span>四种体态</span></th>
+                                <th><span>主动</span></th>
+                                <th><span>被动</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span>一般式</span></td>
+                                <td><span>writing</span></td>
+                                <td><span>be written</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>完成式</span></td>
+                                <td><span>having written</span></td>
+                                <td><span>having been written</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>进行式</span></td>
+                                <td><span>没这种用法</span></td>
+                                <td><span>没这种用法</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>完成进行式</span></td>
+                                <td><span>没这种用法</span></td>
+                                <td><span>没这种用法</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+                <p><span>可以看到，不定式一共有四种不同的结构形式。</span></p>
+                <ul>
+                    <li>
+                        <p><span>一般式</span></p>
+                        <p><span>动名词是否使用被动语态，也在于他与自己逻辑主语的关系，对于逻辑主语和句子一致的句子，不需要额外些主语句子主语就是逻辑主语，不一致则是复合结构。</span></p>
+                        <blockquote>
+                            <p><span>逻辑主语和句子主语一致的被动情形：He narrowly escaped being run over.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>逻辑主语和句子主语不一致的被动情形：I have not the least objection to the child being
+                                    punished.</span>
+                            </p>
+                        </blockquote>
+                        <p><span>还有一种用主动形式表示被动意思的情形：在demand、deserve、need、require、want等动词作谓语的后面，动名词的主动形式就表示被动意思，不需要并且不存在动名词的被动形式。</span>
+                        </p>
+                        <blockquote>
+                            <p><span>He deserves shooting first. 他应该第一个被枪毙。</span></p>
+                            <p><span>He deserves to shoot first. 他应该第一个开始射击。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>完成式</span></p>
+                        <p><span>表示动名词动作发生在谓语动作之前，</span><strong><span>尤其</span></strong><span>(但不见得非要)是在谓语动作之前的一段较长时间持续的情况。</span>
+                        </p>
+                        <blockquote>
+                            <p><span>He denied having been there.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>I repented having shot the bird.</span></p>
+                        </blockquote>
+                        <p><span>完成被动式则是兼具双重特点：</span></p>
+                        <blockquote>
+                            <p><span>He prided himself on having never been beaten in chess.</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h3 id='there-be-的不定式与动名词形式'><span>There be 的不定式与动名词形式</span></h3>
+                <p><span>这种句式表示</span><strong><span>“有”</span></strong><span>的意思，这种句型也可以用于非谓语，起着特殊的作用，有不定式和动名词两种形式。</span>
+                </p>
+                <p><span>不定式和后面的分词都没有提及，放在此处集中讨论。</span></p>
+                <p><span>there的词性是副词，起到的作用是用于be，seem，appear等词前面引出句子。这里你可以把他理解成不定式的一部分，不要孤立的看它。</span></p>
+                <ul>
+                    <li>
+                        <p><span>动名词形式</span></p>
+                        <p><span>多用在介词后面：</span></p>
+                        <blockquote>
+                            <p><span>He spoke of there being danger. there不可以去掉的，不然就变成了“是危险”。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>不定式形式</span></p>
+                        <ul>
+                            <li>
+                                <p><span>用在接不定式作宾语的动词后面</span></p>
+                                <blockquote>
+                                    <p><span>I don&#39;t mean there to be any unpleasantness. </span></p>
+                                    <p><span>mean后面接不定式表示打算，所以这里使用there be的不定式形式表示：我并没有任何冒犯的意思。</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>I don&#39;t want there to be any misunderstandings on this point.</span>
+                                    </p>
+                                    <p><span>我不希望在这一点上有什么误解。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>用在介词for后面</span></p>
+                                <blockquote>
+                                    <p><span>For there to be life，there must be air and water.</span></p>
+                                    <p><span>作目的状语</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>It was too late for there to be any buses.</span></p>
+                                    <p><span>这里应该是作结果状语，it代之的是天色而不是不定式作主语里的形式主语。不过似乎也没有办法理解成结果状语，因为结果状语的话for是多出来的，没有带着for的不定式作结果状语？【存疑】</span>
+                                    </p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>It isn&#39;t cold enough for there to be a frost tonight.</span></p>
+                                    <p><span>这里应该是作结果状语，it代之的是外面的天气而不是不定式作主语里的形式主语。不过似乎也没有办法理解成结果状语，因为结果状语的话for是多出来的，没有带着for的不定式作结果状语？【存疑】</span>
+                                    </p>
+                                </blockquote>
+                                <p><span>那这个介词for的出现规律，或者说特点，是什么呢？主要出现在哪些地方、表达什么意思呢？【存疑】</span></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h1 id='分词'><span>分词</span></h1>
+                <h3 id='分词的意义'><span>分词的意义</span></h3>
+                <p><span>相比于前面的不定式只有单一形式，分词有现在分词和过去分词之分，两者在意义上有差别，在了解分词作成分、起什么作用之前，应了解这两种分词的意义是什么。</span></p>
+                <ul>
+                    <li>
+                        <p><span>现在分词的意义</span></p>
+                        <p><span>从语态角度，现在分词表示主动意义；从时态的角度，现在分词一般表示进行的动作，相当于进行时态；同时也可以表示一般的动作，相当于一般时态。</span></p>
+                    </li>
+                    <li>
+                        <p><span>过去分词的意义</span></p>
+                        <p><span>对于及物动词的过去分词，只表示被动含义，没有主动意义；对于不及物动词则是只有主动含义，没有被动意义(毕竟他都不及物了，怎么会有动作的承受者，所以必然没有被动)；不过不及物动词的过去分词出现的频率很低，所以及物动词的过去分词通常表示被动意义。</span>
+                        </p>
+                        <p><span>对于及物动词的过去分词，具有一般动作或完成动作的意义；对于不及物动词的过去分词只表示完成动作。</span></p>
+                    </li>
+                    <li>
+                        <p><span>总结：</span></p>
+                        <figure>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><span>体态</span></th>
+                                        <th><span>主动</span></th>
+                                        <th><span>被动</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span>一般式</span></td>
+                                        <td><span>现在分词</span></td>
+                                        <td><span>(及物动词)过去分词</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>进行式</span></td>
+                                        <td><span>现在分词</span></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>完成式</span></td>
+                                        <td><span>(不及物动词)过去分词</span></td>
+                                        <td><span>(及物动词)过去分词</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                        <p><span>(和前面两种非谓语的体态不一样，分词没有完成进行式)</span></p>
+                        <p><span>可以看到，不及物动词的现在分词与过去分词都表示主动，他们的区别在于时态上，不及物动词的现在分词往往表示进行或一般的动作，而不及物动词的过去分词表示完成的动作。</span>
+                        </p>
+                        <p><span>分词通过两种分词形式区分了主动被动，和前面两种谓语不同，他没有主动和被动(形式)。</span></p>
+                    </li>
+                </ul>
+                <p><span>下文将详细介绍每种不定式的具体意义、用法和特点：</span></p>
+                <ul>
+                    <li>
+                        <p><span>主动的、正在进行的动作：现在分词</span></p>
+                        <p><span>特点：把分词改成定语从句则从句的谓语要用进行时态；此时的现在分词多数表示的是所修饰名词的一种短暂特点，强调的是一种正在发生的动作。</span></p>
+                        <blockquote>
+                            <p><span>the sinking ship</span></p>
+                            <p><span>= the ship that is sinking 正在下沉的船</span></p>
+                        </blockquote>
+                        <p><span>简单提一句(后面会细说)单个分词作定语一般放在被修饰的名词前，但如果是分词短语作定语，需要放在后面：</span></p>
+                        <blockquote>
+                            <p><span>I like the girl </span><strong><span>dancing with that
+                                        guy</span></strong><span>.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>主动的、一般的动作：现在分词</span></p>
+                        <p><span>特点：把分词改成定语从句则从句的谓语要用一般时态；此时的现在分词多数表示的是所修饰名词的一种持久性的特点，并不强调正在发生的动作。</span></p>
+                        <blockquote>
+                            <p><span>an understanding man</span></p>
+                            <p><span>=a man who can understand other&#39;s feelings 善解人意的人</span></p>
+                        </blockquote>
+                        <p><span>这些分词往往表示某人或某物的某一(和动作有关从而需要利用非谓语表示的)一贯特征，而不是一时特征。</span></p>
+                        <p><span>现在分词合适具有进行时以为，他的两种用法之间该和区分，取决于动词的意思，也取决于上下文的语境，没有特别的规定。</span></p>
+                    </li>
+                    <li>
+                        <p><span>被动的、一般或完成的动作：及物动词过去分词</span></p>
+                        <p><span>特点：过去分词是由及物动词变化而来；若将分词改成定语从句则从句的谓语要用被动语态。</span></p>
+                        <blockquote>
+                            <p><span>一般的动作：</span></p>
+                            <p><span>the exploited class</span></p>
+                            <p><span>= the class that is exploited 被剥削阶级</span></p>
+                            <p><span>完成的动作：</span></p>
+                            <p><span>an annoyed man</span></p>
+                            <p><span>= the man that has been annoyed 被惹恼了的男子</span></p>
+                        </blockquote>
+                        <p><span>这些及物动词变化过来的过去分词，表示的动作到底是一般的还是完成的，主要看上下文语境而定，没有特别的规定。</span></p>
+                    </li>
+                    <li>
+                        <p><span>主动的、完成的动作：不及物动词过去分词</span></p>
+                        <p><span>特点：过去分词由不及物动词变化而来；若将分词改成定语从句则从句的谓语要用主动语态和完成式；从表意上看，此时过去分词只表示一种完成的状态，而多数已经失去了原动词的动作的概念。</span>
+                        </p>
+                        <blockquote>
+                            <p><span>the sunken ship</span></p>
+                            <p><span>= the ship that has sunk 已沉于水底的船</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>being done：现在分词和过去分词结合</span></p>
+                        <p><span>这是一种特殊的用法，即有进行意味又有被动意味。应用场景不多，具体用法见下文。</span></p>
+                    </li>
+                </ul>
+                <blockquote>
+                    <p><span>可以看到，分词的形式(变过去式或进行式)和他们能表达的意思是有一定关联的。</span></p>
+                </blockquote>
+                <h3 id='分词的作用一）作状语'><span>分词的作用（一）：作状语</span></h3>
+                <p><span>四种结构：</span></p>
+                <ul>
+                    <li>
+                        <p><span>单独的分词(短语)作状语 (被动也算主语)</span></p>
+                        <p><span>此时分词在句中、句首、句末作状语，逻辑主语和句子主语一致。</span></p>
+                        <p><span>这里说单独分词是指不带主语，但其他所有的成分都可以带着。</span></p>
+                        <p><span>反过来说，如果是用分词以这种方式作状语，那么逻辑主语就必须和句子主语一致，下面有一种符合中文逻辑但不符合英文语法的常见错误：</span></p>
+                        <ul>
+                            <li>
+                                <p><span>垂悬分词：</span></p>
+                                <blockquote>
+                                    <p><span>Waiting for a bus, a brick fell on my head.</span></p>
+                                    <p><span>这句话就是错的，等车是人等车，但句子的主语是砖头。</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>After doing my homework, the dog was fed.</span></p>
+                                    <p><span>感觉好像是狗在做作业。</span></p>
+                                </blockquote>
+                                <p><span>之所以中文可以这么说，是因为汉语的主语在具体的语境中往往都会省去不说，这就是汉语的“无主句”规则，反映了汉语简洁性的特点。但英语在这些方面就强调精确性，需要分词的主语明显出现，如果没有就认为和句子主语一致。</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <p><span>借举例这种用法的机会，顺便举例介绍下伴随状语：</span></p>
+                        <blockquote>
+                            <p><span>Dressed up as Fater Christmas and accompanied by a &quot;guard of honor&quot; of
+                                    six
+                                    pretty girls，he set off down the main street of the city riding a baby elephant
+                                    called
+                                    Jumbo.</span></p>
+                            <p><span>主语是he set off down the main street of the
+                                    city：他沿着成立的主街出发了；有三个分词作状语，前面个是过去分词作方式状语：dressed up as Father
+                                    Christmas(打扮成圣诞老人)，accompanied by a “guard of honor” of six pretty
+                                    girls(由六个漂亮姑娘组成的“仪仗队”的陪同下)；句末还有一个现在分词构成的伴随状语：riding a baby elephant called
+                                    Jumbo。</span>
+                            </p>
+                            <p><span>伴随状语是指状语的动作伴随主句发生，它所表达的动作或状态是伴随句子的谓语动词的动作而发生或存在的，伴随状语的主语一般和句子主语一致，毕竟是同时发生的动作。</span>
+                            </p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>固定结构</span></p>
+                        <p><span>这种结构是对情形一的衍生和补充，前面那种结构要求使用单独的分词的逻辑主语和句子主语一致，但是对于一些表示人态度的固定表达方式中，分词的逻辑主语和句子的主语是不一致的，但因为已经是约定俗成的固定结构，所以不算错。</span>
+                        </p>
+                        <ol start=''>
+                            <li>
+                                <p><span>副词+speaking</span></p>
+                                <p><span>比如generally(，strictly，broadly，...) speaking</span></p>
+                                <blockquote>
+                                    <p><span>Generally speaking,men are stronger than women.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>分词+介词</span></p>
+                                <p><span>比如judging from，talking of，allowing for，...</span></p>
+                                <blockquote>
+                                    <p><span>Allowing for her inexperience，she has done a good job.</span></p>
+                                    <p><span>考虑到她缺乏经验，能做成这样已经不错了。</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>Taking everything into consideration，they ought to win this game.</span>
+                                    </p>
+                                    <p><span>把所有的因素考虑在内，他们应该赢得这场比赛。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>分词+(that)从句 （that可以省略）</span></p>
+                                <p><span>比如seeing that...(=since 既然)，considering that...(=since 既然)，supposing
+                                        that...(=if
+                                        假如)，granting that...(=though 尽管)，allowing that...(考虑到)，...</span></p>
+                                <blockquote>
+                                    <p><span>Supposing there was a war，what would you do？</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>分词短语相当于一个非限定性定语从句</span></p>
+                                <p><span>为什么说是相当于一个非限定性定语从句呢？是因为它从语法、结构、形式上看是状语，但从表达的意思上，更像是从当整句话的定语，对整句话所表达事件的描述、评价、补充等。也就是说他的逻辑主语是整个句子。</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>In recent years，railroads have been combining with each other and merging
+                                            into
+                                            supersystems，causing heightened concerns about monopoly.</span></p>
+                                    <p><span>近些年来，铁路公司相互合并成为超大型集团，这引起人们对垄断的日益关注。</span></p>
+                                    <p><span>最后一个逗号后面的就是围绕分词causing构成的结果状语。heightened concerns about
+                                            monopoly是分词的宾语，heightened是一个过去分词作定语，修饰“对垄断的关注”，因为是被动关系所以用过去分词。heighten：及物动词，意为(使)增强、加强(尤指某种情绪或效果)。</span>
+                                    </p>
+                                </blockquote>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p><span>独立分词的结构（一）：名词+分词</span></p>
+                        <p><span>这种情况就是分词的逻辑主语和句子主语不一致，也就是我们常说的“独立主格结构”的一种，叫做“独立分词结构”，比较类似动名词的复合结构(如my
+                                doing)和不定式的复合结构(如for
+                                sb. to do)。在句首句末句中都可以出现，不过一般用逗号单独隔开。</span></p>
+                        <blockquote>
+                            <p><span>The portuguese give a great deal of credit to one man for having promoyted sea
+                                    travel，that man being Prince Henry the navigator，who lived in the 15th
+                                    century.</span>
+                            </p>
+                            <p><span>这里后面两句就是分词being作状语，表达补充说明。</span></p>
+                            <p><span>葡萄牙人对一个人很少敬仰，是因为他推动了航海事业，这个人就是15世纪的航海家亨利王子。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>独立分词结构（二）：with+名词+分词</span></p>
+                        <p><span>在前面那种结构的接触上演变而来，多了一个介词with，但表达的意义有很大不同，具体的意义差别后文再讨论，这里我们只介绍结构。</span></p>
+                        <blockquote>
+                            <p><span>A car roared past，with smoke pouring from the exhaust.</span></p>
+                            <p><span>一辆小汽车忽地开了过去，排气管冒出一团团黑烟。(算是伴随状语？)</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <p><span>分词作状语的意义：</span></p>
+                <ul>
+                    <li>
+                        <p><span>(名词+)分词</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>表示条件</span></p>
+                                <p><span>单独的分词：</span></p>
+                                <blockquote>
+                                    <p><span>Therefore，jogging and dieting，</span><strong><span>carried to
+                                                extremes</span></strong><span>，can be hazardous.</span></p>
+                                    <p><span>含义为“如果过度了”，可以改写成if they are carried to extremes。</span></p>
+                                </blockquote>
+                                <p><span>名词+分词：</span></p>
+                                <blockquote>
+                                    <p><span>Weather permitting，we‘ll go fishing.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>表示时间</span></p>
+                                <blockquote>
+                                    <p><span>Reading the letter，she burst out crying.</span></p>
+                                    <p><span>=As she read the letter，she burst out crying.</span></p>
+                                    <p><span>她看着信，失声痛哭起来。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>表示原因</span></p>
+                                <p><span>单独的分词：</span></p>
+                                <blockquote>
+                                    <p><span>Not knowning what to do next，I want to ask for your advice.</span></p>
+                                </blockquote>
+                                <p><span>名词+分词：</span></p>
+                                <blockquote>
+                                    <p><span>It being so nice a day，let’s go out for a walk.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>表示让步</span></p>
+                                <blockquote>
+                                    <p><span>Though understanding no Janpanse，Charles was able to communicate with
+                                            them.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>表示结果</span></p>
+                                <p><span>必须放在句末，专门放在句末表示结果，为了和其他用法区分，否则句子的意思会不同。</span></p>
+                                <blockquote>
+                                    <p><span>Finding the door locked，I went home. 这里放在句子前面做的是时间状语。</span></p>
+                                    <p><span>发现门锁着，我就回家了。、</span></p>
+                                    <p><span>I went home，finding the door locked. 这才是结果状语。</span></p>
+                                    <p><span>我回到家发现门锁着。</span></p>
+                                </blockquote>
+                                <p><span>而且从表意的逻辑来看，既然都是结果了，肯定应该放在最后，不然会很奇怪，不符合逻辑：</span></p>
+                                <blockquote>
+                                    <p><span>He fired，killing one of the bandits.</span></p>
+                                    <p><span>他开了枪，击毙了其中一名匪徒。</span></p>
+                                </blockquote>
+                                <p><span>这个就比较明显，你要是把状语放在前面就变成了他击毙了一名匪徒，他开枪了，表意非常奇怪，你也没办法给动名词killing的结构安置一个合理的成分。</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p><span>表示方式</span></p>
+                                <p><span>往往修饰句子中的谓语动词，放在句首，也可以放在句末，也可以放在句子中。</span></p>
+                                <blockquote>
+                                    <p><span>Smiling，he answered.</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>She came running hurriedly into her husband&#39;s office one
+                                            morning.</span>
+                                    </p>
+                                    <p><span>这里相当于是running和hurriedly一起作状语。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>表示补充说明或伴随状况</span></p>
+                                <p><span>这和前面讲的表示方式很类似，有的时候很难区分。</span></p>
+                                <p><span>表示补充说明：</span></p>
+                                <blockquote>
+                                    <p><span>The Chinese word for crisis is divided into two characters，one meaning
+                                            danger
+                                            and the other meaning opportunity.</span></p>
+                                    <p><span>这里的one和the other和动名词一起构成“名词+动名词”的结构。</span></p>
+                                </blockquote>
+                                <p><span>表示伴随状况：</span></p>
+                                <blockquote>
+                                    <p><span>She lay sick，scarcely moving on her bed，looking through the small window at
+                                            the
+                                            blank side of the next brick house.</span></p>
+                                </blockquote>
+                            </li>
+                        </ol>
+                        <blockquote>
+                            <p><span>注意：像表目的这样用途，是分词作状语不具备的。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>固定结构本质和名词+分词作状语是一样的。</span></p>
+                    </li>
+                    <li>
+                        <p><span>with+名词短语+分词</span></p>
+                        <ol start=''>
+                            <li>
+                                <p><span>表示补充说明等</span></p>
+                                <ol start=''>
+                                    <li>
+                                        <p><span>表示伴随状况、补充说明、具体举例等</span></p>
+                                        <ul>
+                                            <li>
+                                                <p><span>伴随状况：</span></p>
+                                            </li>
+                                            <li>
+                                                <p><span>补充说明：</span></p>
+                                                <blockquote>
+                                                    <p><span>Lodon was found to be the least punctual city，with 41
+                                                            percent
+                                                            of responddents admitting that they were hardly ever on
+                                                            time，compared with the national average of 28
+                                                            percent.</span>
+                                                    </p>
+                                                    <p><span>最后这个用过去分词compared的也是作补充说明状语。</span></p>
+                                                </blockquote>
+                                            </li>
+                                            <li>
+                                                <p><span>举例说明：</span></p>
+                                                <blockquote>
+                                                    <p><span>Mobile phones have broken many social taboos，with people
+                                                            answering calls in the middle of a conversation or chatting
+                                                            away
+                                                            on the toilet.</span></p>
+                                                </blockquote>
+                                            </li>
+                                        </ul>
+                                        <blockquote>
+                                            <p><span>补充说明或具体举例的独立分词结构通常是放在句末，而少有放在句首的。</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>表示原因</span></p>
+                                        <blockquote>
+                                            <p><span>Good timekeeping is becoming a forgotten social etiquette，with a
+                                                    new
+                                                    generation considering lateness the norm rather than a faux pas that
+                                                    should be avoided. </span></p>
+                                        </blockquote>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <p><span>分词短语作状语可以和连词连用(尽管他不是句子)，相当于简化后的状语从句保留了连词。</span></p>
+                <blockquote>
+                    <p><strong><span>Once</span></strong><span> deprived of oxygen，the brain dies.</span></p>
+                    <p><span>=Once it is deprived of oxygen，the brain dies.</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>Be careful </span><strong><span>while</span></strong><span> crossing the road.</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>Although exhausted by the walk，he continued his journey.</span></p>
+                </blockquote>
+                <h3 id='分词的作用二）作定语'><span>分词的作用（二）：作定语</span></h3>
+                <ul>
+                    <li>
+                        <p><span>单个分词作定语：要前置</span></p>
+                        <blockquote>
+                            <p><span>Please enclose a stamped addressed envelop.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>分词短语作定语：要后置</span></p>
+                        <blockquote>
+                            <p><span>There was a </span><strong><span>very interesting</span></strong><span> remark
+                                </span><u><strong><span>in a book by an Englishman that I read
+                                            recently</span></strong></u><span> </span><strong><u><span>giving what he
+                                            thought was a reason for this American
+                                            characteristic</span></u></strong><span>.</span></p>
+                            <p><span>我最近看过一本书，它是由一个英国人写的，我还记得书里有一句十分有趣的话，作者认为这句话说明了美国人为什么是这种性格。</span></p>
+                            <p><span>关于这个复杂句子的详解在【句子】这一章节提到过，其中最需要花点心思理解的就是后面what引导的这个作宾语的名词从句，这里的thought和was两个谓语放在一起看起来很别扭，但其实是he
+                                    thought构成主谓结构的插入语，这里作的是插入语。</span></p>
+                            <p><span>有关插入语和这个句子的具体详解见【句子章节-定语从句部分-特殊的定语从句一节-带有插入语的定语从句类型】。</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>Did you attend the meeting </span><strong><span>held last
+                                        month</span></strong><span>
+                                    in Shanghai？</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h3 id='分词的作用三）作补足语'><span>分词的作用（三）：作补足语</span></h3>
+                <p><strong><span>在感觉动词后充当宾语补足语。</span></strong></p>
+                <p><span>例如：find，hear，smell，observe，watch，notice，...</span></p>
+                <blockquote>
+                    <p><span>I heard him criticized many times.</span></p>
+                </blockquote>
+                <p><strong><span>如果句子的谓语使用了被动语态，那么此时分词是补充说明主语的，因此被成为主语补足语。</span></strong></p>
+                <blockquote>
+                    <p><span>He has been seen making tie-free appearances.</span></p>
+                </blockquote>
+                <p><span>一个特殊的用法：我们可以用</span><strong><span>被动进行的分词being
+                            done</span></strong><span>的形式来作宾语补足语，这相当于现在分词和过去分词的结合体，既有进行又有被动意味：</span></p>
+                <blockquote>
+                    <p><span>In recent years we havve seen cases of traditional Chinese brands
+                        </span><strong><span>being
+                                pirated</span></strong><span> or patented overseas.</span></p>
+                </blockquote>
+                <p><strong><span>除了在感觉动词后充当宾补，也可以在get和have后面作宾语补足语。</span></strong><span>例如have sth. done。</span></p>
+                <blockquote>
+                    <p><span>When you are preparing for your college adventures abroad，it‘s easy enough to make sure you
+                        </span><strong><u><span>get</span></u><span> all the right forms </span><u><span>filled
+                                    out</span></u><span>，</span><u><span>have</span></u><span> your passport
+                            </span><u><span>ready</span></u><span>，your bags </span><u><span>packed</span></u><span>，and
+                                your textbooks </span><u><span>waiting</span></u><span> for you at the other
+                                end</span></strong><span>，but how do you prepare for the adjustment to a new
+                            place？Especially，how to survive culture shock？</span></p>
+                </blockquote>
+                <p><strong><span>分词作补语和不定式作补语的区别：</span></strong></p>
+                <p><span>这两种结构都可以作补语，过去分词作补语在意义上能够很容易和不定式区分，需要我们关注的是现在分词作补语和不定式作补语的区别，他们看起来很像，但是在意义上有着很大的区别，各自表达了不同的意思，适用于不同的情形：</span>
+                </p>
+                <p><span>用现在分词，强调动作在进行；用不定式则表示一般的动作或者是这个动作自始至终的全过程。</span></p>
+                <blockquote>
+                    <p><span>I watched them climb the tower. 因为是感官动词，所以to被省略了。</span></p>
+                    <p><span>我观看他们一直爬到塔顶。</span></p>
+                    <p><span>I watched them climbing the tower. </span></p>
+                    <p><span>我观看他们正在向塔顶爬。</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>I watched him step off the pavement，cross the road，and disappear into the post
+                            office。</span>
+                    </p>
+                    <p><span>这几个动作显然都是全过程，所以不能用现在分词。因为这几件事不可能同时正在干，这描述的是一个流程。</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>In the park you often see people do Tai chi.</span></p>
+                    <p><span>一般的动作。</span></p>
+                </blockquote>
+                <h3 id='区别分词作的成分定语还是状语'><span>区别分词作的成分：定语还是状语？</span></h3>
+                <p><span>作表语和补语是比较明显的，不存在混淆的可能。但定语和状语很容易混淆，造成对句子的错误理解。下面先看两个常被错误理解的例句：</span></p>
+                <blockquote>
+                    <p><span>The government is to ban payments to witness by newspapers seeking to buy up people
+                            involved in
+                            prominent cases such as the trial of Rosemary West.</span></p>
+                    <p><span>The government is to ban payments是句子主干，is to do是一个特殊句型。</span></p>
+                    <p><span>to witness修饰payments作并列定语。</span></p>
+                    <p><span>by newspapers修饰payments作并列定语</span></p>
+                    <p><span>seeking to buy up people作分词短语修饰newspapers。</span></p>
+                    <p><span>involved in prominent cases such as the trial of Rosemary West作分词短语修饰people。</span></p>
+                    <p><span>所以句子正确的理解应当是：政府禁止报界向重大案件(如对罗斯玛丽·斯维特一案)的目击者付钱收买他们。</span></p>
+                    <p><span>但对于seeking to buy up
+                            people如果你错误的把他理解成状语，就会对句子含义产生误解：政府为了笼络诸如与罗斯玛丽·斯维特的审判这样的大案中的有关人士，将禁止报纸媒体向证人付费。</span></p>
+                    <p><span>而事实上分词短语是不能用作目的状语的，因为这是不定式的专有功能。</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>The natural scientist，Abansit di Ginervra，had spent twenty years collecting data of weather
+                            conditions. One day his new maid tidied his study. When he came back he could not find his
+                            collection. The maid told him she had burnt everything </span><strong><span>thinking it was
+                                of
+                                no use</span></strong><span>. Abansit controlling himself said in despair，“It was the
+                            result
+                            of my hard work of twenty years. Please don&#39;t touch anything in the room again.”</span>
+                    </p>
+                    <p><span>这里的分词thinking应当作原因状语，意思为“女仆告诉他说，他认为哪些东西都没用，所以把它们全都烧掉了。”如果你按照定语理解就变成了她把她认为没用的烧掉了。也就是说还留了一点，但显然是全烧掉了，一点没留。</span>
+                    </p>
+                </blockquote>
+                <p><span>那么到底该如何区别呢？有一些规则：</span></p>
+                <ul>
+                    <li>
+                        <p><span>不能用作定语的分词结构</span></p>
+                        <ul>
+                            <li>
+                                <p><span>完成式(having done和having been done)</span></p>
+                                <p><span>分别是主动完成式和被动完成式（完成式有主动和被动之分，而没有过去分词和现在分词之分，具体见下一节）。</span></p>
+                                <p><span>他们不能作后置定语，因为短语所以也更不能作前置定语。</span><strong><span>分词的完成式不能用作后置定语，这点非常重要！</span></strong>
+                                </p>
+                                <blockquote>
+                                    <p><span>The Chinese children having been raised in the U.S. can speak fluent
+                                            English.</span></p>
+                                    <p><span>这句话是错的，因为完成式分词不能放在后面作定语。</span></p>
+                                    <p><span>The Chinese children having been raised in the U.S.，we find they have a
+                                            totally
+                                            different value from that of those raised in China.</span></p>
+                                    <p><span>虽然分词的完成式不能放在名词后面作定语，但不意味着不能放在名词后面，他可以放在名词后面作状语，这里起的作用是原因状语，理解为：</span></p>
+                                    <p><span>由于这些中国孩子在美国长大，我们发现他们的价值观和中国长大的孩子完全不同。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>不及物动词(例如grow)的过去分词(例如grown)</span></p>
+                                <p><span>只能作前置定语，不能作后置定语。</span></p>
+                                <blockquote>
+                                    <p><span>The Chinese children grown in the U.S. can speak fluent English.
+                                            这句话是错的，应当改写成：</span></p>
+                                    <p><span>The Chinese children who have grown in the U.S. can speak fluent
+                                            English.</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>不能用作状语的分词结构</span></p>
+                        <ul>
+                            <li>
+                                <p><span>不及物动词的过去分词，不能作状语，但是他的完成式可以作状语。</span></p>
+                                <blockquote>
+                                    <p><span>Grown up in a small village，I developed a great interest in...
+                                            ×，因为不能作状语，可以改写成相应的完成式：</span></p>
+                                    <p><span>Having grown up in a small village，I developed a great interest in...
+                                            √</span>
+                                    </p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>还有一类情况，像这一节一开始举得两个例子里的第二个。这种表达不论把他理解成状语还是定语，从语法层面上都是说的通的。这就需要揣摩上下文，根据句意来判断。不过尽量不要写这种会引起歧义的句子，用其他的表达方式替换，比如用从句。</span>
+                        </p>
+                    </li>
+                </ul>
+                <h3 id='分词的体态和语态'><span>分词的体态和语态</span></h3>
+                <p><span>体态上只有一般式和完成式，没有进行式以及完成进行式。语态上，一般式的主动被动通过过去分词和现在分词来区分；但完成式不这样区分，完成式依旧是用be
+                        done表示被动，分词为having，不存在现在分词和过去分词的说法。主动完成式为having done，被打动完成式为having been done。</span></p>
+                <p><span>同时发生、在谓语后发生、一般动作就用一般式；在谓语动词所表示的动作之前发生则用完成式。</span></p>
+                <p><span>具体来说，完成式的用法有如下几种细分情况：</span></p>
+                <ul>
+                    <li>
+                        <p><span>如果分词是短暂动词，那么分词的完成式所表示的动作往往是谓语动词之前多次发生，即表现为重复性。</span></p>
+                        <blockquote>
+                            <p><span>Having been bitten twice，the postman refused to deliver out letters unless we
+                                    chained
+                                    our dog up。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>如果分词是延续动词，则分词表示动作往往在谓语动作之前就发生，并且已经持续了一段时间，即表现为持续性的特点。</span></p>
+                        <blockquote>
+                            <p><span>Having reading the newspaper，I walked over to the window and saw it‘s raining
+                                    outside.</span></p>
+                            <p><span>看完报纸，我走到窗前，看见外面正在下雨。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>分词不表示延续，但也可以不表示重复发生，即分词的动作不是重复发生，但如果分词的动作与谓语动词之间有一段时间间隔，此时的分词最好用完成式。</span></p>
+                        <blockquote>
+                            <p><span>Having failed to qualify as a doctor，I took up teaching.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>与上面相反的，我们也可以用分词的一般式表示分词的动作和谓语动作之间间隔时间很短，在分词动作之后谓语动作紧接着就发生，强调动作的连续性。虽然一般式并没用这种用法(一般式只能表示同时发生或者在谓语之后发生)，这算是一种特例。</span>
+                        </p>
+                        <blockquote>
+                            <p><span>Putting down the newspapper，I walked over to the windows and saw it&#39;s raining
+                                    outside.</span></p>
+                        </blockquote>
+                        <p><span>ps：对一般式，不需要纠结动词是不是延续。</span></p>
+                        <ul>
+                            <li>
+                                <p><span>但也不尽然都是这种情况，因为一般式原本的用法是表示在谓语后发生或者和谓语同时发生。对于有的词用一般式的现在分词，表示的不见得是连续的先后发生。例如：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>Reading the newspapper，I walked over to the windows and saw it’s raining
+                                            outside.</span></p>
+                                    <p><span>看着报纸，我走到窗前，看见外面正在下雨。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>对于上面这种描述如果直接接一般式就会直接理解成两件事同时发生，那么对于这一类的事件，要如何表示成前面那种的，表示两件事间隔很短的相继发生的呢？答案是使用适当的连词之类的，给分词加东西：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>After reading the newspapper，I walked over to the windows and saw it’s
+                                            raining
+                                            outside.</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                        <p><span>所以可以看到，对于分词的一般式，除了表示的动作后于谓语发生之外(这种和剩下两种分的特别开，一看便知，不讨论)，</span><br><span>到底是会被理解成先于谓语动作且间隔很短连续发生，还是只能理解成两件事同时进行，着主要取决于动词的具体意义，要结合句意来分析：如果分词和谓语的两个动作能够同时进行(例如前面的read和walk)，那他就只能表示同时进行，但也可以通过给分词加一些东西，比如时间连词(after
+                                reading)，让他表示和谓语动作是有先有后但先后很紧密；</span><br><span>相反如果分词和谓语的动作本身就不能同时进行(例如put和walk)，是有先有后的，那么就必然是上面说的那种特殊用法，表示发生了分词的动作后紧接着就发生了谓语动作。</span>
+                        </p>
+                    </li>
+                </ul>
+                <p><span>你一定会联想到前面两种非谓语并感到疑惑：为什么分词这里对体态分的这么细？又是关注动作是否可以延续，又是关注分词动作和谓语动作之间的时间间隔，而不定式和动名词却没提到这些。</span><br><span>这是因为他们所作的成分和表达的意义决定的，他们作的哪几种成分和表达的意义，都不可能涉及到这么多种类的情形，不可能出现上面那么多的情况。</span><br><span>前面两种分词的用法，往往你从句意就可以明确他和谓语的动作之间的时间间隔，并且不可能表现为重复性(除非引入了其他表达次数的成分)。</span><br><span>仔细回想不定式作状语的有限的几种用法以及作其他成分的用法，会发现他们根本遇不到上文提到过的问题。</span>
+                </p>
+                <hr />
+                <p><span>非谓语都能够表达(相对于谓语)哪些时态的动作，这里作一个汇总：对于一般动作，是最普遍的，三种非谓语都可以表达；对于和谓语动作同时发生的动作，也就是进行式，动名词是没有的，只能用不定式和分词；对于发生在谓语动作之前的动作，使用完成式，三种非谓语也都可以表达；完成进行式是不定式特有的；最值得注意地，前面没有提到过，表达将来的动作，即非谓语动作在谓语动作之后，只能通过不定式来表达，用不定式的一般式，这一功能是分词和动名词都不具备的。</span>
+                </p>
+                <h3 id='分词的特殊用法构成复合形容词'><span>分词的特殊用法：构成复合形容词</span></h3>
+                <p><span>本段介绍复合形容词的构词规律。</span></p>
+                <p><span>名词/形容词/副词+分词，本质相当于一个简化版的句子。</span></p>
+                <p><strong><span>内部和外部关系</span></strong></p>
+                <p><span>外部关系是指分词和被修饰词的关系：主动或被动。主动或被动靠分词来区分。</span></p>
+                <p><span>内部关系就是构成复合形容词的两个词之间的关系，或者说名词/形容词/副词在这个结构中做的成分。</span></p>
+                <p><strong><span>现在分词构成的复合形容词</span></strong></p>
+                <p><span>他们的共同特点就是具有相同的外部关系：都是主动，被修饰词充当分词动作的逻辑主语。</span></p>
+                <ul>
+                    <li>
+                        <p><span>及物动词的现在分词</span></p>
+                        <p><span>及物动词必须得有宾语，所以这也是及物动词的现在分词构成复合形容词的唯一用法。</span></p>
+                        <ul>
+                            <li>
+                                <p><span>名词+及物动词的现在分词</span></p>
+                                <p><span>内部关系：名词和现在分析存在逻辑上的动宾关系。</span></p>
+                                <blockquote>
+                                    <p><span>freedom-loving people</span></p>
+                                    <p><span>相当于people love freedom</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><span>不及物动词的现在分词</span></p>
+                        <ul>
+                            <li>
+                                <p><span>名词+不及物动词的现在分词</span></p>
+                                <p><span>内部关系：动状，名词作状语</span></p>
+                                <blockquote>
+                                    <p><span>a sky-flying kite</span></p>
+                                    <p><span>相当于a lite flies in the sky</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>名词+系动词的现在分词</span></p>
+                                <p><span>来自于“系动词+名词作表语”的句型，内部关系：系表。</span></p>
+                                <blockquote>
+                                    <p><span>fossil-appearing objects</span></p>
+                                    <p><span>相当于The objects appear to be fossils (类似于化石的物体)</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>形容词+系动词的现在分词</span></p>
+                                <p><span>内部关系：系表</span></p>
+                                <blockquote>
+                                    <p><span>a good-looking man</span></p>
+                                    <p><span>相当于a man looks good</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>副词+不及物动词的现在分词</span></p>
+                                <p><span>内部关系：动状</span></p>
+                                <blockquote>
+                                    <p><span>far-reaching events</span></p>
+                                    <p><span>相当于events reach far</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong><span>过去分词构成复合形容词</span></strong></p>
+                <p><span>他们的共同特点就是具有相同的外部关系：都是被动，被修饰词充当分词动作的逻辑宾语。</span></p>
+                <ul>
+                    <li>
+                        <p><span>既然是被动、被修饰的词作宾语，那么动词必须是及物的，这里不存在不及物的情况</span></p>
+                        <ul>
+                            <li>
+                                <p><span>名词+及物动词的过去分词</span></p>
+                                <p><span>内部关系：动状，表示动作的方式或者状态。</span></p>
+                                <blockquote>
+                                    <p><span>water- covered lands</span></p>
+                                    <p><span>相当于lands covered with water</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>这里你可能感到困惑，被动为什么没be动词？是的，被动语态必须有be动词，所以这不是被动，这相当于是一个定语从句，只不过省略了which
+                                            werre。</span></p>
+                                </blockquote>
+                                <p><span>不过有的句子也可以理解成名词作主语，两种理解都可以：</span></p>
+                                <blockquote>
+                                    <p><span>U.S-led war</span></p>
+                                    <p><span>相当于The U.S. leds the war</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>形容词+及物动词的过去分词</span></p>
+                                <p><span>内部关系：动补，充当宾语补足语。</span></p>
+                                <blockquote>
+                                    <p><span>a ready-made dress</span></p>
+                                    <p><span>相当于made a dress ready (一件成衣)</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>a clean-shaven man</span></p>
+                                    <p><span>相当于a man shaved himself clean</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>副词+及物动词的过去分词</span></p>
+                                <p><span>内部关系：动状</span></p>
+                                <blockquote>
+                                    <p><span>a newly-built library</span></p>
+                                    <p><span>相当于a library built newly</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>the above-mentioned items</span></p>
+                                    <p><span>相当于the items mentioned above (上面提到的内容)</span></p>
+                                </blockquote>
+                                <p><span>需要注意，</span><strong><span>对于复合形容词，连字符&quot;-&quot;不是必须的</span></strong><span>：</span>
+                                </p>
+                                <blockquote>
+                                    <p><span>newly elected president</span></p>
+                                    <p><span>相当于president elected newly (新当选的总统)</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong><span>其他构成的复合形容词</span></strong></p>
+                <p><span>英语中还有一部分复合形容词，不是用分词构成的，逻辑关系比较简单。这里借着这个机会放在一起汇总。</span></p>
+                <ul>
+                    <li>
+                        <p><span>形容词+名词+ed</span></p>
+                        <blockquote>
+                            <p><span>bad-tempered people 坏脾气的人</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>cold-blooded animals 冷血动物</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>near-sighted people 近视眼</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>ill-humored people 没有幽默感的人</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>数词+名词+ed</span></p>
+                        <blockquote>
+                            <p><span>a two-faced person 两面三刀的人</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>a three-legged table 三条腿的桌子</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h1 id='从句与非谓语'><span>从句与非谓语</span></h1>
+                <p><span>开篇说过，非谓语可以替代冗长的从句，简化句子。本章从三大从句入手，讨论他们如何被简化为非谓语，从一个全新的视角来看待从句和非谓语的关系。</span></p>
+                <h3 id='名词从句的简化'><span>名词从句的简化</span></h3>
+                <p><span>名词从句是属于名词性的，三大非谓语只有动名词和不定式具有名词的特征，自然只能被简化成这两种形式——动名词和不定式。</span></p>
+                <p><span>由陈述句变来的，即由that引导的名词从句一般简化成动名词表达，采用动名词复合结构的形式；由疑问句变来的，即由whether或what等特殊疑问词引导的名词从句一般简化为不定式。</span>
+                </p>
+                <h5 id='名词从句与动名词'><span>名词从句与动名词</span></h5>
+                <ul>
+                    <li>
+                        <p><span>由that引导的主语从句与动名词</span></p>
+                        <blockquote>
+                            <p><span>It surprised us that John won the marathon.</span></p>
+                            <p><span>=That John won the marathon surprised us.</span></p>
+                            <p><span>=John&#39;s winning the marathon surprised us.</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>that引导的同位语从句与动名词</span></p>
+                        <p><span>英语没有名词+动名词的结构，所以要在同位语从句修饰的名词后面加一个介词，来连接名词和动名词，同时表达同位语关系。介词一般是of，偶尔可以用about等。</span></p>
+                        <blockquote>
+                            <p><span>There was no chance that Davy would come from the battle alive.</span></p>
+                            <p><span>=There was no chance of Davy coming from the battle alive.</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>Anyone with half an eye on the unemployment figures kenw that the assertion
+                                </span><strong><span>that economic recovery would be just around the corner was
+                                        untrue.</span></strong></p>
+                            <p><span>=Anyone with half an eye on the unemployment figures kenw that the assertion
+                                </span><strong><span>about economic recovery being just around the corner was
+                                        untrue.</span></strong></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>that引导的宾语从句与动名词</span></p>
+                        <p><span>这种情形的情况比较复杂：既可以转换成动名词，也可以转换成不定式。这主要取决于主句的谓语动词，看谓语动词接不定式还是动名词。</span></p>
+                        <blockquote>
+                            <p><span>I consider that I will emigrate to America in the future.</span></p>
+                            <p><span>=I consider emigrating to America in the future.</span></p>
+                            <p><span>这是因为consider后面要接动名词，不能接不定式。</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h5 id='名词从句与不定式'><span>名词从句与不定式</span></h5>
+                <ul>
+                    <li>
+                        <p><span>that引导的宾语从句与不定式</span></p>
+                        <blockquote>
+                            <p><span>I hope that I can drive to work in my own car.</span></p>
+                            <p><span>=I hope to drive to work in my own car.</span></p>
+                            <p><span>这是因为hope后面要接不定式，不能接动名词。</span></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>由whether和what等特殊疑问词引导的名词从句。</span></p>
+                        <p><span>主要是宾语从句简化为不定式，此时宾语从句中往往含有情态动词，比较多见的是should或can/could。</span></p>
+                        <p><span>whether或特殊疑问词不能省略，依旧需要带着。</span></p>
+                        <blockquote>
+                            <p><span>She can&#39;t decide whether she should go with him or stay home.</span></p>
+                            <p><span>=She can&#39;t decide whether to go with or (to) stay hoem.</span></p>
+                            <p><span>这里的不定式具有“应该”的情态意义。</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>Please tell me how I can get to the bus station.</span></p>
+                            <p><span>=Please tell me how to get to the bus station.</span></p>
+                            <p><span>这里的的不定式具有能够的情态意义。</span></p>
+                        </blockquote>
+                    </li>
+                </ul>
+                <h3 id='定语从句的简化'><span>定语从句的简化</span></h3>
+                <h5 id='什么样的定语从句才可以简化'><span>什么样的定语从句才可以简化</span></h5>
+                <ul>
+                    <li>
+                        <p><span>关系词要作主语</span></p>
+                        <p><span>关系词在定语从句中充当宾语，这样的定语从句不能简化成一个短语，只有关系词在定语从句中作主语的时候才能简化为短语。（这可能和定语从句本身的结构有关，具体原因不知道。</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p><span>简化后原本的意思可能会丢失、模糊</span></p>
+                        <p><span>有些简化会导致信息的丢失，无法表达原来的完整意思。</span></p>
+                        <p><span>所有用作后置定语的短语几乎都可以看作是定语从句简化后的结果，或者说可以用定语从句来改写。</span></p>
+                        <blockquote>
+                            <p><span>The people who were responsible for the incident were all punished.</span></p>
+                            <p><span>The people responsible for the incident were all punished.</span></p>
+                            <p><span>这里就是之前我们提到过的定语从句简化，而非被动语态。</span></p>
+                        </blockquote>
+                        <blockquote>
+                            <p><span>the girl who was standing in the corner</span></p>
+                            <p><span>the girl standing in the corner</span></p>
+                            <p><span>the girl in the corner</span></p>
+                        </blockquote>
+                        <p><span>我们在这里对能够作后置定语的短语做一个总结：</span><strong><span>形容词短语、分词短语、不定式短语、介词短语都可以作后置定语，都可以统一于定语从句</span></strong><span>。不过这里我们只讨论不定式短语和分词短语两种情形。</span>
+                        </p>
+                        <p><span>但另一方面，我们不能忽略，在简化的过程中，短语、句子的意思都有所改变。比如上面的例子，最开始的第一句我们可以明确地知道谈论地是一个过去地情形，但是第二句我们就看不出这是个进行时了，再看第三句，连分词standing都没了，只保留了in
+                                the corner这个介词短语，这里地含义变得更模糊了，信息在逐步地丢失。</span></p>
+                        <p><span>我们可以看到定语从句和分词短语在明晰性上存在着句大差距，请比较：</span></p>
+                        <ul>
+                            <li><span>The person writing reports...</span></li>
+                            <li><span>The person writing who will write/will be writing/writes/is writing/wrote/was
+                                    writing
+                                    reports...</span></li>
+                        </ul>
+                        <p><span>这个例子中我们可以看到一个分词writing可能对应的分词是如此之多，而如果把它简化成分词形式，就都只有一种形式即writing，会丧失其精确性。除此之外如果从句有情态动词，简化后也会被丢掉，丧失情态意味。所以把定语从句简化为非谓语的形式，虽然结构变得简洁了，但是这是以明晰性为代价的。</span>
+                        </p>
+                        <p><strong><span>因此有的句子我们还是要采取他的从句形式表达，尽管他简化成分词在语法上也是说的通的；除此之外这也是某些定语从句不能简化成分词短语的一个重要原因</span></strong><span>。</span>
+                        </p>
+                    </li>
+                </ul>
+                <h5 id='定语从句与分词'><span>定语从句与分词</span></h5>
+                <p><span>在关系词充当定语从句主语的前提下，如果谓语动词是实义动词，那么就一定是简化为分词短语，包括现在分词和过去分词。</span></p>
+                <p><span>但前面说过，将从句简化成非谓语，会导致信息的丢失，其中的关键是定语从句谓语时间与主句的谓语时间之间的关系。过去分词和现在分词仅仅是说明了分词语态和体态的特点，并没有涉及具体的时间，并没有办法表示这个动作是现在进行还是过去进行。这是因为分词动作的时间要通过句子谓语动作的时间体现出来，两者一般是一致的，或者说是基于主语动作的时间的。</span>
+                </p>
+                <blockquote>
+                    <p><span>The men </span><strong><span>working</span></strong><span> on the site
+                        </span><strong><span>were</span></strong><span> in some danger.</span></p>
+                    <p><span>=The men who </span><strong><span>were working</span></strong><span> on the site were in
+                            some
+                            danger.</span></p>
+                    <p><span>当时在工地上工作的那些人处境非常危险。</span></p>
+                    <p><span>The men </span><strong><span>working</span></strong><span> on the site
+                        </span><strong><span>are</span></strong><span> in some danger.</span></p>
+                    <p><span>=The men who </span><strong><span>are working</span></strong><span> on the site are in some
+                            danger.</span></p>
+                    <p><span>现在正在工地上工作的哪些人处境非常危险。</span></p>
+                </blockquote>
+                <p><span>因此，当定语从句的谓语动作时间与主句谓语动作时间不一致时，不能够改写成分词短语。比如：</span></p>
+                <blockquote>
+                    <p><span>Do you know the boy who broke the window?</span></p>
+                    <p><span>不能改写成Do you know the boy breaking the window？因为这样的意思就好像是这个男孩在说话的时候正在打碎玻璃。</span></p>
+                    <p><span>也不能写成having broke，因为分词的完成式不能作后置定语！这相当于把两头的路都堵死了。</span></p>
+                </blockquote>
+                <ul>
+                    <li>
+                        <p><strong><span>可以简化成分词短语的定语从句</span></strong><span>：</span></p>
+                        <ul>
+                            <li>
+                                <p><span>主从句的谓语同为现在时间</span></p>
+                                <ul>
+                                    <li><span>主从句的谓语动词的动作都是现在的一般动作</span></li>
+                                    <li><span>主从句的时间都表示现在，但主句的谓语动词表示一般状态，而从句的谓语表示现在进行的动作。</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p><span>主从句的谓语同为过去的时间</span></p>
+                            </li>
+                            <li>
+                                <p><span>主从句的谓语时间不一致</span></p>
+                                <p><span>对于一些特殊的情况，尽管时间不一致，但在不影响意思表达的情况下，或者绝对不可能用一致的时间去理解从而产生歧义，还是可以简化。</span></p>
+                                <ul>
+                                    <li>
+                                        <p><span>比如下面这句：从句的谓语是现在进行时态，主句是一般过去时态。</span></p>
+                                        <blockquote>
+                                            <p><span>The girl who is playing basketball used to be very weak.</span></p>
+                                            <p><span>The girl playing basketball used to be very weak.</span></p>
+                                        </blockquote>
+                                    </li>
+                                    <li>
+                                        <p><span>再比如下面这句：从句谓语是一般过去时，而主句是一般现时态。</span></p>
+                                        <blockquote>
+                                            <p><span>The car that was repaired yesterday by him is mine.</span></p>
+                                            <p><span>The car repaired yesterday by him is mine.</span></p>
+                                            <p><span>因为由yesterday提示，所以一定不会理解成是现在在被修的是我的车。</span></p>
+                                        </blockquote>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong><span>不可以简化成分词短语的定语从句：</span></strong></p>
+                        <ul>
+                            <li>
+                                <p><span>因时态限制：从句动作在主句动作之前发生。</span></p>
+                                <p><span>比如前面举得哪个打破玻璃的例子就是，两个动作的时间不一致，用一般式表达不出原本的意思，又因为完成式不能用作后置定语，所以having
+                                        done也不能用，英语中没有这样的句子构造形式。</span></p>
+                            </li>
+                            <li>
+                                <p><span>定语从句中含有情态动词时</span></p>
+                                <p><span>简化后会失去情态的意味。</span></p>
+                                <blockquote>
+                                    <p><span>The boy who will come to see you tomorrow will bring you that book.</span>
+                                    </p>
+                                    <p><span>The boy coming to see you tomorrow will bring you that book.</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>定语从句由be动词作谓语时</span></p>
+                                <blockquote>
+                                    <p><span>Those who are busy don&#39;t have to go. 哪些正忙着的人不必去。</span></p>
+                                    <p><span>不能写成Those being busy don&#39;t have to go.
+                                            因为英语中“being+形容词”这样的结构不能作后置定语。</span>
+                                    </p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>在一些特殊的句子里，有时由于语义上的原因，不能转换</span></p>
+                                <p><span>这一类其实也应该归到第一类，第一类说的是从句动作发生主句之前，但其实时态限制不止这些，只要因为时态对不上、不能表达原来意思的，都算。</span></p>
+                                <blockquote>
+                                    <p><span>The man who cocked for the students has died.</span></p>
+                                    <p><span>你要是说成The man cooking for the students has
+                                            died.，这个句子就会变得很奇怪：这男的已经死了，他现在却还在做饭。</span></p>
+                                </blockquote>
+                                <p><u><span>这样看来，时态限制似乎都是由于分词的完成式不能用作后置定语所导致的，因为没办法用having
+                                            done表达从句动作发生在主句动作之前，所以必然会出现时态的限制。</span></u></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <h5 id='定语从句与不定式'><span>定语从句与不定式</span></h5>
+                <p><span>被the only，the last，the next，序数词，最高级形容词修饰的名词，其后所接的定语从句往往要用不定式来替换。</span></p>
+                <blockquote>
+                    <p><span>You are the only one that can understand me.</span></p>
+                    <p><span>You are the only one to understand me.</span></p>
+                </blockquote>
+                <blockquote>
+                    <p><span>Clint was the second person that fell into the trap.</span></p>
+                    <p><span>Clint was the second person to fall into the trap.</span></p>
+                </blockquote>
+                <h3 id='状语从句的简化'><span>状语从句的简化</span></h3>
+                <p><span>只有当状语从句的主语和主句的主语相同时才能简化，否的会影响句意的改变。不过其实说是化简，基本就省略了个主语。</span></p>
+                <p><span>三大非谓语中，只有不定式和分词才可能作状语，因而状语从句自然也只能简化成这两种非谓语形式。</span></p>
+                <ul>
+                    <li>
+                        <p><span>状语从句与分词</span></p>
+                        <ul>
+                            <li>
+                                <p><span>如果从句含有be动词，我们只需要把从句和be动词省去。</span></p>
+                                <blockquote>
+                                    <p><span>A zerro can have its meaning only </span><strong><span>when it is
+                                                used</span></strong><span> with real numbers；thoughts can give off
+                                            brilliant
+                                            light only </span><strong><span>when they are put</span></strong><span> into
+                                            action.</span></p>
+                                    <p><span>A zero can have its meaning only </span><strong><span>when
+                                                used</span></strong><span> with real numbers；thoughts can give off
+                                            brilliant
+                                            light only </span><strong><span>when put</span></strong><span> into
+                                            action.</span></p>
+                                    <p><span>注意when不能省去</span></p>
+                                </blockquote>
+                                <blockquote>
+                                    <p><span>A tiger can&#39;t be tamed unless it is caught very young.</span></p>
+                                    <p><span>A tiger can&#39;t be tamed unless caught very young.</span></p>
+                                    <p><span>注意这里的unless也没有省去，连词或者说引导状语的词不能被省去。</span></p>
+                                </blockquote>
+                            </li>
+                            <li>
+                                <p><span>如果没有be动词，我们需要把主语省去，并把动词变成现在分词-ing形式。</span></p>
+                                <blockquote>
+                                    <p><span>Since I came to Beijing，I have made many new friends.</span></p>
+                                    <p><span>Since coming to Beijing，I have made many new friends.</span></p>
+                                </blockquote>
+                            </li>
+                        </ul>
+                        <blockquote>
+                            <p><strong><span>感觉这样用be动词划分的方式有点奇怪？毕竟be动词接动作，有的是表示被动，但也有表示正在进行时的？</span></strong></p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <p><span>状语从句与不定式</span></p>
+                        <p><span>一般只有目的状语从句可以简化成不定式。</span></p>
+                    </li>
+                </ul>
+                <p><span>注意，状语从句的简化都保留了引出从句的连词，而定语从句简化的时候，关系词都被一起去掉了。</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>
