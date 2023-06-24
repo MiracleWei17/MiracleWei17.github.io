@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>pte攻略</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ :root {--mermaid-font-zoom:1.25em ;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="overview" class="md-header-anchor"></a><span>Overview</span></h1><p><strong><span>pte判分机制：</span></strong></p><ul><li><span>找来了40多万不同水平的考生和老师，最开始是人工阅卷，让这些人做题，然后让机器去学习这些人的答案和判分，形成一个语料库。后面的人来答题，是用你的答案去语料库匹配，匹配到和你相应的分数。然后pte的分数其实也不是你的真实分数，不是说你错几个就扣除多少分，两者没有直接关联，是根据短期内考生的排名来出的分，其实是你和别人的相对水平。</span></li><li><span>这种纯机器的判分方式就意味着你可以通过一系列技巧达到高分，哪怕你啥也不会，我们要做的就是骗机器，让他以为你很厉害。</span></li><li><span>pte所有的题型，几乎没有需要你自己发挥的题型，不看重内容、逻辑。毕竟机器也看不懂，他只能通过简单检测你回答和题目关键词的匹配度来确定你的内容分。所有涉及内容的题都可以通过套个模板解决。</span></li></ul><p><strong><span>题型：</span></strong></p><p><span class='md-image'><img src="./题型&分值.jpg" style="zoom:50%;float:left"></span></p><blockquote><p><span>出题顺序和图中顺序一致，下文分题型讲解时则按照题型的重要性/哪些题型分值高需要拿分的顺序来排布。</span></p></blockquote><p><strong><span>考试结构/时间：</span></strong></p><ol start='' ><li><span>口语与写作：54-67分钟</span></li><li><span>阅读：29-30分钟</span></li><li><span>听力：30-34分钟</span></li></ol><p><span>总共时常：2小时。</span></p><blockquote><p><span>其实官网提供的信息非常全面，具体的题目信息见下文。你也可以先去官网看看他们的</span><a href="https://www.pearsonpte.com.cn/pte-academic/test-format"><span>描述</span></a><span>。</span></p></blockquote><p><strong><span>机经：</span></strong></p><ul><li><p><span>pte有几个题型，真题的命中率非常的高，直接做一遍背下来。</span></p></li><li><p><span>大题库与小题库的区别。</span></p></li><li><p><span>要背的： WFD小题库(202) 约90%命中+</span></p><p><span>				</span><span>SST小题库(48) 100%命中+</span></p><p><span>				</span><span>RS萤火虫大题库&amp;猩际月预测(547)+</span></p><p><span>				</span><span>ASQ萤火虫大题库&amp;猩际月预测(1000) 90%命中</span></p><blockquote><p><span>其实两个写作题都是100%命中的，虽然分值低吧，但也建议把小题库(高频)都刷一遍。</span></p><p><span>阅读的两个FIB全刷完命中率有小一半吧，冲79+的可以刷刷，但还是口语听力优先。</span></p></blockquote><p><span>其中RS和ASQ所有App的大题库都不全，所以建议这俩题型把萤火虫和猩际都刷一遍(很多都是重合的，工作量不是很大)。WFD、SST、WE的话萤火虫就够了。</span></p><p><span>建议从现在开始你每天就按计划的背，和下面的内容同步进行，早背。</span></p></li></ul><p><strong><span>练习策略：</span></strong><span>先练分值高的，哪些单选、多选，你认识个题型就好了，不要浪费时间，除非你目标分数四个79。优先RA、RS、DI、RL、SST、FIB、WFD(不分先后)，这几个题非常重要，稍微错一个10分就没了，直接达不到你的目标分数了，所以一定要确保没问题。</span><br><span>像听力那两个MCQ，到时候能听就选，听不懂就拉倒，占比太低了，才一两分。听力的那几个小分值的题，都比较考验硬实力（语速超快内容超多），听不懂就是听不懂，短时间提分也很难，就别白费力气了。</span></p><blockquote><p><span>考试的时候每道题都没有题目类型的标注，只有一段很墨迹的(音频)指引，所以你要先弄清楚每道题特征、长啥样。</span></p></blockquote><p><strong><span>判分：</span></strong></p><p><span>最终成绩和作答分数没有直接关系，并且OG也没有给出各题型所占分数。下面每个题型给出的(大概)分数占比，更确切地说是每道题对你最终成绩地影响程度，是由一些(补习)机构进行多次考试测出来的：只答某道题，答满分，然后看最终成绩，就知道每个题对最终成绩的四个part的影响。</span></p><h1><a name="speaking" class="md-header-anchor"></a><span>Speaking</span></h1><h2><a name="所有题型通用的评分标准" class="md-header-anchor"></a><span>所有题型通用的评分标准</span></h2><p><span>先看看OG给的评分标准：</span></p><p><span class='md-image'><img src="./口语评分标准.png" style="zoom:40%;float:left;"></span></p><p><span>其中发音和流利度是最重要的，要优先保证这两个，至于内容，机器听不懂。关于如何牺牲后者，将在其上投入的精力转移到前两项，在下文每个题型中会给出具体的应试思路。</span></p><ul><li><p><strong><span>发音</span></strong></p><ul><li><p><span>单词清晰度：</span></p><ul><li><p><span>发音要准确</span></p><blockquote><p><span>m</span><strong><span>i</span></strong><span>le发ai的音、ch</span><strong><span>an</span></strong><span>ge发en的音、l</span><strong><span>o</span></strong><span>sses发ao的音、cr</span><strong><span>i</span></strong><span>sis发ai的音、r</span><strong><span>e</span></strong><span>lative发ai的音</span></p></blockquote></li><li><p><span>不要吞音，该发的辅音、结尾的s之类的，要清晰。</span></p><p><span>不能太快：双元音(located)、长元音(vaccine)、多音节(intermediate)</span></p></li><li><p><span>只有带r才发er的音，不然是e</span></p></li><li><p><span>th的音不该太重&amp;要咬舌</span></p></li></ul><blockquote><p><span>发音阻力(口型打开)、单词的轻盈感、音节拆读</span></p></blockquote></li><li><p><span>单词重音：一个单词只能有一个重音，其他音相对重音音节又轻又快，每个词内应当紧凑，不要拖沓。</span></p><p><span>平时练习需要注意那些自己平常发音重音位置可能出错的词，例如</span><strong><span>in</span></strong><span>dustry，in</span><strong><span>du</span></strong><span>strial，po</span><strong><span>li</span></strong><span>tical，</span><strong><span>po</span></strong><span>litics，poli</span><strong><span>ti</span></strong><span>cian(这三个单词的li，第一个发li，后两个是le)，specifi</span><strong><span>c</span></strong><span>，</span><strong><span>pro</span></strong><span>cesses，me</span><strong><span>cha</span></strong><span>nic，</span><strong><span>me</span></strong><span>chanism，</span><strong><span>re</span></strong><span>cognize，</span><strong><span>a</span></strong><span>nalyse/ze，a</span><strong><span>nal</span></strong><span>ysis/ses，标示数字十几的重音在后six</span><strong><span>teen</span></strong><span>，标示数字几十的重音在前</span><strong><span>si</span></strong><span>xty，有-tion的词重音在tion的前一个音节上precipi</span><strong><span>ta</span></strong><span>tion，Euro</span><strong><span>p</span></strong><span>ean，。</span></p></li><li><p><span>一些语音现象。</span></p><blockquote><p><span>其中失去爆破是最为关键的，后面几个如果你顾不上来，做不到也无所谓，但有没有在该失爆的位置失爆会严重影响最终成绩。</span></p></blockquote><ul><li><p><span>失去爆破：前面一个单词以爆破音结尾，主要是t/d/p/k结尾的，如果后一个单词以辅音开头，前面的爆破音就不读了。</span></p><p><span>失爆可以发生在两个单词间，也可以发生在单词内：wi</span><strong><span>de</span></strong><span>spread、shi</span><strong><span>p</span></strong><span>ment、</span><strong><span>ou</span></strong><span>t</span><strong><span>l</span></strong><span>ook。</span></p><p><span>读数字时，小数点point、hundred、thousand都要失爆。</span></p><p><span>较为特殊地，如果是分别两个微意群(后面你会知道这是什么，简言之就是局内以几个词为一组进行不是很明显的断句，以微意群为单位连读)尾和首构成失爆，也要像上边那样操作，只不过是相对弱化而非彻底不读。</span></p></li><li><p><span>同化：前后两词同一个音也失爆。</span></p><p><span>例如：ought to，be used to，economic considerations。</span></p></li><li><p><span>连读(词内、词间都会存在)：</span></p><ul><li><span>一些普通的连读，例如：hol</span><strong><span>d o</span></strong><span>n，w</span><strong><span>e a</span></strong><span>re，th</span><strong><span>e e</span></strong><span>lectricity。</span></li><li><span>完美连读：/n/、/l/、/r/+元音音标，例如：a</span><strong><span>n x</span></strong><span>-ray，an ice pack，a</span><strong><span>n</span></strong><span>other，e</span><strong><span>n</span></strong><span>able。</span></li><li><span>击穿：like her/him，读成like er/im。</span></li></ul></li></ul></li></ul></li><li><p><strong><span>流利度</span></strong></p><p><span>Smoothe:不卡顿、不蹦字；Effortless：自然不刻意，别乱加腔调；Natural paced：语速均衡且正常，不慢于汉语速度，不快到元音发不清楚。具体要做到的技术细节如下：</span></p><ul><li><p><span>流畅不卡顿，这将严重影响成绩，因为机器本来就听不懂，他只要察觉出你产生出了卡顿，就认为你不熟练、说的不好，就会给你匹配一个低分。在此基础上就产生了两个策略：</span></p><ul><li><p><span>牺牲内容保流利度：读不出来的词就略过/换成something之类/读这个单词的一半，说错了也将错就错往下说，千万别读的有毛病了就回过头复读，会被机器识别。像RA这个题型，你要是读一大段，对于你拿不准的发音，一段大概能有六个词换成something。大不了内容分全不要了，因为内容占比真的很低，但发音流利度扣分是立竿见影的。</span></p><blockquote><p><span>对于哪些你说不出来的词：换词一定是换一个具体的词，像something，千万不要换成A、B这种东西，包括写作距离也是这样，不要写像city A这样的表达，会影响分数。</span></p></blockquote></li><li><p><span>语速：pte并没有一个和语速相关的评分标准，但你读的太慢会在超出作答时间，你读的太快，你总不能保证一直这样快，总有慢的时候，这样就会形成一个语速差，机器在这种反差对比下会认为是你卡壳了，流利度就会扣分，语速越快卡的就越明显很多时候。所以要语速适中，重在一致。</span></p></li></ul></li><li><p><span>重弱读/微意群：一个微意群以2-4个词构成，小词开头，实词结尾。</span></p><p><span>实词：名词、动词、形容词、数字、副词、指代词(代词不算代词是小词)，这些有实意的词。否定词也需要重读。</span></p><p><span>小词：除了上面的都是，需要注意be动词也是小词。</span></p><p><span>小词又低又快，快速带过，紧贴后面的实词。</span></p><p><span>最后呈现的效果就是，微意群内非常紧凑，微意群间有短暂几乎不可察觉的轻微停顿，但是不是要真的停顿，只不过从听感上你会觉得微意群内的词是更近的。</span></p><p><span>通过这样形成重弱读和意群的连读/断句。这是语音部分拿分的核心，低分无一例外都有重弱读不对的问题。</span></p></li><li><p><span>断句：</span></p><ul><li><p><span>长主语后</span></p></li><li><p><span>长介词短语前</span></p></li><li><p><span>and：如果and前后是单词、短语不断句；连接两个句子断句，and后面是句子、没有主语的句子，在and前断句。</span></p></li><li><p><span>标点：标识列举不断句，两个形容词叠加修饰名词中间逗号不停顿。</span></p></li><li><p><span>从句连接词：前面有介词断在介词前</span></p><ul><li><span>宾语从句：连接词可跟前可跟后。</span></li><li><span>定语从句：如果比较短就不要和名词拆开了。</span></li></ul></li><li><p><span>插入语：在插入语后面断句，插入语和前面尽管有逗号但是要无缝衔接。</span></p></li><li><p><span>动词和后面的宾语不能断。</span></p></li></ul></li></ul></li><li><p><strong><span>内容</span></strong><span>    </span></p><p><span>比较无所谓的一个东西，差不多就行。</span></p><p><span>需要注意的就是对于哪些你没有办法把正确的词说出，要随便找一个词占位的时候，只能找something这样的实际存在的词，千万别用ABCD这样的字母指代，会扣分。</span></p></li></ul><p><span>考试系统的三秒原则：所有需要收音的题，三秒不说话就默认你说完了，直接跳下一题了，所以这要求你千万不能卡，并且很多题你是一定要套模板的，因为有的东西你汉语反应可能都超出三秒了。同时需要注意，你作答完成后要立刻点next并确认进入下一题，因为这期间的空白时间都会给你录进去，可能会影响机器判分(，没准还把你身边的人的声音录进去：考位都是挨着的，没隔音，到时候考场会非常嘈杂，你在说口语你旁边的也在说，说啥的都有，千万别被他们影响)。</span></p><p><span>一些极低分的情形：口语一般是不会低于40的，要是低于40，基本不是你答案的问题，而是一些收音相关的严重问题。例如声音太低，检测不到；检测到别人的；语速太慢——判定你说的不是英语；读错的太多——三分之一以上；经常加减（吞音）音节。</span></p><p><span>口语等下面进度条出蓝色再说，不然第一句话容易录不进去。</span></p><h2><a name="ra-read-aloud" class="md-header-anchor"></a><span>RA-Read Aloud</span></h2><p><span>全口语最重要的一个题，一定要确保高分，分值占比约33%。</span></p><p><span>但题目形式本身其实是非常简单的，就是读句子，做到前面提的哪些流利度、发音要求就好。</span></p><p><span>这个题没有机经，要机经也没什么意义，你就每天保质保量的读上一些句子(在精不在多)，不要太在意App的打分，有时候它的打分是不准的(比如它会认为你的小词读的不清晰，但事实上本来就不重度，毕竟这些App都是模拟，和pte的语料库是不一样的，评分仅供参考，重点还是练习纠正你自己的发音)。</span></p><p><span>准备时间30/35/40，作答时间40或3秒无声音，自动开始自动或手动结束作答。说完记得赶紧点next并确认。</span></p><p><span>如何利用准备时间：试读，声音偏小语速偏快。</span></p><p><span>RA一句话：这是该题型的讨巧方法，思路依旧是舍弃内容分保证流利度和发音，因为很多RA是非常长的，你难免会出岔子，与其这样还不如内容分少要一点。只选择一个10个词以上的句子，可以不是完整的一句话，但尽可能在意群完整的地方断句。这样做的好处就是你有更多的时间准备、考虑各个因素，并且避开不好读的地方。</span></p><p><span>事实上你平时练直接按照RA一句话的模式练就好了，各大App也都有这个模式。但你考前一定要买个pte的官方模考服务，进行一次模拟考试，模考的其中一个目的就是检验你自己到底是否适合RA一句话的做题方法，你在这次模考使用这个方法来作答，假如你这部分成绩很低，那可能你还是适合读整段的、不适合这种方法，或者需要反思下自己发音是不是哪里有问题。</span></p><h2><a name="rs-repeat-sentence" class="md-header-anchor"></a><span>RS-Repeat Sentence</span></h2><p><span>分值第二大的题，占比约30%。10-12个题，40分。</span></p><p><span>机经命中率一般(三四道吧)，但是也不低，所以你要去刷/背大题库，并且单个App也不是很全，建议猩际的月预测+萤火虫大题库都刷(目前500多句)。</span></p><p><span>没有提示音，注意观察那个倒计时提示作答的小格子。</span></p><p><span>评分标准：Fluency(5)、Pronunciation(5)、Content(3)。</span></p><p><span>内容有四档评分标准：</span></p><ul><li><span>所有词基本都包含且语序正确3</span></li><li><span>做到一半语序正确2</span></li><li><span>不到一半语序正确1</span></li><li><span>几乎一点边不沾0</span></li></ul><p><span>要注意这个在内容方面是要考察语序的，语序错了就没分</span></p><p><span>所有要说的题，都是流利度、发音为主，所有的技巧都服务于这些，优先保口语，而不是内容。不是要说完整，是要说流利，千万别卡/重弱读出错。</span></p><p><span>保证不卡的一个很重要的因素就是断句，根据我自己的练习体验，你在听的时候如果只是辨认出了内容，但对句子结构没有一个清晰的、本能的反映，不提前分辨出微意群，复述的时候大概率是要卡壳的，最起码也是极其烫嘴。</span></p><hr /><p><span>根据你听到的句子能听懂的程度不同，有着如下应对技巧：</span></p><ul><li><span>80%：练过、有印象、熟悉的</span></li><li><span>50%：前一半/有一半/前后一半拼一起/各种各样。把你能说的一半，说两遍，让他更像一个句子，更好的展现你的发音和流利度，从而语音分更高。（其实一般后一半印象最深，因为这是你最后听到的，还没忘多少呢）</span></li><li><span>＜50%：把这几个词流利的说三四遍。</span></li><li><span>sth.</span></li></ul><p><span>你没听清，不知道音，你就不要硬记发音来学舌，不要去努力记你记不住的试词！一个是你记的和正确发音可能不太一样，并且记它要消耗你大量脑力，会导致你别的都记不住，不如换sth。</span></p><p><span>实际答题中，优先记主要结构，而非实词，因为实词不好记。</span></p><p><span>听懂&gt;记忆；句子结构＞单个单词。</span></p><p><span>要是这个句子实在是太拗口，失爆说不出来，就别按照失爆去读，毕竟要想，然后还又烫嘴，先保证流利度。</span></p><hr /><p><span>在日常使用App练习时，有以下技巧：</span></p><ol start='' ><li><p><span>注意原声节奏、断句、重弱读</span></p></li><li><p><span>听出结构后自主划分</span></p><blockquote><p><span>不论是第一遍做还是没听清重复听、对照答案，划分句子结构、重弱读进行断句，对作答、练习都是至关重要的。</span></p></blockquote></li><li><p><span>不要模仿语速和音高</span></p></li><li><p><span>整理生词+熟悉句子</span></p></li><li><p><span>朗读+复述</span></p></li><li><p><span>app/网页结合音频练习(不需要注意分数，因为他太看重内容了)，从短到长(App可以根据句子个数筛选，你一筛选就会发现其实500句绝大多数都是短句子，剩下不好记的也没多少了)。</span></p></li></ol><hr /><p><span>一些极其常见的结构：</span></p><ul><li><span>the influence of A on B. A对B的影响。</span></li><li><span>there will be no A given for B. B没有A。</span></li></ul><h2><a name="di-describe-image" class="md-header-anchor"></a><span>DI-Describe Image</span></h2><p><span>这是分值占比第三大的题，大致占了22%。</span></p><p><span>不需要你自己发挥，并且你也不能自己发挥，因为你一旦自己思考就容易超时、卡壳，最后分数是非常难看的。pte判分因为是机器判分，有着和雅思托福不一样的答题逻辑，可以通过一些技巧确保内容上拿分。</span></p><p><span>这道题机经命中率不高，重在理解几种图片的答题套路，平时把模板练熟，用小题库练。</span></p><p><span>每道题25s思考，作答40s。</span></p><hr /><p><strong><span>The following picture shows information about</span><span>		</span><span>in the unit of</span><span>		</span><span>.</span></strong></p><p><strong><span>If you look at the picture, you can see that</span></strong></p><p><span>		</span><strong><span>the largest number can be found in</span><span>		</span><span>, which is around</span><span>		</span><span>, and</span></strong></p><p><span>		</span><strong><span>the lowest number can be found in</span><span>		</span><span>, which is around.</span></strong></p><p><strong><span>If you look at the picture, you can see that</span></strong></p><p><span>		</span><strong><span>the largest number can be found in</span><span>		</span><span>, which is around</span><span>		</span><span>, and</span></strong></p><p><span>		</span><strong><span>the lowest number can be found in</span><span>		</span><span>, which is around.</span></strong></p><p><strong><span>In conclusion, the following picture shows information about</span><span>		</span><span>and</span><span>		</span><span>.</span></strong></p><p><span>一共2+8+2个空，如果词不够，没有单位、总结的地方没东西填，可以不填，总结处可以和一开始about后面的内容一样。</span></p><p><span>不要思考模板的意义、不要考虑语法，直接在图中找信息填就可以，哪怕你说的话狗屁不通。其实模板也只是帮助你凑时常的。所有题都是这一个模板，放心，绝对够用。</span></p><p><span>空里的这个实词千万要和前面的小词紧密衔接，不然断句就不对了。要提前想好怎么读，别到了读的时候卡在这里，RL也是如此，这两个套模板的口语题，都不能在要填的这个空处卡。</span></p><hr /><p><span>关于找信息填空，有如下几个方面需要注意：</span></p><ul><li><span>给你这25s思考时间就是找信息然后提前小声快速串一遍的：1.观察标题；2.观察单位；3.找图片主体的八个信息；4.思考conclusion；5.标题等信息如果太长要提前划分微意群试读。</span></li><li><span>只要你的音频中涉及图中6个有效信息内容就直接是满分了，所以真别纠结内容。</span></li><li><span>对于DI题型，文字远比数字重要，优先选文字信息。</span></li><li><span>说显性信息：直接找现成的。不要去读具体的数值，对于得分没意义，并且时间开销过大。示例：如果是一个折线图，其中一个点在纵轴给出的两个坐标之间，你就别研究到底这个点对应的数了，8个信息去纵轴的时候直接从上往下顺着说纵轴给的现成的数就可以得分。不过你反应的过来，找极值则更好。</span></li><li><span>联想：但对于一些纯图，文字非常少的题，就需要你去联想、寻找潜在信息。一个很好用的方法是，先快速寻找出图中你会读的物体、找名词，然后去联想这些物体和图有关的属性/特性/相关的动作。</span></li><li><span>数值尽量别找0。</span></li><li><span>数字后面带着的单位尽量要读。</span></li><li><span>图片里的信息实在凑不够/不会读，实在没啥说的，说颜色也行。还可以说箭头(有的图有)：arrow。</span></li><li><span>数字标题太墨迹太长的，你直接读一半都行，数字比如7238￥，你要是来不及反应就直接读seven thousand dollars，先保证流利度。</span></li><li><span>DI标题里有的词，即使图片里有你也别再说了，因为已经标题采过一次关键词的分了。</span></li></ul><hr /><p><span>将图片信息带入模板作答的时候，眼睛/脑子一定要比嘴快，要比你嘴说的提前，要提前想着后面是啥，不然就会反应、想，从而导致在一些小词处拖沓，被机器判定流利度/重弱读有问题。</span></p><hr /><p><span>几种没起标题需要自己总结题目的题型(同时这也是DI图片的类型划分)：</span></p><ul><li><p><span>different kinds/types of something(复数)</span></p><p><span class='md-image'><img src="./DI_种类.jpg" style="zoom:45%;float:left"></span></p><p><span class='md-image'><img src="./DI_种类2.jpg" style="zoom:35%;float:left"></span></p></li><li><p><span>横轴and纵轴</span></p><p><span class='md-image'><img src="./DI_横纵轴.jpg" style="zoom:40%;float:left"></span></p></li><li><p><span>流程图：the process of something</span></p><p><span class='md-image'><img src="./DI_流程.jpg" style="zoom:40%;float:left"></span></p></li><li><p><span>布局图：the layout of something</span></p><p><span class='md-image'><img src="./DI_布局图.jpg" style="zoom:65%;float:left"></span></p></li><li><p><span>还有一些比较离谱的，要你自己总结题目。比如这个：The green bin project。</span></p><p><span class='md-image'><img src="./DI自己总结.png" style="zoom:40%;float:left"></span></p></li></ul><h2><a name="rl-retell-lecture" class="md-header-anchor"></a><span>RL-Retell Lecture</span></h2><p><span>RL不太清楚是啥就别记了</span></p><p><span>后三个题型的相对顺序及分辨：和DI一样，也有一个图，DI没有听力只有一个作答框，RL有俩。假如你做了三个DI，那你要做好准备下一个可能是RL，如果第四个还是DI，那下一个一定是RL(因为DI是三到四个)。</span><br><span>RL是一到两个，所以做完一个RL下一个可能是ASQ，做好ASQ听的准备。</span></p><hr /><p><span>做题流程：</span></p><ol start='' ><li><p><span>准备5秒：看图(图得用途其实不大，要是能让你图里读信息不就成DI了，但如果你从音频听得信息凑不够模板要求，可以从图里找几个，图几乎和信息无关|不是很重要)+画模板。</span></p><p><span class='md-image'><img src="./RL模板.png" style="zoom:70%;float:left"></span></p><p><span>先从左向右，再从上向下，一对对记，记11个信息。模板也是一对对得，和DI模板很像。</span></p></li><li><p><span>听lecture60-100秒：记笔记。</span></p></li><li><p><span>准备10秒：迅速读熟悉记得单词。</span></p></li><li><p><span>说40秒：至少说30秒。</span></p></li></ol><hr /><p><span>评分机制：发音(5)、流利度(5)、内容(5)。对内容要求很低，和前面DI是一样的。内容量对听力分数影响不大，理论上六个词命中就可以满分了(11个空得模板是为了以防万一6个有没命中+凑字)。</span></p><p><span>选词策略：</span></p><ul><li><p><span>说显性信息，音频现成单词原词不要同义替换。</span></p></li><li><p><span>主题词没有出现、出现错位影响不大，不同于后面哪个要背机经得SST题型要记主题词，RL和DI很像，对你选的信息没那么讲究，和是否重点信息关系不大。</span></p></li><li><p><span>笔记记词：三大词性。不同于后面的SST，这个没有语法要求，记什么词用什么词，不需要调整词性，直接读。</span></p></li><li><p><span>不记不熟的词、不要记缩写/符号：防止你口语说的时候出错。</span></p></li><li><p><span>多记：太精挑细选万一文章短说完了你还没记够，所以只要听出来什么就一定记，不要因为你觉得它不重要就不记，不然到了后面你啥有用的都没听出来就麻烦了。要真没记够，把你前面记得认为重要的词重复用；</span></p><p><span>记够了也继续记：因为你前面在多记，都不精。直接在哪个模板上把一些你觉得不重要的词划掉替换。</span></p><p><span>要是你11个真的很满意了，那确实没必要再听了，提前练。</span></p></li></ul><hr /><h3><a name="模板" class="md-header-anchor"></a><span>模板</span></h3><p><strong><span>The following lecture shows information about ...</span></strong></p><p><strong><span>First of all. the speaker has mentioned information about ..., which is very important to ...</span></strong></p><p><strong><span>And he also mentioned something about ..., which has a great impact on ...</span></strong></p><p><strong><span>Also we can know that, the speaker has mentioned information about ..., which is very important to ...</span></strong></p><p><strong><span>And he also mentioned something about ..., which has a great impact on ...</span></strong></p><p><strong><span>In conclusion, the following lecture shows information about ... and ...</span></strong></p><p><strong><span>(And we should focus on the imformation about ... because it can bring a lot of benefits to human society.)</span></strong></p><p><span>一般正常语速说到conclusion那句，时常是够得，大多数情况是不用说括号里哪句来凑字的。</span></p><hr /><p><span>小题库命中率很高，但练习的时候不需要真的去答题、评分，因为很多音频都是近似的，并且本来也是套模板，实际答题很浪费时间。看着答案、原文去熟悉关键词，然后听音频记笔记记一下关键词然后对答案即可，不需要写summary。</span></p><h2><a name="asq-answer-short-questions" class="md-header-anchor"></a><span>ASQ-Answer Short Questions</span></h2><p><span>题目长这样：和RL区别在于RL大多数情况都有图。</span></p><p><span class='md-image'><img src="./asq.png" style="float:left; zoom:80%"></span></p><p><span>5-6题，给口语也就一两分，给听力7-8分，作答时间：10s。</span></p><hr /><p><span>试词：原理和WFD很像，只要他要的答案出现就给分/只找对的，错的他不管，机器太傻了。所以可以试词，把你觉得可能的都试。</span></p><p><span>这道题评分没有发音和流利度分，只有内容分，单词别读错就行(不然识别不到)。回答内容都很简单，就是个单词。</span></p><ul><li><span>有的时候你担心说一遍他收音啥的没录好，还能把这个词说两遍(单复数)。如：dictionary，dictionaries。</span><br><span>同样的你对你自己的发音不自信，也可以把你觉得可能的音都说一遍。</span></li><li><span>有一大堆题，你要回答的是个名词复数，或者其他以s结尾的词。对于这种词你大概率是分不清末尾怎么发音的，是/s/、/ci/、/z/的哪一种，所以你只要有一点拿不准，就把着三个都试试。</span></li></ul><p><span>两种提问：</span></p><ul><li><p><span>特殊疑问句：What do we call ...? 我们把xxx叫什么？</span></p><p><span>确保你能听清的技巧：把这句话划分成两部分，前一半只有一个词是重点——就是他要问的那个东西的类别/描述，然后后一半是对他要问你东西的具体特性。这样你前一半就可以把注意力放在内一个词上，少听很多东西。</span></p></li><li><p><span>选择疑问句：纯白给分的，你把他给你的这俩选项都说一遍就给分。</span></p><p><span>需要注意的是，他这种A or B的题型，给你的选项很有可能是带a、the这样冠词的，你要注意听说的时候把冠词也得说上，不然算错。【至少萤火虫里我练习的时候算我错，保险起见。</span></p></li></ul><p><span>注意3秒原则，别想太久。要是你想思考，还不想让他给你切下一题：把他问题里你有印象的词说上一些拖时间(别嗯嗯啊啊，说词)。</span></p><ul><li><span>举例：What do we call the book that we look for new words in？答：book ... look for new words ... Dictionary！</span></li></ul><p><span>命中率还可以，要刷题：萤火虫大题库(600多目前)+猩际月预测(因为萤火虫不全)，一共1000道左右。</span></p><p><span>同一个单词内的这些音节要紧凑，单词读的要在保证清晰的情况下快一点，不然可能会被识别成多个音相近的单词。</span></p><h1><a name="writing" class="md-header-anchor"></a><span>Writing</span></h1><p><span>题目构成：两个SWT+一个WE或者一个SWT+两个WE。</span></p><p><span>其中SWT约占分数的6%，WE约占15%。主要影响写作分数的其实是别的题型：两个FIB加起来约32%，听力WFD约23%，听力SST提供了约17%。</span></p><p><span>虽然这两道题是写作，但事实上这两道题对写作供分也就二十分，真正对写作有影响的其实是其他几个对写作供分的题型；而且哪怕这题的十几分，写的好的人，和写的差的人，分数也不会拉开差距(也就几分)，也就是说就算你答的不好分数也不会太低。所以这练习这两道题的时间投入产出比是很低的，时间紧迫的话过多纠结这俩题很不划算。</span></p><p><span>真题命中率不高，主要还是给你熟悉答题套路的。</span></p><p><span>pte不需要你发挥，也不需要你像托福雅思那样讲逻辑、扣题目，做pte的写作你不能太较真，下面两个题型：第一个当裁缝、第二个套模板。</span></p><blockquote><p><span>pte所有涉及写的题型里，同一个小题内，以小题内第一个涉及英美拼写的词为准，要做到</span><a href="https://www.wmlzjy.com/english/%E8%8B%B1%E7%BE%8E%E6%8B%BC%E5%86%99.html"><span>英美拼写一致</span></a><span>，用哪个写法要统一，不然会扣分。</span></p></blockquote><h2><a name="swt-summarize-written-text" class="md-header-anchor"></a><span>SWT-Summarize Written Text</span></h2><p><span>四个评分标准：某种程度上分数只有0、6、7三档。</span></p><ul><li><strong><span>Content：</span></strong><span>2 Provides a good summary of the text. All relevant aspects mentioned；1 Provides a fair summary of the text but misses one or two aspects；0 Omits or misrepresents the main aspects of the text. 5个点答对其3、4就好；必须包含文本主要信息。</span></li><li><strong><span>Formal requirements：</span></strong><span>1 Is written in one, single, complete sentence；0 Not written in one, single,  complete sentence or contains fewer than 5 or more than 75 words. Summary is written in capital letters.  一旦这里格式0分，机器就不会往后面的评分标准看了，直接0分。所以格式要写对：首字母大写(不能在不该大写处大写)，一句话(只能有一个句号，一定不要超出一句)，5-75词(考试系统会做词数统计，不要超出限制)。</span></li><li><strong><span>Grammar：</span></strong><span>2 Has correct grammatical structure；1 Contains grammatical errors with no hindrance to  communication；0 Has defective grammatical  structure which could hinder communication.  只要写正确即可——原文、原词组合成句【只是概括能力，没必要自己写，利用原文，直接拿原文拼接当裁缝，pte不会纠结你内容，并且这样语法绝对不会出错。</span></li><li><strong><span>Vocabulary：</span></strong><span>2 Has appropriate choice of words；1 Contains lexical errors with no hindrance to  communication；0 Has defective word choice which could hinder communication. 也是不出错即可，直接用原文。</span></li></ul><p><span>答题时间10分钟，这十分钟的分配：3-3-3-1。</span></p><hr /><p><strong><span>Step1</span></strong></p><p><span>读三分钟，看大概，判断文体。不同的文体决定了概括策略。</span></p><ul><li><p><span>记叙文</span></p><p><span>内容上有三个得分点：</span></p><ul><li><span>起因？这个起因，一定是一件事而，是谁干了什么，不能只有人、也不能只有物，而要是一件事儿。</span></li><li><span>经过？</span></li><li><span>结果？</span></li></ul></li><li><p><span>说明文</span></p><ul><li><p><span>介绍某一个名词/东西</span></p><p><span>也是三个得分点：</span></p><ul><li><span>定义？</span></li><li><span>演变/发展过程(以前、现在、将来、兼有)？</span></li><li><span>功能/作用/操作步骤/如何使用/组成/几个方面/特性？</span></li></ul><blockquote><p><span>不过这里就没那么严谨了，有的时候不见得这三方面都有，可能就两方面。或者第三方面列举的那几个展开拆成了几个方面，取代了演变过程的地位。</span></p></blockquote></li><li><p><span>介绍一个项目/实验</span></p><ul><li><span>谁/那个组织发起的？</span></li><li><span>做了什么？（不需要具体步骤）</span></li><li><span>结果/结论/建议？提示词：found、show、indicate、illustrate、demonstrate、comment、mean、suggest、aim。这里的结论有些时候可能是有两个or分两方面来说。</span></li></ul></li></ul><blockquote><p><span>注意看段末结论、证明了什么。</span></p></blockquote></li><li><p><span>但上面三种情形哪个也套不上的情况是有的</span></p><ul><li><span>一般是结构很明显直接说了几个方面的总分结构：主旨很明显，看着做就好了。</span></li><li><span>萤火虫真题小题库中一篇名为Frog amber的：我的感觉就是，第一段看着像是介绍一个实验/研究，但你读完发现他这个好像是披着这东西的皮写了一个记叙文，故事是有发展的，讲了这个东西的发现、进一步发现、结果-要被拿去干啥(最后一段)。但也不那么像记叙。</span></li></ul></li></ul><p><strong><span>Step2</span></strong></p><p><span>选择，按照上面的思路，选三句话(可能更多，极个别情况还会更少，总之就是把你认为重要的选出来，只要最后别超出75词)。每段选出的话一般≤1。</span></p><p><span>也有可能很多句都对应了一方面，但选一句即可。</span></p><p><span>这里一定要把握住一个很关键的要点：不选细节。一切数据、带数字的、举例子、说明文带时间、特殊情况、特例，这都是细节，是讲具体情况，这个题是让你总结概括主旨，这些细节一定不能选！</span></p><p><span>提示词很关键，尤其是文首文末的，例如therefore、as a result这种词，很多时候这种词引导的大概率就是关键句(尽管你觉得不像)。</span></p><p><span>答案一般不会低于30词，基本能包含全。</span></p><p><strong><span>Step3</span></strong></p><p><span>拼接：加入连词、换词、组句。</span></p><p><span>常见的连接词：and，but，while，although，because，which。全都用and用逗号把内几句连起来都没问题。说明文介绍名词还可以用which means。说明文项目/实验还可以用..., which found ..., but ...</span></p><p><span>如果字数超了，删除无关细节：形容词、修饰成分。</span></p><p><strong><span>Step4</span></strong></p><p><span>最后一分钟。检查：拼写是否有误？空格是不是不小心打多了？逗号后面空格都有吗？大小写是否有误？写的是不是一句话？字数有没有超出限制？当时选的句子都写进去了没？</span></p><blockquote><p><span>理论上你看不懂也不影响你做题，因为重在把握结构、找提示词，但也不是说这种方法就包治百病了，千万不要一看不懂就直接去略读然后猜关键句，要先尽力去读、理解它讲的什么，实在不行再用这种方法。因为在看不懂的情况下，很容易凭借着只言片语，把文章理解成另一种结构。譬如真题里的《Crime rate》我因为生词较多看了一两段就不认真看了，直接把文章理解成一个记叙结构、理解成一个犯罪率这件事儿的发展了，但事实上它是一个很简单的总分结构。</span></p></blockquote><h2><a name="writing-essay" class="md-header-anchor"></a><span>Writing Essay</span></h2><p><span>评分标准：</span></p><ul><li><p><span>内容（0/1/2/3）</span></p><ul><li><span>3：很好的契合主题，每段都提到了题目的关键词。</span></li><li><span>2：大致契合主题，但遗漏了一些小的关键词，某一段没有命中题目的次要关键词。</span></li><li><span>1：大致契合主题，但遗漏了一些主要的关键词，某一段没有命中题目的主要关键词。</span></li><li><span>0：跑题了</span></li></ul></li><li><p><span>格式（0/1/2）</span></p><ul><li><span>2：200-300词。</span></li><li><span>1：120-199或301-380词。</span></li><li><span>0：少于120或大于380词、大小写有问题、标点符号有问题、不成句。</span></li></ul></li><li><p><span>Development, structure and coherence（0/1/2）</span></p><ul><li><span>2：Shows good development and logic structure.</span></li><li><span>1：Is incidentally less well structured, and some elements or paragraphs are poorly linked.</span></li><li><span>0：Lack coherence and mainly consists of lists or loose elements.</span></li></ul></li><li><p><span>General linguistic range（0/1/2）</span></p><ul><li><span>2：Exhibits smooth mastery of a wide range of language to formulate thoughts precisely, give emphasis, differentiate and eliminate ambiguity. No sign that thetest taker is restricted in what they want to communicate.</span></li><li><span>1：Sufficient range of language to provide clear descriptions, express viewpoints anddevelop arguments.</span></li><li><span>0：Contains mainly basic language and lacks precision.</span></li></ul></li><li><p><span>词汇范围（0/1/2）（所以这里的主旨还是要求你不出错就满分，很容易）</span></p><ul><li><span>2：很好掌握大量词汇并运用。</span></li><li><span>1：大致运用许多单词用法，但有</span><u><span>一些单词使用不准确</span></u><span>。</span></li><li><span>0：只能使用非常基本的单词以至于不能完善的说明主题。</span></li></ul></li><li><p><span>拼写（0/1/2)</span></p><ul><li><span>2：都拼对。</span></li><li><span>1：错一个。</span></li><li><span>0：两个或更多。</span></li></ul><blockquote><p><span>注意don&#39;t这种要拆开写，不要简写。</span></p><p><span>然后举例子一定要用具体的东西/词，不要出现city A这种表达。</span></p></blockquote></li><li><p><span>语法（0/1/2）（主要还是不出错，毕竟套模板，复杂句式这块肯定不成问题）</span></p><ul><li><span>2：对复杂句式有很好的使用，基本没有语法错误或很难发现。</span></li><li><span>1：较高的语法水平，没有出现导致理解错误的语法错误。</span></li><li><span>0：只能使用简单句子结构，存在一些基本的语法错误。</span></li></ul><blockquote><p><span>你不确定是否单三的从句，可以写成which could do.</span></p></blockquote></li><li><p><span>注意：只要前两项（内容或格式）任意一项零分，系统就不会再判定剩下几项了，直接默认零分了。</span></p></li></ul><hr /><p><span>从给出的题目来看，可以分为如下几类：</span></p><ul><li><p><span>一个观点/想法/概念（尽管他说了很多不同方面，但只要观点/对错上不对立，那就是一种，你的作答要全盘认可说的这几个）</span></p><blockquote><p><span>看一个例题：</span></p><p><span>Television has two roles: to inform and to entertain. Explain which Television has two roles: to inform and to entertain. Explain which of these roles you see as more important. To what extent do you think that TV today performs each of these roles in an effective way? </span></p><p><span>Support your point of view with details from your own experiences, observations or reading.</span></p><p><span>看起来好像是他在问你你觉得哪一个好点/更对？好像是让你选一个？但这其实就是他的陷阱，或者说pte不必细扣字眼的所在。他这里说的只是电视的两个功能，是两方面，都是说的好处，并不对立，所以你就应当按照这种类型的模板来作答，他提到的这两方面你都要提、都要支持。</span></p></blockquote><ol start='' ><li><span>开头</span></li><li><span>有用1</span></li><li><span>有用2</span></li><li><span>结尾</span></li></ol><h3><a name="模板" class="md-header-anchor"></a><span>模板</span></h3><p><span>这种类型的模板和下面那种类型的道理是一样的，直接把下面那种类型中反驳的那段去掉就可以了。</span></p><p><span>不过也可以这样写：</span></p><p><strong><span>There is no doubt that </span><u><span>照抄题目中的背景表述.</span></u><span> Personally speaking, I would firmly agree that </span><u><span>观点</span></u><span>, which can be supported by the reasons as follows.</span></strong></p><p><strong><span>The first and most important reason for my belief is that </span><u><span>论点1</span></u><span>. To be more specific, </span><u><span>解释论点1</span></u><span>. This can be established by a recent study by Oxford University, which stated that 76% of people believe </span><u><span>改写论点1</span></u><span>.</span></strong></p><p><strong><span>The second reason for this argument is that </span><u><span>论点2</span></u><span>. To illustrate, </span><u><span>解释论点2</span></u><span>. For example, according to an annual report of the Australian government, more than 70% of the citizens believe </span><u><span>改写论点2</span></u><span>.</span></strong></p><p><strong><span>With all the reasons stated above, the conclusion can be made that </span><u><span>改写观点</span></u><span>, because </span><u><span>改写论点1</span></u><span> and </span><u><span>改写论点2</span></u><span>. (In this regard, it is crucial that governments should devote sufficient funding, and public awareness should be raised to improve the situation.)</span></strong></p><p><span>其中括号里的最后一句话是用来凑字数的，但你看句意会发现它并不见得适合所有题目内容，pte的写作还是对逻辑性、内容有一定要求的，所以要是一点边都不沾，就别硬套写这句了，如果你想利用，可以适当改写。</span></p><p><span>同样的，这个模板也可以拿来回答下面这个类型的问题（只不过就没有另一方的观点了，不过没有也是可以的）。</span></p></li><li><p><span>对立的一对东西（必须赞成一个反对一个）</span></p><blockquote><p><span>看两个例题：</span></p><p><span>Age discrimination occurs when a decision is made on the basis of a person’s age. In the workplace, these are most often decisions about being employed in the first place, winning promotions or being unfairly dismissed. Should discrimination against older workers be made illegal?</span></p><hr /><p><span>The claim that animals have “rights” has been the subject of much debate since the 1970s. Are zoos helping or hurting our animals? Should zoos be banned? Do you agree or disagree?</span></p><p><span>提到的别人的观点都是次要的，这里最核心的点在于，他在问你是否支持？问你怎么看？你需要给出一个明确的回答/观点。并且你看到他提供的背景信息都是一边倒的，而不是两方面都说，你可以看到它基本上是只说坏的，所以你写的时候就顺着他说就对了。</span></p></blockquote><ol start='' ><li><span>开头</span></li><li><span>反驳1</span></li><li><span>赞成1</span></li><li><span>赞成2</span></li><li><span>结尾</span></li></ol><h3><a name="模板" class="md-header-anchor"></a><span>模板</span></h3><p><strong><span>Currently, in many countries around the world, there has been a trend </span><u><span>…背景</span></u><span>. Some people strongly assert that </span><u><span>...</span></u><span>,  while others including myself are convinced that </span><u><span>...</span></u></strong></p><p><strong><span>【反方】Some experts argue that there exist a number of reasons why </span><u><span>应该做这件事</span></u><span>. They claim that </span><u><span>这些人做事情可以</span></u><span> because </span><u><span>…</span></u><span>；But these points are only true to some extent. In fact, </span><u><span>启下</span></u><span>。</span></strong></p><p><strong><span>【正方1】Firstly, </span><u><span>第一个原因</span></u><span>. 【解释论证】Because/Due to the fact that </span><u><span>…</span></u><span>, </span><u><span>...</span></u><span>. 【对比论证】In contrast, </span><u><span>如果不这么做会怎么样</span></u><span>. 【举例论证】For example, </span><u><span>举例</span></u><span>.</span></strong></p><p><strong><span>【正方2】Secondly, </span><u><span>第二个原因</span></u><span>. 【解释论证】In other words, </span><u><span>...</span></u><span> 【对比论证】By contrast, </span><u><span>如果不这么做会怎么样</span></u><span>. 【举例论证】For instance/Taking xx as an example, </span><u><span>举例</span></u><span>.</span></strong></p><p><strong><span>In conclusion, I believe that </span><u><span>观点</span></u><span> because it could </span><u><span>论点1</span></u><span> and </span><u><span>论点2</span></u><span>. In addition, I would strongly recommend that </span><u><span>给出建议</span></u><span>.</span></strong></p></li><li><p><span>说的始终是趋势/利与弊</span></p><p><span>这个和前一种类型的根本区别在于：没有提供观点，并且会问你好坏，他在介绍背景信息时，没有像上一种一样一边倒的有明确的好坏，而是用一种客观的口吻说这个东西怎么怎么样：好在哪、坏在哪，并且他的提问也是问这个</span><strong><span>东西本身</span></strong><span>的好坏(而不是你的观点)。</span></p><p><span>他在作答上和前一种的区别是：前者说的是你怎么看：the reason I think ... is ...，后者是说这件事儿本身的好坏(不是你的看法)：the positive of ... is ... </span></p><p><span>作答中，一定要好坏都包含，一定有坏处/消极方面，就算牵强，也要硬编，只要百八十年有过这种说法就作数。</span></p><p><span>不过有些时候，这种类型和上一种在问题上会没有一个明确界限，题目又提了好坏，还提了观点，还问你怎么看，这样的话你怎么回答都可以。</span></p><blockquote><p><span>两个示例：</span></p><p><span>Doing a part-time job while studying is important and useful for most university student [more and more ……]what do you think the advantages and disadvantages of this trend. </span></p><p><span>你可以看到，他说了趋势，问了你好坏。</span></p><p><span>Team sports are generally promoted as a great way to keep fit and build character. However, sporting events such as soccer matches are often accompanied by violence between rival supporters and other forms of antisocial behavior. If sporting events can lead to antisocial behavior, can team sports really be good for us?</span></p><p><span>你可以看到，他分两方面介绍了这东西</span><u><span>对立的</span></u><span>好坏，并且又分别问了你这个东西的好坏：最后一句的两个can。</span></p></blockquote><p><span>这个类型有很多提示词暗示你要这么答，需要积累一下：positive or negative；benefits or problems；merits；bless or curse。值得注意的是最后一个，直译是祝福和诅咒，也说得是利弊。</span></p><h3><a name="模板1" class="md-header-anchor"></a><span>模板1</span></h3><p><strong><span>Currently, in many countries around the world, there has been a trend </span><u><span>…背景</span></u><span>. Some people strongly assert that </span><u><span>...</span></u><span> , while others including myself are convinced that </span><u><span>...</span></u></strong><span> </span></p><p><strong><span>It is worth mentioning that there exist a number of drawbacks to </span><u><span>do题目中的现象或者事情</span></u><span>. To begin with, one of the most pressing problems in this regard is that </span><u><span>...坏</span></u><span>. 【解释论证|字数够可以不写】Because of the fact that </span><u><span>…</span></u><span> But these points are only true to some extent. In fact, they exaggerate the so‐called harmful aspects of </span><u><span>题目中的现象</span></u><span> and completely ignore the obvious benefits.</span></strong></p><p><strong><span>Firstly, </span><u><span>第一个好处</span></u><span> because </span><u><span>解释论证</span></u><span>. For example, </span><u><span>举例.</span></u></strong></p><p><strong><span>Secondly, </span><u><span>第二个好处</span></u><span>.【解释论证|字数够可以不写】In other words, … Taking xx as an example, </span><u><span>举例</span></u><span>.</span></strong></p><p><strong><span>In conclusion, although </span><u><span>题目现象</span></u><span> has problems on </span><u><span>坏</span></u><span>, it could </span><u><span>论点1</span></u><span> and </span><u><span>论点2</span></u><span>. Therefore, I would strongly recommend that </span><u><span>然后给出建议(但这里的其实不是建议/观点，而是说it is positive ... without compromising 坏...)</span></u><span>.</span></strong></p><h3><a name="模板2" class="md-header-anchor"></a><span>模板2</span></h3><p><strong><span>There is no doubt that </span><u><span>...背景</span></u><span>. Personally speaking, I think the pros of </span><u><span>主题词</span></u><span> are as great as the cons, and each will be elaborated respectively.</span></strong></p><p><strong><span>The key benefit of </span><u><span>主题词</span></u><span> is that </span><u><span>论点1</span></u><span>. To be more specific, </span><u><span>解释论点1</span></u><span>. This can be established by a recent study by Oxford University, which stated that 76% of people believe </span><u><span>改写论点1</span></u><span>.</span></strong></p><p><strong><span>On the other hand, the main downside of </span><u><span>主题词</span></u><span> is that </span><u><span>论点2</span></u><span>. To illustrate, </span><u><span>解释论点2</span></u><span>. For example, according to annual report of the Australian government, more than 70% of the citizens believe </span><u><span>改写论点2</span></u><span>。</span></strong></p><p><strong><span>With all the points stated above, the conclusion can be made that </span><u><span>主题词</span></u><span> can bring considerable positive effects but will inevitably cause negative impacts. (In this regard, it is crucial that governments should devote sufficient funding, and public awareness should be raised to improve the situation.)</span></strong></p></li><li><p><span>说的是当下存在的问题，问你问题是什么？问题的影响？怎么解决？</span></p><blockquote><p><span>例如：</span></p><p><span>Government and international institute are faced with many global problems. What these problems could be? Measure?</span></p></blockquote><p><span>套模板作答时需要注意：一定要说具体的问题是怎样的，影响是怎样的，不要浅尝辄止的单纯说好坏，要说具体的影响、坏在哪儿。</span></p><p><span>回答主体分两部分：</span></p><ul><li><p><span>问题&amp;原因是？</span></p><ul><li><span>找政府面临的问题的思路：经济、环境、社会安全问题</span></li><li><span>找个人面临问题的思路：身心健康(physical and mental health)、家庭成员关系、未来发展(就业成长经济学业)。</span></li></ul></li><li><p><span>方法是？(方法要具体)</span></p><ul><li><span>一些思路：activity|写清楚活动形式和内容，加大宣传announcement|video|advertisement，立法|加强惩治管理。</span></li></ul></li></ul><h3><a name="模板" class="md-header-anchor"></a><span>模板</span></h3><p><strong><span>Currently, in many countries around the world, there has been a trend </span><u><span>…背景</span></u><span>. Public concern has arisen about the potential effects brought about by </span><u><span>现象/主题词</span></u><span>. This essay will discuss the problems and solutions to </span><u><span>solve these problems/这里可以替换</span></u><span>.</span></strong></p><p><strong><span>There are two main problems with </span><u><span>...</span></u><span> Firstly, </span><u><span>问题1</span></u><span>. </span><u><span>论证1Specifically, ...</span></u><span> Secondly, </span><u><span>问题2</span></u><span>./Another problem is </span><u><span>问题2</span></u><span>. </span><u><span>论证2Because ..., ...</span></u><span>.</span></strong></p><p><strong><span>The possible solutions are under discussion at both individuals and governments level. First of all, individuals should + </span><u><span>....动词 (关于个人可以怎么做)</span></u><span>. In this case, they are more likely to </span><u><span>... (因此他们更有可能)</span></u><span>; Regarding the government, it is necessary to carry out实行 </span><u><span>some policies政策 to encourage鼓励 the public大众 to ...</span></u><span> For example, </span><u><span>例子</span></u><span>.</span></strong></p><p><strong><span>In conclusion, under the right government policies and with the will of the people, this problem is likely to be successfully solved. It is high time that both governments and individual citizens realized the urgency of this problem and acted accordingly.</span></strong><span> </span></p></li></ul><h1><a name="reading" class="md-header-anchor"></a><span>Reading</span></h1><p><span>真正对阅读分数影响的题型其实是口语的RA，RA给阅读提供了接近33%的分值。SWT给阅读提供了约11%的分数。他俩加上占6%的HCS和HIW的听力题，一共占阅读分数的50%。</span></p><p><span>所以注意分配时间给分值大的</span></p><h2><a name="fibrw-fill-in-the-blanksreadingwritting拖拽）" class="md-header-anchor"></a><span>FIB:R&amp;W-Fill in The Blanks:Reading&amp;Writting（拖拽）</span></h2><p><span>分数占比最大，占纯阅读题部分分数的41%。建议三分钟内做完一篇。</span></p><p><span>从题型上看，RW是拖拽选择，把所有备选和干扰项放在一起，R是下拉菜单选择，每一个空给四个很相近的选项。</span></p><p><span>这两个FIB的思路其实一样的，题目形式都很类似于中学做的完形填空，所以做题套路也是一样的：词性→语义→固定搭配。</span></p><p><span>S1：Pre-reading。S2：While-reading：①词性→②语义→③动词—固定搭配&amp;语态。</span></p><ul><li><span>注意根据填空应有的词性选词时，要注意那些备选词很多都是多词性/意的。</span></li><li><span>FIB:R&amp;W给的备选项，很多词都是成对出现的，也是在考你区分，所以当你识别出一对并且选了其中一个，通常就可以排除另一个了。</span></li><li><span>若blanks的词性都一样，那就要精读了，这时在考察语义和搭配。一些表示转折、递进等逻辑关系的连词、介词，或许能在语义上提示你某个空该选什么词从而和前面的某个词对应起来。</span></li></ul><p><span>所以这也没有太多技巧性可言，主要还是看你的阅读速度+词汇积累。</span></p><p><span>下面会补充一些有关构词法的基本常识，这些会辅助你做题。</span></p><h2><a name="fibr-fill-in-the-blanksreading下拉）" class="md-header-anchor"></a><span>FIB:R-Fill in the Blanks:Reading（下拉）</span></h2><p><span>占比仅次于上一个，占阅读题分值的32%。建议两分钟做完一篇。</span></p><p><span>构词：前缀|改变词义+词根|决定词义+后缀|决定词性。</span></p><p><span>名词常见构词：</span></p><ul><li><p><span>v+er、or</span></p><p><span>v+ant</span><span>	</span><span>这个也有可能构成形容词</span></p></li><li><p><span>n+ist、ian</span></p></li><li><p><span>-ent、-ant</span></p><p><span>在此基础上进一步变形成：-ence、-ance，表示词根的另一个引申义。</span></p></li><li><p><span>一系列动词可以通过后缀-ion变成名词</span></p><ul><li><span>-de、-d→-sion</span></li><li><span>-t→-tion</span></li><li><span>-ate→-ation</span></li><li><span>-te、-se→-ition</span></li></ul><p><span>除此之外，这些-ion的名词还可以再加一些后缀变成形容词</span></p><ul><li><span>-ion+-al</span></li><li><span>-ion+-ive</span></li></ul></li><li><p><span>-ism 制度、主义、学说</span></p></li><li><p><span>adj+-ty</span></p></li><li><p><span>v+ment</span></p></li><li><p><span>adj+ness</span></p></li><li><p><span>-age、-al、-ure</span></p></li><li><p><span>-ics、-ology、-ologist 学科、学家</span></p></li></ul><p><span>形容词常见构词：</span></p><ul><li><p><span>-able、-ible</span></p><p><span>他们进一步变形还能构成名词表示相关的能力：-ability、-ibility</span></p></li><li><p><span>-ion→-ive</span></p><p><span>他们大部分做形容词，但也有作名词/兼具的：objective表示目标&amp;客观的</span></p></li><li><p><span>-ary</span></p></li><li><p><span>-ic</span></p><p><span>如果是-ics则是学科</span></p></li><li><p><span>-ical</span></p></li><li><p><span>-ous、-ious</span></p></li><li><p><span>-ful</span></p></li><li><p><span>-less</span></p></li><li><p><span>-al    可以看到它同时充作名词和形容词的后缀</span></p><ul><li><span>v+-al→n</span></li><li><span>n+al→adj</span></li></ul></li><li><p><span>-ent、-ant    它们同时也是名词的后缀</span></p></li><li><p><span>-ial</span></p></li><li><p><span>n+ly    这时它表示的是形容词而非副词：friendly</span></p></li></ul><p><span>动词常见构词：</span></p><ul><li><span>-ate   它同时也是形容词的后缀</span></li><li><span>-e、-ish    这是一种单纯表示词性的后缀，不具备任何意义</span></li><li><span>-ize、-fy    ...化</span></li><li><span>en-、-en    使动</span></li></ul><p><span>副词常见构词：</span></p><ul><li><span>-wards</span></li><li><span>-wise</span></li><li><span>adv=adj的一些情况</span></li></ul><h2><a name="ro-reorder-paragraphs" class="md-header-anchor"></a><span>RO-Reorder Paragraphs</span></h2><p><span>说多不多说少不少，约占阅读题的16%。出两道。建议每小题不超过两分钟。</span></p><p><span>RO是分界点，他和他前面的题型是需要重点掌握的，后面两个题型对分数的影响就已经不大了，考试也是先顾这三道，后面那俩要是没时间，蒙一个都行。</span></p><hr /><p><span>排序题，每题需要排序的句子不等，在3个和4个之间。</span></p><p><span>他是节选一篇文章的一段拆句子让你排序，有的时候没什么逻辑，你要是实在很难排那也不怪你，大不了分不要了。</span></p><p><span>计分：选对一对给一分，选错不给不倒扣。</span></p><hr /><p><span>策略：</span></p><ol start='' ><li><span>仔细阅读每个句子。</span></li><li><span>找首句/引出句【一般：不该有(你看不出是什么的)代词、不该有有连接词的句子(承接、转折、原因、递进、结果说明、解释说明、总结说明)、事件靠后的(多数RO会按照发展顺序来排序)(since then/before/佩顿·after)。</span></li><li><span>以配对的方式寻找【逻辑连接&amp;指代还原→排除法</span></li></ol><h2><a name="mcq-multiple-answers" class="md-header-anchor"></a><span>MCQ-Multiple Answers</span></h2><p><span>题目形式：占阅读的8%</span></p><ol start='' ><li><span>选项有多个：5选2，6选2，7选2/3。</span></li><li><span>选项/小题内答对得1分，选一个错误项扣一分，不答0分。相当于一个题内，你选个A是对的，选个B是错的，这道题是0分。整个题型整体最低为0没负分。所以不确定得不要蒙，大不了当单选。</span></li><li><span>选项不一定按照文章顺序，也不见得平均分布，很不规律。</span></li><li><span>时间控制在1.5min-2min内。超时就选择最确定得，然后下一题(当成单选做)。</span></li><li><span>多选题不会问文章主旨。</span></li></ol><hr /><p><span>解题策略：</span></p><ol start='' ><li><span>先读题干然后回文中筛选。</span></li><li><span>原则上每个选项需要挨个回文中验证，阅读量较大。</span></li><li><span>但如果个别选项有特殊词：人名、地名、时间、数字等，那就可以优先验证。</span></li><li><span>有的选项很”离谱“，一些不符合常理常规的选项可以直接排除。</span></li></ol><h2><a name="mcq-single-answer" class="md-header-anchor"></a><span>MCQ-Single Answer</span></h2><p><span>占阅读的3%，考试的时候你要是真来不及就随便蒙，优先保证前面三个题型。</span></p><hr /><p><span>题目形式：</span></p><ol start='' ><li><span>选项基本为3-5个，选一个对的。</span></li><li><span>时间控制在1-1.5min</span></li><li><span>选对得一分，不倒扣，总分值2-3。</span></li></ol><hr /><p><span>解题策略：根据不同题型</span></p><ol start='' ><li><p><span>What&#39;s the main idea/aim/point...? 主旨、中心思想</span></p><p><span>Why does writer...?/Writer&#39;s purpose? 目的</span></p><ul><li><span>先看文章再看选项</span></li><li><span>跳过：细节、解释、举例、观点分析</span></li><li><span>主旨/中心句一般出现在：首两句、末句、转折句</span></li></ul><p><span>常见总结词：To sum up；To conclude...</span></p><p><span>常见结果词：Therefore；Thus；So...</span></p><p><span>让步转折：however；but；nevertheless；despite...</span></p></li><li><p><span>细节题</span></p><ul><li><span>S1：回文中定位题干、找同义改写。</span></li><li><span>S2：找到出题句，精读理解。</span></li><li><span>S3：回归选项找答案，找原文替换，同时可用排除法。</span></li></ul></li><li><p><span>Which of the following statement is true about...?</span></p><ul><li><span>题干信息无意义。</span></li><li><span>挨个读选项回文中筛选。</span></li></ul></li></ol><h1><a name="listening" class="md-header-anchor"></a><span>Listening</span></h1><p><span>除了SST是独立计时，其他都是一起计时的，注意把握时间。</span></p><p><span>尤其要注意单选的时间，因为他的位置在中间，大概10min做完这些，要给后面WFD留足够时间。(听力是最后一道大题，WFD是听力最后一道，你身边的人走了弄出声音很影响你做题，本来就听不清呢，所以答听力前面的题时候尽量快着点)。</span></p><p><span>听力这部分影响分数的其实不单单纯听力题：RS占了听力分数的约29%。</span></p><h2><a name="wfd-write-from-dictation" class="md-header-anchor"></a><span>WFD-Write from Dictation</span></h2><p><span>题目特点：</span></p><ol start='' ><li><p><span>占比最大：小40大30分，听力写作都供分。考3-4个，错一个就是十分，就彻底寄了。</span></p><p><span>别的题快点next，多分配时间给他，且每个句子不要超过两分钟。</span></p></li><li><p><span>小题库的命中率很高(几乎100%)，所以一定要背下来。</span></p></li><li><p><span>内容判定机制：音频里有这个词你拼对了一个词得一分，拼错少拼不倒扣，不看顺序，字数没有上限，句号要写但别的标点不要求，逗号不采分，目前没有问号，首字母要大写(这是格式要求)，第一个词区分大小写(所以不确定第一个词是哪个你就把你觉得可能的都写出来并大写)。所以简言之一句话就是，只要原句子里的词出现在你的答案里就给分。</span></p><p><span>这就决定了这道题除了背的另一个主要策略：蒙。</span></p></li></ol><blockquote><p><span>如何看你这场考试WFD有几个题：看倒数第四题，以用十六个题，16-3，看你第13题，如果这个题是HIW，那就说明WFD只有三道。所以你做到WFD把剩下的时间÷3，就是你这场考试WFD每句的时间，所以你哪一句都不能超出这个时间。千万不能超时，要是一道WFD没写，10分就没了，你肯定就达不到目标分了。</span></p></blockquote><hr /><p><span>做题策略：</span></p><ul><li><span>S1：认真听。重点听记实词，因为小词、后缀单复数冠词可以蒙&amp;根据语法补全。</span></li><li><span>S2：迅速回忆，打出每个单词的前2-3个字母【不要打太长，因为长你就要纠结具体拼写，等你研究明白后面词全忘了。</span></li><li><span>S3：补充完整</span></li><li><span>S4：对不确定的词猜、试词。</span></li><li><span>S5：检查：格式(第一个词首字母大写+句号+没有不小心输入两个空格)+拼写+试词是否全面。</span></li></ul><p><span>试词策略：主要是试小词，不要对自己的听力和记忆太自信，而且有的时候他音频就是有问题的|和答案文本不一样，时间允许多试几个，全试最好。</span></p><ul><li><p><span>the a an 句号前一定要把这三个冠词加一套，万一有用呢？和句号绑定</span></p><p><span>就算你听到了冠词，也不影响你在句号前面再试几个，本来一句就有很多。</span></p><p><span>所有名词前面都可以猜冠词，和最后的a an the不矛盾，一个名词不是复数形式，前面大概率要试个a/the，很大概率猜中。</span></p></li><li><p><span>of to for in on at as into within about by from with before during after 一共十六个，不管什么句子你都可以把这套介词全写进去，除非你真的是100%把握写的一点不差。</span></p></li><li><p><span>this that these those 指代四个</span></p></li><li><p><span>is are was were be been 检查句子结构要是没有谓语动词，说明你没听好，一定把这几个be动词都试上</span></p></li><li><p><span>has had have</span></p></li><li><p><span>must might may should will could can would【will和would只要听到一个你就俩都写，因为读快了音频太像。最好是只要你听到/写了一个情态动词，把别的就都试试。</span></p></li><li><p><span>you your and now more not which all 非常容易命中</span></p></li><li><p><span>如果有名词把单复数都试一试；如果你名词试了单复数，那对应的谓语动词最好也跟着试两种形式</span></p></li><li><p><span>如果有动词把原型单三过去式进行时都试试</span></p></li></ul><p><span>一定得试词，你背肯定不可能一字不拉的背下来背的那么精确，背都是背变音、加深试词印象，你就算背好了，实际答题的时候，也大概率是根据他的音频来回忆的。但他的音频肯定是包含重弱读、失爆等语音现象的，这就意味着你根据你听的来，在大多数人都不怎么使用英语的情况下，大概率根据音频写出来之后就算缺词也不会发现语法错误。</span></p><blockquote><p><span>例如真题第三句：A group meeting will be held tomorrow in the library conference room。音频里的这个the是非常细若游丝地一笔带过，你根本听不到.非母语者在默写地时候也并不会觉得少个the有什么不妥，这不就丢分了，所以一定要试一些词。</span></p><p><span>像第六句：We can all meet at my office after the lecture。音频根本就没读at这个单词。</span></p><p><span>第七句：Tutorials are scheduled in the final week of the term.。音频里根本没有are这个词。</span></p></blockquote><p><span>所以背是一方面，试词是一方面，就算你背了，这些小词你在考场上也根本察觉不出、顾不到。</span></p><p><span>并且有些东西机经也不见得是对的，你刷WFD的时候，你会发现萤火虫有的时候也会给自己的答案备注：他也拿不准。因为这个东西都是考试里总结的，所以他给的答案也可能多/少s，介词是错的之类。</span></p><p><span>甚至机经本身就有问题：</span></p><p><span class='md-image'><img src="./wfd机经存在的问题.png" style="zoom:70%; float:left"></span></p><p><span>主要还是背，萤火中的小题库都背下来，这很重要。</span></p><blockquote><p><span>注意&#39;s、&#39;t这种，要能够辨别，别理解成复数or单三和前面单词写在一起，要么拆开要么加撇：city s或者city&#39;s。</span></p></blockquote><p><span>还有一个很关键的点：你要通过一些很清晰的词，来检查哪些不那么清晰的词，判断你写没写对。比如说你动词明确听到了是are/is、have/has，那你相应的名词就肯定是复数/单数，反过来也是一样的道理，那你是不是就应该写成相对应的或者把两种都试一下；主语是单三但他语音里的动词显然没有s，那是不是这个动词就应该是过去分词的形式？这样从语法上的对映关系有很多。</span></p><h2><a name="sst-summarize-spoken-text" class="md-header-anchor"></a><span>SST-Summarize Spoken Text</span></h2><p><span>占比约12%，也很重要，因为他还给写作供分。</span></p><p><span>只有48篇机经，命中率超高(截至至2023.3.23)，要背。</span></p><p><span>听力第一题、也是唯一一个独立计时的。</span></p><p><span>1-2道，每道10min。</span></p><p><span>50-70词，不能多不能少。</span></p><p><span>这个题型的音频录的很随意、很嘈杂，有时候还有背景音乐和警笛，不是在录音棚</span></p><p><span>10=2(听+记)+6作答+2拼写&amp;语法检查。</span></p><blockquote><p><span>SST算是写作，需要检查语法，名词可数一般要么和the放一起，要么变复数。检查动词要不要变ing、及物动词要不要加宾语。</span></p></blockquote><hr /><p><span>评分标准：</span></p><ul><li><span>内容：所有重点信息的原词原句2分、少一部分1分、遗漏主题0。逻辑不重要，pte只有WE看点逻辑，其他都不重要。</span></li><li><span>格式：字数。全大写、没标点、分行写敲回车都是零分。不要敲回车，写一整段。</span></li><li><span>语法：满分或0，扣分制，不用复杂句高级句，时态和原文保存一致。</span></li><li><span>词汇：2分词汇恰当，0词汇错误导致理解障碍。没必要做同义替换。</span></li><li><span>拼写：满分2，错一个扣一份，0为止。</span></li></ul><hr /><p><span>策略：</span></p><ol start='' ><li><p><span>保内容牺牲拼写：多个词写并列—A, B, C or D，这样符合语法分不扣语法分，蒙对了就符合内容不扣内容分，牺牲拼写两分。但千万别选哪些你根本不认识靠音频蒙的单词，拼不对内容拼写分全没了。</span></p></li><li><p><span>背机经，主要是背主题词。你直接去读他那个答案，他的音频/原文很多是模拟出来的，和考试的内容不一样了，可以拿来模仿考试流程练练，但是原文本身意义不大。</span></p></li><li><p><span>套模板：pte的考试也变动过，每个版本时期，适合的模板也不太一样，有的过时的模板会给0。</span></p><p><span>注意模板里每个空都是名词：</span></p><ul><li><span>如果你要填的词本来就是名词，不可数就直接填，可数要加冠词或者变复数（不过如果是复合名词，名词修饰名词的时候，前面的名词大概率是单数的）；</span></li><li><span>形容词如果知道名词形式就填名词，如果不知道就写being+adj；</span></li><li><span>动词则是变v-ing，如果你知道对应名词也可以。</span></li></ul><h3><a name="模板1" class="md-header-anchor"></a><span>模板1</span></h3><p><span>This lecture mainly talks about the </span><u><span>...</span></u><span>, which would involve </span><u><span>...</span></u><span> Firstly, they have mentioned </span><u><span>...</span></u><span> and </span><u><span>...</span></u><span>, related to </span><u><span>...</span></u><span> and </span><u><span>...</span></u><span> due to </span><u><span>...</span></u><span> and </span><u><span>...</span></u><span> Secondly, they have mentioned </span><u><span>...</span></u><span> and </span><u><span>...</span></u><span> while elaborating on </span><u><span>...</span></u><span> and </span><u><span>...</span></u><span> Therefore, </span><u><span>...</span></u><span> can be proven by </span><u><span>...</span></u><span> and </span><u><span>...</span></u></p><h3><a name="模板2" class="md-header-anchor"></a><span>模板2</span></h3><p><span>This lecture mainly discussed </span><u><span>主题词/that 主题句</span></u><span>. Firstly, the speaker/professor/woman mentioned that </span><u><span>key aspect 1</span></u><span>. After that, he/she also believed that key </span><u><span>aspect 2</span></u><span>. Finally, the lecture highlighted that </span><u><span>key aspect 3</span></u><span>.</span></p></li><li><p><span>用于筛选信息的信号词：</span></p><ul><li><span>转折：however, but, nevertheless, although,despite, on the one</span></li><li><span>并列：also, as well as, and, in addition, furthermore</span></li><li><span>序数词：firsly， secondly</span></li><li><span>目的：in order to</span></li><li><span>结果：so, therefore, the findings of the study show that ...</span></li><li><span>语气词：so, well, now ...</span></li><li><span>设问的答案：Why is this happening?</span></li></ul></li></ol><h2><a name="fib-fill-in-the-blanks" class="md-header-anchor"></a><span>FIB-Fill in The Blanks</span></h2><p><span>占比约10%，重要，给写作供分。</span></p><p><span>这个看机经没啥意义，题目形式是给你一片文章挖空，让你根据整篇文章的音频补单词，主要是背单词，去萤火虫背FIB的单词，要做到能辨音。词库是全的，一共915，不会超出这个范围。</span></p><p><span>2-3题，每题3-7空，每空1分，听写，不能试。</span></p><hr /><p><span>7秒准备时间：观察空间距(对离得近的空有个准备)+看第一行。</span></p><p><span>要记笔记，因为来不及敲：1.眼睛不要脱离屏幕会跟丢，盲写；2.单词的词尾不要空，实在来不及也要保证前后写上中间空，因为词尾容易有变化，都是一些很细节的东西，容易忘掉。3.注意失去爆破：p/k/d/t，有的词你听着怪/不符合语法，是因为他吞音了。</span></p><p><span>很多情况就算你听的很清楚，实际答案也不是这个，有的是语音现象，有的是单纯的他的音频就不是答案，所以你最后检查要核对语法。词尾！一定要注意词尾，有无s、有无ly、有无ed、什么词性。</span></p><p><span>不能太相信自己听的，eg：James is best，假如是treat播音可能没有ed，但你要加。有的时候播音就是specialize，但根据语法就应该是specialized。</span></p><hr /><p><span>要养成下面两个很重要的习惯，可以避免很多你会的单词不出错：</span></p><ol start='' ><li><span>眼睛一定不要脱离屏幕，对每个空之间的间隔一定要在一开始就心中有数，不然大概率在某个词紧后面这个空的时候你还在写、纠结上一个词导致错过。</span></li><li><span>一定要集中注意听空位的词，不能只是听个大概，因为需要你去辨认这个词需不需要加s、是什么词性对应的形式。</span></li></ol><h2><a name="highlight-incorrent-words" class="md-header-anchor"></a><span>Highlight Incorrent words</span></h2><p><span>选错词(5个左右)。通过点一下，让这个单词变黄标记为错词(再点一下就又变回去了)，这道题需要你选出和音频不一致的词。</span></p><p><span>2-3题，一共6分左右，给阅读也加6分。</span></p><p><span>难度低，能跟上问题不大。但语速超快，恨不得都四五倍速了，而且速度还不均匀、飘忽不定，还是得练练。pte这几个低分值的题语速都特别快。</span></p><p><span>一词一分，选错倒扣，所以你拿不准的千万别选。</span></p><blockquote><p><span>pte一共有三个选错倒扣分的题型：听力的多选、阅读的多选、还有这道，尽量采取保守一点的策略。</span></p></blockquote><p><span>听的时候眼睛比录音起码快两个词，尤其是换行的时候，不然你会跟不上。</span></p><h2><a name="highlight-corrent-summary" class="md-header-anchor"></a><span>Highlight Corrent Summary</span></h2><p><span>4分左右，给听力和阅读供分。1-2题，60-90秒的lecture。</span></p><p><span>没题干，给四个选项/主旨，选一个对的。</span></p><p><span>准备时间看选项：看第一个或者最短的。</span></p><p><span>听的时候注重理解，不要看选项。前两句最重要。</span></p><p><span>考察主旨，选择总结性最强的选项，选的时候遇到合适的就选，不往后看，别太拖。</span></p><p><span>注意一些信号词，有助于信息筛选，这块参见SST部分。</span></p><h2><a name="mcq-multiple-answers-n949" class="md-header-anchor"></a><span>MCQ-Multiple Answers</span></h2><p><span>分值太小了，就一两分。</span></p><p><span>一到两个题，只给听力供分。</span></p><p><span>选错倒扣，最低0分。答案个数不确定(他不告诉你)。</span></p><hr /><p><span>听力MCQ做题方法：</span></p><ul><li><p><span>10秒原则。其实你要是真听不懂10秒都不用，直接选一个next算了。</span></p><p><span>听不懂你就别纠结了，你每纠结一秒就浪费WFD的一秒。 其实题目和正确选项他在音频都进行了同义替换，至少以我的水平，本来就听不出来是啥，他还给换了，更听不出。。。</span></p></li><li><p><span>保守原则：65分以下当单选，79在确定前提下选俩。选的多大概率是0分。永远别选仨。</span></p></li><li><p><span>7/10秒准备时间：只看题干关键词(关键词可替换)。来不及看选项的。</span></p></li><li><p><span>答案一般在音频的关键词后出现，一般有替换。</span></p></li><li><p><span>注意听逻辑连接词。</span></p></li></ul><h2><a name="mcq-single-answer-n967" class="md-header-anchor"></a><span>MCQ-Single Answer</span></h2><p><span>分值很小，就一两分。</span></p><p><span>阅读听力四个MCQ单选多选区别：单选选项是圆圈，多选是方框。</span></p><p><span>做题策略和前面多选是一样的。</span></p><h2><a name="select-missing-words" class="md-header-anchor"></a><span>Select Missing Words</span></h2><p><span>1-2题。只给听力供分。没有题干(单选有)。</span></p><p><span>消音题：最后一句话不完整，有个地方被消音了，让你在选择选消音的是啥。</span></p><p><span>考的是前几个句子的泛听和最后一句的精听，要你结合文义来选。</span></p><p><span>是words，有短语的时候。</span></p><p><span>准备时间7秒：看主题和选项长度(如果选项太长就说明他最后一句读出来的就很短，你得快速反应)。</span></p><h1><a name="模考考试" class="md-header-anchor"></a><span>模考&amp;考试</span></h1><p><span>这俩都可以用券，去淘宝买券便宜，还简单(官网不用兑换码预约考试好像要填信用卡一大堆磨磨唧唧的)。</span></p><p><span>考试前做一次模考是必要的：检验复习成果、查缺补漏、熟悉答题节奏、根据成绩确认你是否适合RA一句话。(你还可以同时录屏，这样成绩不太理想也可以找个辅导班找老师一对一给你看看，也可以自己复盘)。</span></p><p><span>模考一共就内几套题，题目内容是固定的，做一套少一套。买的时候按照这个顺序：D→C→E(比较奇怪) AB太老了别做了|没参考意义，模考题一两年出一套。</span></p><p><span>模考和真正考试有区别：</span></p><ol start='' ><li><span>进度条：正式的是格子，模考是线。</span></li><li><span>小作文考试的时候不能粘贴(模考可以，但你也别粘，养成习惯)。</span></li><li><span>考试时听力的小提醒不能跳过</span></li><li><span>WFD试词，真正考试可以无限量试词，模考不让打太多词，有输入限制，也就多三四个。</span></li><li><span>大小作文sst三个独立计时的题，模考没给你分出来，记得卡时间。</span></li><li><span>考试口语点next会弹确认框，记得赶紧确认因为这时候还在录音，模考不会。</span></li></ol><p><span>考试当天：</span></p><ol start='' ><li><p><span>要求半小时前。早点到，西安这边早到早选座。选座方式是：拿储物柜钥匙选座。</span></p></li><li><p><span>带身份证。</span></p></li><li><p><span>夏天(空调冷，穿个好脱的外套)。</span></p></li><li><p><span>出分快：2小时后基本就出成绩了。</span></p></li><li><p><span>西安考场地点：雁塔区吉祥路179号世纪商务大厦8层A座|华为培训中心(他这个没有一个写着Pearson/pte的考场，他是借的别人的场地)。</span></p></li><li><p><span>选离门远的地方(不然提前答完的人出来进去的影响你)，上一排也是门开始是7到更大。  </span></p><p><span>选5、11or6、12(2023年3月：根据考过的同学反应，6号机器是坏的，键盘有毛病，避雷)。</span></p><p><span>截止到2023.4，西安的考场长这样：</span></p><p><span class='md-image'><img src="./考场布局1.png" style="float:left;"></span></p></li><li><p><span>考场那里挺吵的，每个人都挨着做，做好心理准备别被影响。</span></p></li><li><p><span>监考是在另一个屋子通过监控看，有问题举手、挥手。</span></p><p><span>不知道那个地方考场的布局图：</span></p><p><span class='md-image'><img src="./考场布局2.png" style="float:left; zoom:50%"></span></p></li><li><p><span>不要带电子产品，考完举手老师给你登出系统。</span></p></li><li><p><span>考试结果：四封邮件。</span></p></li><li><p><span>考场提供：发两支笔一个本子。</span></p><ul><li><span>他这个本子是那种每一页都塑封，然后用那种白板笔写写了擦掉重复利用，运气差拿到的本子可能破旧不堪。</span></li><li><span>笔先试试能不能用，考试前不让写字不过可以划线。</span></li><li><span>笔爱干记得盖。</span></li><li><span>不够可以要。</span></li></ul></li><li><p><span>口语试音：没时间限制但有的考场催你。调整麦的位置。声音适中，爆破音不喷麦，没有呼吸汽流声。微弱电流声正常。声音一开始调小因为提示音太大。试音可以用下面这几个词试：test test one two three。</span></p></li><li><p><span>截止2023.3，西安的考场是要求戴口罩的。不过带了也好，变相防止喷麦，他提供的键鼠耳麦都挺涝的。</span></p></li></ol></div>
+</body>
+</html>
